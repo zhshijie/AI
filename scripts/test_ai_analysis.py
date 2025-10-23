@@ -18,8 +18,7 @@ def test_ai_analyzer():
     print("=" * 60)
     
     # 检查环境变量
-    print("
-[1/4] 检查环境变量...")
+    print("\n[1/4] 检查环境变量...")
     
     providers = {
         'groq': 'GROQ_API_KEY',
@@ -37,21 +36,16 @@ def test_ai_analyzer():
             print(f"  ✗ {provider}: 未配置 ({env_key})")
     
     if not available_providers:
-        print("
-⚠️  未配置任何AI服务，将使用备用分析方法")
+        print("⚠️  未配置任何AI服务，将使用备用分析方法")
         print("建议配置至少一个AI服务以获得更好的分析质量")
-        print("
-推荐配置Groq（完全免费）：")
+        print("推荐配置Groq（完全免费）：")
         print("1. 访问 https://console.groq.com/")
         print("2. 注册并获取API密钥")
         print("3. 设置环境变量：export GROQ_API_KEY='your-api-key'")
-        print("
-继续使用备用分析方法进行测试...
-")
+        print("继续使用备用分析方法进行测试...")
     
     # 导入分析器
-    print("
-[2/4] 导入AI分析器...")
+    print("[2/4] 导入AI分析器...")
     try:
         from ai_analyzer import get_analyzer
         print("  ✓ AI分析器模块导入成功")
@@ -60,8 +54,7 @@ def test_ai_analyzer():
         return False
     
     # 准备测试数据
-    print("
-[3/4] 准备测试数据...")
+    print("[3/4] 准备测试数据...")
     test_news = [
         {
             'id': 1,
@@ -107,8 +100,7 @@ def test_ai_analyzer():
     print(f"  ✓ 准备了 {len(test_news)} 条测试新闻")
     
     # 执行分析
-    print("
-[4/4] 执行AI分析...")
+    print("[4/4] 执行AI分析...")
     
     # 确定使用哪个提供商
     if available_providers:
@@ -122,33 +114,28 @@ def test_ai_analyzer():
         analyzer = get_analyzer(provider)
         result = analyzer.analyze_news(test_news)
         
-        print("
-" + "=" * 60)
+        print("" + "=" * 60)
         print("分析结果")
         print("=" * 60)
         
         # 显示关键指标
-        print(f"
-📊 投资温度: {result.get('temperature_score', 0):.1f}°")
+        print(f"📊 投资温度: {result.get('temperature_score', 0):.1f}°")
         print(f"😊 市场情绪: {result.get('sentiment', '未知')} {result.get('sentiment_emoji', '')}")
         print(f"📈 积极新闻: {result.get('positive_count', 0)} 条")
         print(f"📉 消极新闻: {result.get('negative_count', 0)} 条")
         print(f"📊 中性新闻: {result.get('neutral_count', 0)} 条")
         
         # 显示分析文本
-        print(f"
-💡 分析结论:")
+        print(f"💡 分析结论:")
         analysis_text = result.get('analysis_text', '无')
         # 自动换行显示
         import textwrap
         wrapped_text = textwrap.fill(analysis_text, width=58)
-        for line in wrapped_text.split('
-'):
+        for line in wrapped_text.split(''):
             print(f"   {line}")
         
         # 显示关键因素
-        print(f"
-🔑 关键因素:")
+        print(f"\n🔑 关键因素:")
         key_factors = result.get('key_factors', [])
         for i, factor in enumerate(key_factors[:5], 1):
             if isinstance(factor, dict):
@@ -159,42 +146,35 @@ def test_ai_analyzer():
         
         # 显示AI提供商
         ai_provider = result.get('ai_provider', 'unknown')
-        print(f"
-🤖 分析引擎: {ai_provider}")
+        print(f"🤖 分析引擎: {ai_provider}")
         
         # 保存结果
         output_file = 'test_analysis_result.json'
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
-        print(f"
-💾 完整结果已保存到: {output_file}")
+        print(f"💾 完整结果已保存到: {output_file}")
         
-        print("
-" + "=" * 60)
+        print("" + "=" * 60)
         print("✅ 测试完成！")
         print("=" * 60)
         
         # 给出建议
         if ai_provider == 'fallback_rules':
-            print("
-💡 建议:")
+            print("💡 建议:")
             print("   当前使用的是备用分析方法（基于规则）")
             print("   建议配置AI服务以获得更专业的分析结果")
             print("   推荐使用Groq（完全免费）：https://console.groq.com/")
         else:
-            print("
-🎉 恭喜！AI分析功能运行正常")
+            print("🎉 恭喜！AI分析功能运行正常")
             print(f"   当前使用: {ai_provider}")
             print("   可以在GitHub Actions中使用此配置")
         
         return True
         
     except Exception as e:
-        print(f"
-❌ 分析失败: {str(e)}")
+        print(f"❌ 分析失败: {str(e)}")
         import traceback
-        print("
-详细错误信息:")
+        print("详细错误信息:")
         traceback.print_exc()
         return False
 
@@ -204,33 +184,25 @@ def main():
     success = test_ai_analyzer()
     
     if success:
-        print("
-" + "=" * 60)
+        print("" + "=" * 60)
         print("下一步操作")
         print("=" * 60)
-        print("
-1. 如果测试成功，可以在GitHub仓库中配置相同的环境变量")
+        print("1. 如果测试成功，可以在GitHub仓库中配置相同的环境变量")
         print("   Settings → Secrets and variables → Actions → New repository secret")
-        print("
-2. 运行完整的新闻爬取和分析:")
+        print("2. 运行完整的新闻爬取和分析:")
         print("   python scripts/fetch_news.py")
-        print("
-3. 查看详细的AI配置指南:")
+        print("3. 查看详细的AI配置指南:")
         print("   cat AI_ANALYSIS_GUIDE.md")
         sys.exit(0)
     else:
-        print("
-" + "=" * 60)
+        print("" + "=" * 60)
         print("故障排查")
         print("=" * 60)
-        print("
-1. 检查是否正确安装了依赖:")
+        print("1. 检查是否正确安装了依赖:")
         print("   pip install -r requirements.txt")
-        print("
-2. 检查环境变量是否正确设置:")
+        print("2. 检查环境变量是否正确设置:")
         print("   echo $GROQ_API_KEY")
-        print("
-3. 查看详细的故障排查指南:")
+        print("3. 查看详细的故障排查指南:")
         print("   cat AI_ANALYSIS_GUIDE.md")
         sys.exit(1)
 
