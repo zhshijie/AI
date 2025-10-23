@@ -1,0 +1,42 @@
+name: Fetch Tencent News and Analyze
+
+on:
+  schedule:
+    # 每6小时执行一次
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  fetch-and-analyze:
+    runs-on: ubuntu-latest
+    
+    # 添加权限配置
+    permissions:
+      contents: write  # 允许写入仓库内容
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # 使用GitHub Token
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+          
+      - name: Fetch Tencent news and analyze
+        run: |
+          python scripts/fetch_tencent_news.py
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add data/tencent_news.json data/tencent_analysis.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Tencent news data - $(date)" && git push)
+

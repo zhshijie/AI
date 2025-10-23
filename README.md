@@ -11,6 +11,7 @@
 - ✅ **多源聚合**：整合Google News、Yahoo Finance、BBC、CNBC等多个新闻源
 - ✅ **智能分析**：基于关键词的情感分析，评估投资温度
 - ✅ **美观界面**：现代化响应式设计，支持移动端
+- ✨ **腾讯专版**：专门针对腾讯控股的投资分析系统，提供详细的投资建议
 
 ## 🏗️ 系统架构
 
@@ -47,22 +48,57 @@
 .
 ├── .github/
 │   └── workflows/
-│       └── fetch-news.yml          # GitHub Actions工作流配置
+│       ├── fetch-news.yml          # 全球经济新闻工作流
+│       └── fetch-tencent-news.yml  # 腾讯新闻工作流
 ├── api/
 │   └── index.py                    # Vercel Serverless函数
 ├── data/
-│   ├── news.json                   # 新闻数据
-│   └── analysis.json               # 分析结果
+│   ├── news.json                   # 全球经济新闻数据
+│   ├── analysis.json               # 全球经济分析结果
+│   ├── tencent_news.json           # 腾讯新闻数据
+│   └── tencent_analysis.json       # 腾讯投资分析结果
 ├── docs/                           # GitHub Pages前端页面
-│   ├── index.html
-│   └── main.js
+│   ├── index.html                  # 全球经济新闻主页
+│   ├── main.js                     # 主页脚本
+│   ├── tencent.html                # 腾讯投资分析页面
+│   ├── tencent.js                  # 腾讯页面脚本
+│   └── health.html                 # 健康检查页面
 ├── scripts/
-│   └── fetch_news.py               # 新闻爬取与分析脚本
+│   ├── fetch_news.py               # 全球经济新闻爬虫
+│   └── fetch_tencent_news.py       # 腾讯新闻爬虫
 ├── vercel.json                     # Vercel配置文件
-└── README.md                       # 项目说明文档
+├── README.md                       # 项目说明文档
+└── TENCENT_INVESTMENT_GUIDE.md     # 腾讯投资分析使用指南
 ```
 
+## 🎯 双系统架构
+
+本项目包含两个独立的分析系统：
+
+### 1. 全球经济新闻分析系统
+- 📊 **功能**：分析全球经济新闻，评估整体投资温度
+- 🌐 **访问**：`https://your-username.github.io/your-repo/index.html`
+- 📝 **说明**：适合宏观经济分析和全球市场趋势判断
+
+### 2. 腾讯投资分析系统 ⭐ NEW
+- 🎯 **功能**：专注腾讯控股及相关行业，提供详细投资建议
+- 🔗 **访问**：`https://your-username.github.io/your-repo/tencent.html`
+- 📖 **文档**：查看 [腾讯投资分析使用指南](./TENCENT_INVESTMENT_GUIDE.md)
+- 💡 **特色**：
+  - AI生成的详细投资建议（买入/持有/观望/减持）
+  - 风险等级评估和具体行动指南
+  - 关键投资机会和风险分析
+  - 业务板块分类统计和趋势分析
+
 ## 🚀 部署指南
+
+### 快速开始（3步完成）
+
+1. **Fork本仓库** → 2. **启用GitHub Actions** → 3. **启用GitHub Pages**
+
+就这么简单！系统会自动运行，无需任何配置。
+
+详细步骤：
 
 ### 1. Fork 本仓库
 
@@ -115,15 +151,25 @@
 4. 点击 `Save`
 5. 等待几分钟，访问 `https://your-username.github.io/your-repo-name`
 
-### 6. 更新前端API地址
+### 6. 更新前端API地址（可选）
 
-编辑 `docs/main.js` 文件，将第2行的API地址替换为你的Vercel域名：
+**注意**：如果你只使用GitHub Pages，无需修改任何代码！系统会自动从数据文件读取。
+
+如果你部署了Vercel API，可以编辑 `docs/main.js` 文件，将第2行的API地址替换为你的Vercel域名：
 
 ```javascript
 const API_BASE = 'https://your-vercel-app.vercel.app/api';
 ```
 
 提交更改后，GitHub Pages会自动更新。
+
+**数据加载优先级**：
+1. GitHub Pages环境：自动从 `data/` 目录读取JSON文件
+2. 本地开发：自动从 `data/` 目录读取JSON文件
+3. 配置了Vercel API：使用API接口
+4. 以上都失败：使用内置演示数据
+
+详细配置说明请查看 [部署配置指南](./DEPLOYMENT_GUIDE.md)
 
 ## 🔧 配置说明
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,8 +134,13 @@
         }
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .fa-spin {
@@ -146,6 +152,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -160,7 +167,7 @@
             .news-card-image {
                 height: 150px;
             }
-            
+
             .stat-card {
                 padding: 1rem;
             }
@@ -185,6 +192,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
     <!-- 顶部导航栏 -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
@@ -192,17 +200,25 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-3">
                     <i class="fas fa-chart-line text-3xl text-indigo-600"></i>
-                    <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    <h1
+                        class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                         全球经济新闻与投资温度评估
                     </h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <span id="updateTime" class="text-sm text-gray-500"></span>
-                    <a href="./health.html" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 flex items-center space-x-2">
+                    <a href="./tencent.html"
+                        class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-chart-line"></i>
+                        <span>腾讯投资</span>
+                    </a>
+                    <a href="./health.html"
+                        class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 flex items-center space-x-2">
                         <i class="fas fa-heartbeat"></i>
                         <span>健康检查</span>
                     </a>
-                    <button id="refreshBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 flex items-center space-x-2">
+                    <button id="refreshBtn"
+                        class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 flex items-center space-x-2">
                         <i class="fas fa-sync-alt"></i>
                         <span>刷新数据</span>
                     </button>
@@ -261,13 +277,13 @@
                     投资温度分析
                 </h2>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- 温度计图表 -->
                 <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6">
                     <div id="temperatureGauge" class="w-full h-80"></div>
                 </div>
-                
+
                 <!-- 分析结果 -->
                 <div class="space-y-4">
                     <div class="bg-blue-50 rounded-xl p-4">
@@ -279,7 +295,7 @@
                             加载中...
                         </p>
                     </div>
-                    
+
                     <div class="bg-green-50 rounded-xl p-4">
                         <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
                             <i class="fas fa-key text-green-600 mr-2"></i>
@@ -292,7 +308,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-4 text-center">
                             <i class="fas fa-arrow-up text-green-600 text-2xl mb-2"></i>
@@ -352,4 +368,5 @@
 
     <script src="./main.js"></script>
 </body>
+
 </html>

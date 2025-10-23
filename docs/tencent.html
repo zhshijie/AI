@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯投资分析系统 - AI智能投资建议</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .advice-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.3);
+        }
+
+        .risk-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .risk-low {
+            background: #10b981;
+            color: white;
+        }
+
+        .risk-medium {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .risk-high {
+            background: #ef4444;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-chart-line text-3xl gradient-text"></i>
+                    <h1 class="text-2xl font-bold gradient-text">
+                        腾讯投资分析系统
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="updateTime" class="text-sm text-gray-500"></span>
+                    <a href="./index.html" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>返回首页</span>
+                    </a>
+                    <button id="refreshBtn" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>刷新数据</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 统计卡片区 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card fade-in">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-white text-opacity-80 text-sm">相关新闻</p>
+                        <p id="newsTotal" class="text-3xl font-bold mt-2">0</p>
+                    </div>
+                    <i class="fas fa-newspaper text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.1s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-white text-opacity-80 text-sm">投资温度</p>
+                        <p id="tempScore" class="text-3xl font-bold mt-2">--</p>
+                    </div>
+                    <i class="fas fa-temperature-high text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.2s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-white text-opacity-80 text-sm">市场情绪</p>
+                        <p id="sentiment" class="text-2xl font-bold mt-2">--</p>
+                    </div>
+                    <i class="fas fa-smile text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.3s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-white text-opacity-80 text-sm">投资评级</p>
+                        <p id="rating" class="text-xl font-bold mt-2">--</p>
+                    </div>
+                    <i class="fas fa-star text-4xl opacity-50"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投资建议区 -->
+        <div class="advice-card mb-8 fade-in" style="animation-delay: 0.4s;">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-lightbulb mr-3"></i>
+                    AI投资建议
+                </h2>
+                <span id="riskBadge" class="risk-badge risk-medium">中等风险</span>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white bg-opacity-20 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        综合评估
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-white text-opacity-90">投资建议：</span>
+                            <span id="recommendation" class="font-bold text-xl">--</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-white text-opacity-90">风险等级：</span>
+                            <span id="riskLevel" class="font-bold">--</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-white text-opacity-90">积极因素：</span>
+                            <span id="positiveCount" class="font-bold text-green-300">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-white text-opacity-90">消极因素：</span>
+                            <span id="negativeCount" class="font-bold text-red-300">0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        详细分析
+                    </h3>
+                    <p id="detailedAnalysis" class="text-white text-opacity-90 leading-relaxed text-sm">
+                        加载中...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投资温度可视化 -->
+        <div class="glass-card mb-8 fade-in" style="animation-delay: 0.5s;">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-fire text-orange-500 mr-3"></i>
+                投资温度分析
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div id="temperatureGauge" class="w-full h-80"></div>
+                <div id="categoryChart" class="w-full h-80"></div>
+            </div>
+        </div>
+
+        <!-- 关键机会与风险 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div class="glass-card fade-in" style="animation-delay: 0.6s;">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-arrow-up text-green-500 mr-2"></i>
+                    关键投资机会
+                </h3>
+                <ul id="opportunities" class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">加载中...</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="glass-card fade-in" style="animation-delay: 0.7s;">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>
+                    主要投资风险
+                </h3>
+                <ul id="risks" class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-times-circle text-red-500 mt-1 mr-2"></i>
+                        <span class="text-gray-700">加载中...</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 行动建议 -->
+        <div class="glass-card mb-8 fade-in" style="animation-delay: 0.8s;">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-tasks text-blue-500 mr-3"></i>
+                具体行动建议
+            </h3>
+            <div id="actionItems" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4">
+                    <p class="text-gray-700">加载中...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 关键因素 -->
+        <div class="glass-card mb-8 fade-in" style="animation-delay: 0.9s;">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-key text-yellow-500 mr-3"></i>
+                关键影响因素
+            </h3>
+            <div id="keyFactors" class="space-y-3">
+                <div class="flex items-start">
+                    <i class="fas fa-circle text-xs text-gray-400 mt-2 mr-3"></i>
+                    <span class="text-gray-700">加载中...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新闻列表 -->
+        <div class="glass-card fade-in" style="animation-delay: 1s;">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-newspaper text-blue-500 mr-3"></i>
+                腾讯相关新闻动态
+            </h2>
+            <div id="newsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 新闻卡片将通过JavaScript动态生成 -->
+            </div>
+            <div id="loading" class="text-center py-12 hidden">
+                <i class="fas fa-spinner fa-spin text-4xl text-indigo-600"></i>
+                <p class="text-gray-600 mt-4">加载中...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white mt-12 py-6 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+            <p>&copy; 2025 腾讯投资分析系统. Powered by AI + GitHub Actions</p>
+            <p class="text-sm mt-2">
+                <i class="fas fa-info-circle mr-1"></i>
+                本系统仅供参考，投资有风险，决策需谨慎
+            </p>
+        </div>
+    </footer>
+
+    <script src="./tencent.js"></script>
+</body>
+</html>
+
