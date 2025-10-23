@@ -70,13 +70,13 @@
   "negative_count": 3,
   "neutral_count": 19,
   "analyzed_news_count": 55,
-  "analyzed_at": "2025-10-23T11:26:29.309977",
+  "analyzed_at": "2025-10-23T11:50:49.869714",
   "categories_distribution": {
     "AI技术": 26,
-    "股市表现": 6,
+    "股市表现": 5,
     "云服务": 1,
     "元宇宙": 13,
-    "社交平台": 1,
+    "社交平台": 2,
     "投资并购": 1,
     "数字内容": 2,
     "综合动态": 4,
@@ -91,7 +91,7 @@
     "股市表现": {
       "positive": 1,
       "negative": 0,
-      "neutral": 2
+      "neutral": 1
     },
     "云服务": {
       "positive": 0,
@@ -106,7 +106,7 @@
     "社交平台": {
       "positive": 0,
       "negative": 0,
-      "neutral": 1
+      "neutral": 2
     },
     "投资并购": {
       "positive": 0,
