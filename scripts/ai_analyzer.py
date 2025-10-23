@@ -21,7 +21,9 @@ AI_PROVIDERS = {
         'api_url': 'https://openrouter.ai/api/v1/chat/completions',
         'api_key_env': 'OPENROUTER_API_KEY',
         'model': 'meta-llama/llama-3.1-8b-instruct:free',
-        'free': True
+        'free': True,
+        'site_url': 'https://github.com',
+        'site_name': 'Economic News Analyzer'
     },
     'deepseek': {
         'api_url': 'https://api.deepseek.com/v1/chat/completions',
@@ -162,8 +164,8 @@ class AINewsAnalyzer:
             
             # 根据不同的提供商设置不同的请求头
             if self.provider == 'openrouter':
-                headers['HTTP-Referer'] = 'https://github.com'
-                headers['X-Title'] = 'Economic News Analyzer'
+                headers['HTTP-Referer'] = self.config.get('site_url', 'https://github.com')
+                headers['X-Title'] = self.config.get('site_name', 'Economic News Analyzer')
             
             payload = {
                 'model': self.config['model'],
@@ -182,12 +184,17 @@ class AINewsAnalyzer:
             }
             
             print(f"正在调用 {self.provider} AI API...")
+            print(f"API URL: {self.config['api_url']}")
+            print(f"Model: {self.config['model']}")
+            
             response = requests.post(
                 self.config['api_url'],
                 headers=headers,
                 json=payload,
                 timeout=60
             )
+            
+            print(f"响应状态码: {response.status_code}")
             
             if response.status_code == 200:
                 result = response.json()
@@ -206,7 +213,7 @@ class AINewsAnalyzer:
                 # 添加元数据
                 from datetime import datetime
                 analysis_data['analyzed_at'] = datetime.now().isoformat()
-                analysis_data['analyzed_news_count'] = len(news_summary.split('\n'))
+                analysis_data['analyzed_news_count'] = len(news_summary.split('\n\n'))
                 analysis_data['ai_provider'] = self.provider
                 
                 return analysis_data
@@ -337,4 +344,3 @@ if __name__ == '__main__':
     
     result = analyzer.analyze_news(test_news)
     print(json.dumps(result, indent=2, ensure_ascii=False))
-
