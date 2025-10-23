@@ -1,0 +1,132 @@
+{
+  "temperature_score": 58.3,
+  "sentiment": "中性",
+  "sentiment_emoji": "😐",
+  "investment_advice": {
+    "overall_rating": "中性观望",
+    "risk_level": "中高风险",
+    "recommendation": "建议观望",
+    "detailed_analysis": "基于最新30条新闻分析，腾讯当前面临较多不确定性（积极新闻8条，消极新闻3条）。市场情绪偏谨慎，建议保持观望态度，等待更清晰的方向信号。",
+    "key_opportunities": [
+      "估值处于相对合理区间",
+      "长期基本面仍然稳固"
+    ],
+    "key_risks": [
+      "短期业绩压力较大",
+      "监管政策影响持续",
+      "市场竞争加剧",
+      "宏观经济环境不确定"
+    ],
+    "action_items": [
+      "建议暂时观望，不建议新增仓位",
+      "已持有者可考虑减持至5-10%仓位",
+      "设置严格止损，建议在下跌10%时止损",
+      "等待明确的转机信号再考虑入场"
+    ]
+  },
+  "key_factors": [
+    {
+      "type": "positive",
+      "category": "股市表现",
+      "title": "Tencent (OTCMKTS:TCEHY) Stock Passes Above 200 Day Moving Average - Here's Why -"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "Tencent-backed humanoid robot startup Leju raises $210m in pre-IPO round - DealS"
+    },
+    {
+      "type": "negative",
+      "category": "AI技术",
+      "title": "IBM tops third-quarter estimates and lifts guidance, but stock drops"
+    },
+    {
+      "type": "negative",
+      "category": "综合动态",
+      "title": "Sony Blasts Tencent's 'Knock-off Horizon' Lawsuit Response As 'Nonsense,' Insist"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "CNBC Daily Open: Tesla's revenue rose — but so did its operating costs"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "CNBC Daily Open: Tesla's increased costs outweighed its revenue growth"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "Amazon unveils prototype AI smart glasses for its delivery drivers"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "Elon Musk said Tesla's robot will be 'incredible surgeon,' left Wall Street with"
+    }
+  ],
+  "positive_count": 8,
+  "negative_count": 3,
+  "neutral_count": 19,
+  "analyzed_news_count": 55,
+  "analyzed_at": "2025-10-23T11:26:29.309977",
+  "categories_distribution": {
+    "AI技术": 26,
+    "股市表现": 6,
+    "云服务": 1,
+    "元宇宙": 13,
+    "社交平台": 1,
+    "投资并购": 1,
+    "数字内容": 2,
+    "综合动态": 4,
+    "游戏业务": 1
+  },
+  "category_sentiment": {
+    "AI技术": {
+      "positive": 7,
+      "negative": 2,
+      "neutral": 9
+    },
+    "股市表现": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 2
+    },
+    "云服务": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    },
+    "元宇宙": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    },
+    "社交平台": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    },
+    "投资并购": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    },
+    "数字内容": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 2
+    },
+    "综合动态": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 1
+    },
+    "游戏业务": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    }
+  }
+}
