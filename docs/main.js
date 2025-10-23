@@ -1,5 +1,5 @@
 // API基础URL - 替换为你的Vercel部署URL
-const API_BASE = 'https://your-vercel-app.vercel.app/api';
+const API_BASE = 'https://https://ai-394y.vercel.app//api';
 
 // 如果在本地开发，可以使用相对路径读取data目录
 const USE_LOCAL_DATA = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
