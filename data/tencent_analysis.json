@@ -32,11 +32,6 @@
     },
     {
       "type": "positive",
-      "category": "云服务",
-      "title": "Tencent Cloud and eMAG Join Forces to Accelerate Digital Growth Across Eastern E"
-    },
-    {
-      "type": "positive",
       "category": "AI技术",
       "title": "Tencent-backed humanoid robot startup Leju raises $210m in pre-IPO round - DealS"
     },
@@ -64,27 +59,32 @@
       "type": "positive",
       "category": "AI技术",
       "title": "Amazon unveils prototype AI smart glasses for its delivery drivers"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
+      "title": "Elon Musk said Tesla's robot will be 'incredible surgeon,' left Wall Street with"
     }
   ],
   "positive_count": 8,
   "negative_count": 3,
   "neutral_count": 19,
   "analyzed_news_count": 55,
-  "analyzed_at": "2025-10-23T12:03:38.648772",
+  "analyzed_at": "2025-10-23T12:06:37.449062",
   "categories_distribution": {
     "AI技术": 26,
     "股市表现": 5,
-    "云服务": 2,
+    "云服务": 1,
     "元宇宙": 13,
-    "社交平台": 2,
+    "社交平台": 1,
     "投资并购": 1,
     "数字内容": 2,
-    "综合动态": 3,
+    "综合动态": 5,
     "游戏业务": 1
   },
   "category_sentiment": {
     "AI技术": {
-      "positive": 6,
+      "positive": 7,
       "negative": 2,
       "neutral": 9
     },
@@ -94,7 +94,7 @@
       "neutral": 1
     },
     "云服务": {
-      "positive": 1,
+      "positive": 0,
       "negative": 0,
       "neutral": 1
     },
@@ -106,7 +106,7 @@
     "社交平台": {
       "positive": 0,
       "negative": 0,
-      "neutral": 2
+      "neutral": 1
     },
     "投资并购": {
       "positive": 0,
@@ -121,7 +121,7 @@
     "综合动态": {
       "positive": 0,
       "negative": 1,
-      "neutral": 1
+      "neutral": 2
     },
     "游戏业务": {
       "positive": 0,
