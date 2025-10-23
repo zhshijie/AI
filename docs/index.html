@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球经济新闻与投资温度评估系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .news-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-card-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .news-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        .news-card-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            color: #6b7280;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .category-btn:hover {
+            border-color: #6366f1;
+            color: #6366f1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .fa-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .news-card-image {
+                height: 150px;
+            }
+            
+            .stat-card {
+                padding: 1rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-chart-line text-3xl text-indigo-600"></i>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                        全球经济新闻与投资温度评估
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="updateTime" class="text-sm text-gray-500"></span>
+                    <button id="refreshBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>刷新数据</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 统计卡片区 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-100 text-sm">新闻总数</p>
+                        <p id="newsTotal" class="text-3xl font-bold mt-2">0</p>
+                    </div>
+                    <i class="fas fa-newspaper text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card bg-gradient-to-br from-green-500 to-green-600 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-green-100 text-sm">今日新闻</p>
+                        <p id="newsToday" class="text-3xl font-bold mt-2">0</p>
+                    </div>
+                    <i class="fas fa-calendar-day text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-purple-100 text-sm">投资温度</p>
+                        <p id="tempScore" class="text-3xl font-bold mt-2">--</p>
+                    </div>
+                    <i class="fas fa-temperature-high text-4xl opacity-50"></i>
+                </div>
+            </div>
+            <div class="stat-card bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-orange-100 text-sm">市场情绪</p>
+                        <p id="sentiment" class="text-2xl font-bold mt-2">--</p>
+                    </div>
+                    <i class="fas fa-smile text-4xl opacity-50"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投资温度分析区 -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                    <i class="fas fa-fire text-orange-500 mr-3"></i>
+                    投资温度分析
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- 温度计图表 -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6">
+                    <div id="temperatureGauge" class="w-full h-80"></div>
+                </div>
+                
+                <!-- 分析结果 -->
+                <div class="space-y-4">
+                    <div class="bg-blue-50 rounded-xl p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            分析结论
+                        </h3>
+                        <p id="analysisText" class="text-gray-700 leading-relaxed">
+                            加载中...
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-xl p-4">
+                        <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                            <i class="fas fa-key text-green-600 mr-2"></i>
+                            关键因素
+                        </h3>
+                        <ul id="keyFactors" class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-circle text-xs text-green-500 mt-1.5 mr-2"></i>
+                                <span>加载中...</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-4 text-center">
+                            <i class="fas fa-arrow-up text-green-600 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-600">积极新闻</p>
+                            <p id="positiveCount" class="text-2xl font-bold text-green-700">0</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-red-100 to-red-200 rounded-xl p-4 text-center">
+                            <i class="fas fa-arrow-down text-red-600 text-2xl mb-2"></i>
+                            <p class="text-sm text-gray-600">消极新闻</p>
+                            <p id="negativeCount" class="text-2xl font-bold text-red-700">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新闻分类筛选 -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-filter text-indigo-500 mr-3"></i>
+                新闻分类
+            </h2>
+            <div id="categoryFilter" class="flex flex-wrap gap-3">
+                <button class="category-btn active" data-category="">
+                    <i class="fas fa-globe mr-2"></i>全部
+                </button>
+            </div>
+        </div>
+
+        <!-- 新闻列表 -->
+        <div class="bg-white rounded-2xl shadow-xl p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-newspaper text-blue-500 mr-3"></i>
+                最新经济新闻
+            </h2>
+            <div id="newsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 新闻卡片将通过JavaScript动态生成 -->
+            </div>
+            <div id="loading" class="text-center py-12 hidden">
+                <i class="fas fa-spinner fa-spin text-4xl text-indigo-600"></i>
+                <p class="text-gray-600 mt-4">加载中...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white mt-12 py-6 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600">
+            <p>&copy; 2025 全球经济新闻与投资温度评估系统. Powered by GitHub Actions + Vercel + GitHub Pages</p>
+            <p class="text-sm mt-2">
+                <a href="https://github.com" target="_blank" class="text-indigo-600 hover:underline">
+                    <i class="fab fa-github mr-1"></i>View on GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "updated_at": "2025-10-23T17:00:00Z",
+  "total_count": 6,
+  "news": [
+    {
+      "id": 1,
+      "title": "Federal Reserve Maintains Interest Rates, Markets React Positively",
+      "description": "The Federal Reserve announced it will maintain benchmark interest rates at 5.25%-5.50%, in line with market expectations. Major US stock indices rose collectively, with investor confidence strengthening.",
+      "url": "https://example.com/news1",
+      "source": "Wall Street Journal",
+      "published_at": "2025-10-23T15:00:00Z",
+      "category": "货币政策",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "China GDP Growth Exceeds Expectations, Strong Economic Recovery",
+      "description": "China's Q3 GDP grew 5.2% year-on-year, exceeding market expectations of 4.8%. Both consumption and investment showed improvement, with economic fundamentals continuing to strengthen.",
+      "url": "https://example.com/news2",
+      "source": "Reuters",
+      "published_at": "2025-10-23T12:00:00Z",
+      "category": "经济数据",
+      "country": "China",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "European Central Bank Hints at Possible Rate Cut, Euro Under Pressure",
+      "description": "ECB President Lagarde indicated the central bank may consider rate cuts if inflation continues to decline. EUR/USD exchange rate fell 0.8%.",
+      "url": "https://example.com/news3",
+      "source": "Financial Times",
+      "published_at": "2025-10-23T09:00:00Z",
+      "category": "货币政策",
+      "country": "EU",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Global Tech Stocks Rally on AI Breakthrough News",
+      "description": "Global tech stocks rose collectively on AI technology breakthrough news. Nvidia, Microsoft and other tech giants hit record highs, with the AI concept continuing to heat up.",
+      "url": "https://example.com/news4",
+      "source": "CNBC",
+      "published_at": "2025-10-23T05:00:00Z",
+      "category": "股市动态",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Oil Prices Drop Sharply on Global Growth Concerns",
+      "description": "International oil prices fell more than 3% in a single day on concerns about slowing global economic growth. Energy sector stocks declined broadly.",
+      "url": "https://example.com/news5",
+      "source": "Bloomberg",
+      "published_at": "2025-10-22T23:00:00Z",
+      "category": "大宗商品",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "UK Inflation Rate Falls to 2.5%, Below Expectations",
+      "description": "UK CPI rose 2.5% year-on-year in October, below market expectations of 2.8%. Expectations for Bank of England rate cuts increased.",
+      "url": "https://example.com/news6",
+      "source": "BBC",
+      "published_at": "2025-10-22T17:00:00Z",
+      "category": "经济数据",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-23T17:00:00Z"
+    }
+  ]
+}

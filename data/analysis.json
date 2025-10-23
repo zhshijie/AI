@@ -1,0 +1,24 @@
+{
+  "temperature_score": 62.5,
+  "sentiment": "中性",
+  "sentiment_emoji": "😐",
+  "analysis_text": "当前全球经济新闻喜忧参半（积极3条，消极2条），市场情绪相对中性。美联储维持利率不变、中国GDP增长超预期等积极因素提振市场信心，但欧洲央行暗示降息、油价大幅下跌等消极因素也带来不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
+  "key_factors": [
+    "✓ 货币政策: Federal Reserve Maintains Interest Rates, Markets React Positively...",
+    "✓ 经济数据: China GDP Growth Exceeds Expectations, Strong Economic Recovery...",
+    "✗ 货币政策: European Central Bank Hints at Possible Rate Cut, Euro Under Pressure...",
+    "✓ 股市动态: Global Tech Stocks Rally on AI Breakthrough News...",
+    "✗ 大宗商品: Oil Prices Drop Sharply on Global Growth Concerns..."
+  ],
+  "positive_count": 3,
+  "negative_count": 2,
+  "neutral_count": 1,
+  "analyzed_news_count": 6,
+  "analyzed_at": "2025-10-23T17:00:00Z",
+  "categories_distribution": {
+    "货币政策": 2,
+    "经济数据": 2,
+    "股市动态": 1,
+    "大宗商品": 1
+  }
+}
