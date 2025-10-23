@@ -1,26 +1,28 @@
 {
-  "temperature_score": 58.3,
+  "temperature_score": 66.7,
   "sentiment": "中性",
   "sentiment_emoji": "😐",
-  "analysis_text": "当前全球经济新闻喜忧参半（积极12条，消极7条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
+  "analysis_text": "当前全球经济新闻喜忧参半（积极11条，消极1条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
   "key_factors": [
-    "✓ 大宗商品: Gold price today, Thursday, October 23: Gold opens higher as...",
-    "✗ 股市动态: Earnings live: Tesla stock falls after earnings miss, IBM si...",
-    "✗ 股市动态: Dow Jones Futures Fall; Tesla Skids After Earnings, Elon Mus...",
-    "✓ 经济数据: AT&T Earnings In-Line, Wireless Subscriber Growth Tops Estim...",
-    "✓ 综合财经: T-Mobile lifts annual forecast as subscriber gains top estim..."
+    "✓ 大宗商品: Oil surges 5% after US sanctions Russian firms Rosneft, Luko...",
+    "✓ 股市动态: IonQ, Rigetti, Other Quantum-Computing Stocks Jump on U.S. S...",
+    "✗ 股市动态: Molina Healthcare stock falls as medical costs spike, Obamac...",
+    "✓ 股市动态: Stock market today: Dow, S&P 500, Nasdaq rise as oil jumps, ...",
+    "✓ 综合财经: White House East Wing demolition nearly complete to make roo..."
   ],
-  "positive_count": 12,
-  "negative_count": 7,
-  "neutral_count": 11,
+  "positive_count": 11,
+  "negative_count": 1,
+  "neutral_count": 18,
   "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-23T12:13:59.989123",
+  "analyzed_at": "2025-10-23T18:11:06.609425",
   "categories_distribution": {
-    "大宗商品": 3,
-    "股市动态": 12,
-    "综合财经": 11,
-    "经济数据": 3,
-    "外汇市场": 1
+    "大宗商品": 4,
+    "综合财经": 15,
+    "股市动态": 7,
+    "货币政策": 1,
+    "经济数据": 1,
+    "数字货币": 1,
+    "国际贸易": 1
   },
   "ai_provider": "fallback_rules"
 }
