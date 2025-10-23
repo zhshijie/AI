@@ -69,10 +69,10 @@
   "positive_count": 8,
   "negative_count": 3,
   "neutral_count": 19,
-  "analyzed_news_count": 55,
-  "analyzed_at": "2025-10-23T12:06:37.449062",
+  "analyzed_news_count": 54,
+  "analyzed_at": "2025-10-23T12:15:40.164345",
   "categories_distribution": {
-    "AI技术": 26,
+    "AI技术": 25,
     "股市表现": 5,
     "云服务": 1,
     "元宇宙": 13,
