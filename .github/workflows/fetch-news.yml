@@ -1,0 +1,39 @@
+name: Fetch News and Analyze
+
+on:
+  schedule:
+    # 每6小时执行一次
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  fetch-and-analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 openai
+          
+      - name: Fetch news and analyze
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: |
+          python scripts/fetch_news.py
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add data/news.json data/analysis.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update news data - $(date)" && git push)
+
