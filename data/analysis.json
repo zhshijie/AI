@@ -1,26 +1,26 @@
 {
-  "temperature_score": 58.33,
+  "temperature_score": 60.0,
   "sentiment": "中性",
   "sentiment_emoji": "😐",
-  "analysis_text": "当前全球经济新闻喜忧参半（积极8条，消极3条），市场情绪相对中性。经济数据有好有坏，建议保持均衡配置，关注市场变化，适时调整投资组合。",
+  "analysis_text": "当前全球经济新闻喜忧参半（积极8条，消极2条），市场情绪相对中性。经济数据有好有坏，建议保持均衡配置，关注市场变化，适时调整投资组合。",
   "key_factors": [
-    "✗ 股市动态: How does the government shutdown impact mortgage rates? Expe...",
     "✓ 综合财经: 10 best high-yield savings accounts for October 2025: Rates ...",
     "✗ 股市动态: How the government shutdown impacts your money: student loan...",
     "✓ 股市动态: Stock Market Today: Oil Prices Jump, Dow Futures Waver— Live...",
-    "✓ 股市动态: Sweden’s Volvo Cars shares jump 40% after profit beat, on tr..."
+    "✓ 股市动态: Sweden’s Volvo Cars shares jump 40% after profit beat, on tr...",
+    "✓ 股市动态: Stocks rise on upbeat earnings; Russia sanctions boost oil -..."
   ],
   "positive_count": 8,
-  "negative_count": 3,
-  "neutral_count": 19,
+  "negative_count": 2,
+  "neutral_count": 20,
   "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-23T09:53:21.310818",
+  "analyzed_at": "2025-10-23T09:59:13.345380",
   "categories_distribution": {
-    "股市动态": 22,
-    "综合财经": 21,
+    "综合财经": 22,
+    "股市动态": 21,
     "大宗商品": 5,
-    "经济数据": 3,
     "外汇市场": 1,
+    "经济数据": 3,
     "国际贸易": 2
   }
 }
