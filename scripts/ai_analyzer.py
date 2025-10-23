@@ -100,16 +100,12 @@ class AINewsAnalyzer:
             source = news.get('source', '')
             
             summary_parts.append(
-                f"{i}. [{category}] {title}
-"
-                f"   来源: {source}
-"
-                f"   摘要: {description[:150]}
-"
+                f"{i}. [{category}] {title}\n"
+                f"   来源: {source}\n"
+                f"   摘要: {description[:150]}\n"
             )
         
-        return "
-".join(summary_parts)
+        return "\n".join(summary_parts)
     
     def _call_ai_api(self, news_summary: str) -> Dict:
         """调用AI API进行分析"""
@@ -210,9 +206,7 @@ class AINewsAnalyzer:
                 # 添加元数据
                 from datetime import datetime
                 analysis_data['analyzed_at'] = datetime.now().isoformat()
-                analysis_data['analyzed_news_count'] = len(news_summary.split('
-
-'))
+                analysis_data['analyzed_news_count'] = len(news_summary.split('\n'))
                 analysis_data['ai_provider'] = self.provider
                 
                 return analysis_data
