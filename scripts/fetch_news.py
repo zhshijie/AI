@@ -299,6 +299,34 @@ def analyze_with_ai(news_list: List[Dict]) -> Dict:
     """使用AI分析投资温度"""
     print("\n开始AI分析...")
     
+    try:
+        # 尝试导入AI分析器
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from ai_analyzer import get_analyzer
+        
+        # 优先尝试使用Groq（免费且强大）
+        ai_provider = os.getenv('AI_PROVIDER', 'groq')
+        print(f"尝试使用 {ai_provider} AI服务...")
+        
+        analyzer = get_analyzer(ai_provider)
+        result = analyzer.analyze_news(news_list)
+        
+        print(f"分析完成: 温度={result['temperature_score']:.1f}°, 情绪={result['sentiment']}")
+        return result
+        
+    except ImportError as e:
+        print(f"⚠️  AI分析器模块未找到: {str(e)}，使用备用分析方法")
+        return _fallback_analysis(news_list)
+    except Exception as e:
+        print(f"⚠️  AI分析失败: {str(e)}，使用备用分析方法")
+        return _fallback_analysis(news_list)
+
+
+def _fallback_analysis(news_list: List[Dict]) -> Dict:
+    """备用分析方法（基于关键词规则）"""
+    print("使用基于规则的备用分析方法")
+    
     # 简化的情感分析（基于关键词）
     positive_keywords = [
         'surge', 'rise', 'gain', 'growth', 'increase', 'boost', 'rally',
@@ -366,7 +394,8 @@ def analyze_with_ai(news_list: List[Dict]) -> Dict:
         'neutral_count': neutral_count,
         'analyzed_news_count': total,
         'analyzed_at': datetime.now().isoformat(),
-        'categories_distribution': get_category_distribution(news_list)
+        'categories_distribution': get_category_distribution(news_list),
+        'ai_provider': 'fallback_rules'
     }
     
     print(f"分析完成: 温度={temperature_score:.1f}°, 情绪={sentiment}")
@@ -505,3 +534,4 @@ def generate_mock_news() -> List[Dict]:
 
 if __name__ == '__main__':
     main()
+

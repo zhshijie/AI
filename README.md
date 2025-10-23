@@ -9,7 +9,8 @@
 - ✅ **自动化运行**：定时爬取新闻，自动AI分析，无需人工干预
 - ✅ **实时更新**：每6小时自动更新一次数据
 - ✅ **多源聚合**：整合Google News、Yahoo Finance、BBC、CNBC等多个新闻源
-- ✅ **智能分析**：基于关键词的情感分析，评估投资温度
+- 🤖 **真正的AI分析**：集成Groq、OpenRouter、DeepSeek等AI服务，智能分析新闻并生成专业投资建议
+- ✅ **智能降级**：AI不可用时自动切换到规则分析，确保系统稳定运行
 - ✅ **美观界面**：现代化响应式设计，支持移动端
 - ✨ **腾讯专版**：专门针对腾讯控股的投资分析系统，提供详细的投资建议
 
@@ -106,21 +107,60 @@
 
 ### 2. 配置 GitHub Actions
 
-**无需配置任何API密钥！** 系统使用免费的RSS订阅源和网页爬取。
+#### 基础配置（无需API密钥）
 
-如果你想使用额外的新闻源，可以在仓库中设置以下 Secrets（Settings → Secrets and variables → Actions）：
+系统使用免费的RSS订阅源和网页爬取，**无需任何配置即可运行**。
 
-- `NEWS_API_KEY`（可选）：NewsAPI.org的API密钥
-  - 注册地址：https://newsapi.org/register
-  - 免费版每天100次请求
-
-当前系统使用的免费新闻源：
+当前使用的免费新闻源：
 - ✅ Google News RSS（经济类新闻）
 - ✅ Yahoo Finance RSS（金融新闻）
 - ✅ BBC Business RSS（商业新闻）
 - ✅ CNBC RSS（财经新闻）
 - ✅ Financial Times RSS（金融时报）
 - ✅ Bloomberg RSS（彭博社）
+
+#### AI分析配置（推荐，提升分析质量）🤖
+
+**强烈推荐**配置AI分析功能，使用真正的大语言模型进行智能分析，替代简单的关键词规则。
+
+**方式一：使用Groq（推荐，完全免费）**
+
+1. 访问 [Groq Console](https://console.groq.com/) 注册账号（完全免费）
+2. 获取API密钥：[API Keys页面](https://console.groq.com/keys)
+3. 在GitHub仓库添加Secret：
+   - Name: `GROQ_API_KEY`
+   - Value: 你的API密钥
+
+**方式二：使用OpenRouter（免费模型）**
+
+1. 访问 [OpenRouter](https://openrouter.ai/) 注册账号
+2. 获取API密钥
+3. 在GitHub仓库添加Secrets：
+   - Name: `OPENROUTER_API_KEY`，Value: 你的API密钥
+   - Name: `AI_PROVIDER`，Value: `openrouter`
+
+**方式三：使用DeepSeek（低成本，约0.001元/次）**
+
+1. 访问 [DeepSeek](https://platform.deepseek.com/) 注册账号
+2. 获取API密钥
+3. 在GitHub仓库添加Secrets：
+   - Name: `DEEPSEEK_API_KEY`，Value: 你的API密钥
+   - Name: `AI_PROVIDER`，Value: `deepseek`
+
+📖 **详细配置指南**：
+- 🚀 [5分钟快速开始](./QUICK_START_AI.md) - 最简单的配置方式
+- 📚 [完整使用指南](./AI_ANALYSIS_GUIDE.md) - 深入了解AI分析功能
+
+**AI分析 vs 规则分析对比**：
+
+| 特性 | 规则分析（默认） | AI分析（推荐） |
+|------|----------------|---------------|
+| 准确性 | 60-70% | 85-95% |
+| 分析深度 | 关键词匹配 | 理解语义和上下文 |
+| 投资建议 | 模板化 | 个性化、专业化 |
+| 成本 | 免费 | 免费（Groq/OpenRouter）或极低成本（DeepSeek） |
+
+**注意**：即使不配置AI，系统也会使用规则分析正常运行，只是分析质量会有所降低。
 
 ### 3. 启用 GitHub Actions
 

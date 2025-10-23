@@ -274,6 +274,181 @@ def analyze_tencent_investment(news_list: List[Dict]) -> Dict:
     """分析腾讯投资建议"""
     print("\n开始腾讯投资分析...")
     
+    try:
+        # 尝试导入AI分析器
+        import sys
+        sys.path.insert(0, os.path.dirname(__file__))
+        from ai_analyzer import AINewsAnalyzer
+        
+        # 创建腾讯专用AI分析器
+        ai_provider = os.getenv('AI_PROVIDER', 'groq')
+        print(f"尝试使用 {ai_provider} AI服务进行腾讯投资分析...")
+        
+        analyzer = AINewsAnalyzer(ai_provider)
+        
+        # 如果有AI密钥，使用AI分析
+        if not analyzer.use_fallback:
+            result = _ai_tencent_analysis(analyzer, news_list)
+            if result:
+                print(f"AI分析完成: 温度={result['temperature_score']:.1f}°, 评级={result['investment_advice']['overall_rating']}")
+                return result
+        
+        # 否则使用规则分析
+        print("使用基于规则的腾讯投资分析")
+        return _fallback_tencent_analysis(news_list)
+        
+    except Exception as e:
+        print(f"⚠️  AI分析失败: {str(e)}，使用备用分析方法")
+        return _fallback_tencent_analysis(news_list)
+
+
+def _ai_tencent_analysis(analyzer, news_list: List[Dict]) -> Dict:
+    """使用AI进行腾讯投资分析"""
+    
+    # 准备腾讯专用的分析提示词
+    news_summary = []
+    for i, news in enumerate(news_list[:30], 1):
+        news_summary.append(
+            f"{i}. [{news.get('category', '')}] {news.get('title', '')}\n"
+            f"   来源: {news.get('source', '')}\n"
+            f"   摘要: {news.get('description', '')[:150]}\n"
+        )
+    
+    news_text = "\n".join(news_summary)
+    
+    prompt = f"""你是一位专业的股票分析师，专注于腾讯控股（00700.HK）的投资分析。请基于以下最新的腾讯相关新闻，进行深入分析并给出详细的投资建议。
+
+【腾讯相关新闻】
+{news_text}
+
+【分析要求】
+请从以下维度进行专业分析：
+1. 投资温度评分（0-100分）
+2. 市场情绪（乐观/中性/谨慎）
+3. 投资评级（强烈看好/谨慎看好/中性观望/谨慎看空）
+4. 风险等级（低风险/中等风险/中高风险/高风险）
+5. 具体操作建议（建议增持/建议持有/建议观望/建议减持）
+6. 详细投资分析（至少300字）
+7. 关键投资机会（列出5-8个）
+8. 主要投资风险（列出3-5个）
+9. 具体行动建议（包含仓位配置、止盈止损点位等，列出5-7条）
+
+【输出格式】
+请严格按照以下JSON格式输出：
+{{
+  "temperature_score": 75.8,
+  "sentiment": "乐观",
+  "sentiment_emoji": "😊",
+  "investment_advice": {{
+    "overall_rating": "强烈看好",
+    "risk_level": "中等风险",
+    "recommendation": "建议增持",
+    "detailed_analysis": "详细分析文本，至少300字...",
+    "key_opportunities": ["机会1", "机会2", ...],
+    "key_risks": ["风险1", "风险2", ...],
+    "action_items": ["行动1", "行动2", ...]
+  }},
+  "key_factors": [
+    {{"type": "positive", "category": "游戏业务", "title": "标题..."}},
+    {{"type": "negative", "category": "政策监管", "title": "标题..."}}
+  ],
+  "positive_count": 10,
+  "negative_count": 2,
+  "neutral_count": 0
+}}
+
+注意：
+- overall_rating只能是：强烈看好/谨慎看好/中性观望/谨慎看空
+- risk_level只能是：低风险/中等风险/中高风险/高风险
+- recommendation只能是：建议增持/建议持有/建议观望/建议减持
+- detailed_analysis要详细、专业，至少300字
+- key_opportunities要具体、可操作，5-8条
+- key_risks要全面、客观，3-5条
+- action_items要明确、可执行，包含具体的仓位和点位建议，5-7条
+"""
+
+    try:
+        headers = {
+            'Authorization': f'Bearer {analyzer.api_key}',
+            'Content-Type': 'application/json'
+        }
+        
+        if analyzer.provider == 'openrouter':
+            headers['HTTP-Referer'] = 'https://github.com'
+            headers['X-Title'] = 'Tencent Investment Analyzer'
+        
+        payload = {
+            'model': analyzer.config['model'],
+            'messages': [
+                {
+                    'role': 'system',
+                    'content': '你是一位专业的股票分析师，专注于腾讯控股的投资分析，擅长从新闻中提取关键信息并给出专业投资建议。'
+                },
+                {
+                    'role': 'user',
+                    'content': prompt
+                }
+            ],
+            'temperature': 0.7,
+            'max_tokens': 3000
+        }
+        
+        response = requests.post(
+            analyzer.config['api_url'],
+            headers=headers,
+            json=payload,
+            timeout=60
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            
+            # 提取JSON
+            content = content.strip()
+            if '```json' in content:
+                content = content.split('```json')[1].split('```')[0].strip()
+            elif '```' in content:
+                content = content.split('```')[1].split('```')[0].strip()
+            
+            analysis_data = json.loads(content)
+            
+            # 添加元数据
+            from datetime import datetime
+            analysis_data['analyzed_at'] = datetime.now().isoformat()
+            analysis_data['analyzed_news_count'] = len(news_list[:30])
+            analysis_data['ai_provider'] = analyzer.provider
+            
+            # 添加分类统计
+            categories_distribution = {}
+            for news in news_list[:30]:
+                cat = news.get('category', '其他')
+                categories_distribution[cat] = categories_distribution.get(cat, 0) + 1
+            analysis_data['categories_distribution'] = categories_distribution
+            
+            # 添加分类情感统计
+            category_sentiment = {}
+            for factor in analysis_data.get('key_factors', []):
+                cat = factor.get('category', '其他')
+                ftype = factor.get('type', 'neutral')
+                if cat not in category_sentiment:
+                    category_sentiment[cat] = {'positive': 0, 'negative': 0, 'neutral': 0}
+                category_sentiment[cat][ftype] += 1
+            analysis_data['category_sentiment'] = category_sentiment
+            
+            return analysis_data
+        else:
+            print(f"API请求失败: {response.status_code}")
+            return None
+            
+    except Exception as e:
+        print(f"AI分析出错: {str(e)}")
+        return None
+
+
+def _fallback_tencent_analysis(news_list: List[Dict]) -> Dict:
+    """备用的腾讯投资分析（基于规则）"""
+    
     # 情感分析关键词
     positive_keywords = [
         'surge', 'rise', 'gain', 'growth', 'increase', 'boost', 'rally',
