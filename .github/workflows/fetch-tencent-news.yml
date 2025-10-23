@@ -30,6 +30,11 @@ jobs:
           pip install requests beautifulsoup4 lxml
           
       - name: Fetch Tencent news and analyze
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER }}
         run: |
           python scripts/fetch_tencent_news.py
           
