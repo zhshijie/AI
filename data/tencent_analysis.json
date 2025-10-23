@@ -27,6 +27,11 @@
   "key_factors": [
     {
       "type": "positive",
+      "category": "数字内容",
+      "title": "Assessing Tencent Music After a 100% Surge and New Tech Partnerships in 2025 - s"
+    },
+    {
+      "type": "positive",
       "category": "股市表现",
       "title": "Tencent (OTCMKTS:TCEHY) Stock Passes Above 200 Day Moving Average - Here's Why -"
     },
@@ -59,34 +64,35 @@
       "type": "positive",
       "category": "AI技术",
       "title": "Amazon unveils prototype AI smart glasses for its delivery drivers"
-    },
-    {
-      "type": "positive",
-      "category": "AI技术",
-      "title": "Elon Musk said Tesla's robot will be 'incredible surgeon,' left Wall Street with"
     }
   ],
   "positive_count": 8,
   "negative_count": 3,
   "neutral_count": 19,
   "analyzed_news_count": 54,
-  "analyzed_at": "2025-10-23T12:33:22.603649",
+  "analyzed_at": "2025-10-23T18:05:54.589882",
   "categories_distribution": {
-    "AI技术": 25,
+    "AI技术": 26,
+    "数字内容": 2,
     "股市表现": 5,
     "云服务": 1,
-    "元宇宙": 13,
-    "社交平台": 2,
+    "游戏业务": 2,
+    "元宇宙": 12,
+    "社交平台": 1,
     "投资并购": 1,
-    "数字内容": 2,
-    "综合动态": 4,
-    "游戏业务": 1
+    "综合动态": 3,
+    "政策监管": 1
   },
   "category_sentiment": {
     "AI技术": {
-      "positive": 7,
+      "positive": 6,
       "negative": 2,
-      "neutral": 9
+      "neutral": 10
+    },
+    "数字内容": {
+      "positive": 1,
+      "negative": 0,
+      "neutral": 1
     },
     "股市表现": {
       "positive": 1,
@@ -98,6 +104,11 @@
       "negative": 0,
       "neutral": 1
     },
+    "游戏业务": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 2
+    },
     "元宇宙": {
       "positive": 0,
       "negative": 0,
@@ -106,26 +117,16 @@
     "社交平台": {
       "positive": 0,
       "negative": 0,
-      "neutral": 2
+      "neutral": 1
     },
     "投资并购": {
       "positive": 0,
       "negative": 0,
       "neutral": 1
     },
-    "数字内容": {
-      "positive": 0,
-      "negative": 0,
-      "neutral": 2
-    },
     "综合动态": {
       "positive": 0,
       "negative": 1,
-      "neutral": 1
-    },
-    "游戏业务": {
-      "positive": 0,
-      "negative": 0,
       "neutral": 1
     }
   }
