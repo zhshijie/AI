@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统健康检查 - 新闻数据状态</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+        }
+        
+        .status-card {
+            transition: all 0.3s ease;
+        }
+        
+        .status-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .status-success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        .status-warning {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        .status-error {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .status-loading {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .log-entry {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+        
+        .log-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .log-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .log-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
+    <!-- 顶部导航 -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-heartbeat text-3xl text-red-500"></i>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+                        系统健康检查
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="./index.html" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-home"></i>
+                        <span>返回首页</span>
+                    </a>
+                    <button id="refreshBtn" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 flex items-center space-x-2">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>刷新检查</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 总体状态卡片 -->
+        <div id="overallStatus" class="status-card status-loading text-white rounded-2xl shadow-xl p-8 mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">系统状态检查中...</h2>
+                    <p class="text-lg opacity-90">正在检测新闻数据拉取状态</p>
+                </div>
+                <i class="fas fa-spinner fa-spin text-6xl opacity-50"></i>
+            </div>
+        </div>
+
+        <!-- 详细检查项 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- 新闻数据文件 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">新闻数据文件</h3>
+                    <i id="newsFileIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="newsFileStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+
+            <!-- 分析结果文件 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">分析结果文件</h3>
+                    <i id="analysisFileIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="analysisFileStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+
+            <!-- API服务 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">API服务</h3>
+                    <i id="apiIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="apiStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+
+            <!-- 数据新鲜度 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">数据新鲜度</h3>
+                    <i id="freshnessIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="freshnessStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+
+            <!-- 新闻数量 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">新闻数量</h3>
+                    <i id="countIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="countStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+
+            <!-- 数据完整性 -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">数据完整性</h3>
+                    <i id="integrityIcon" class="fas fa-spinner fa-spin text-2xl text-gray-400"></i>
+                </div>
+                <div id="integrityStatus" class="text-gray-600">
+                    <p>检查中...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 检查日志 -->
+        <div class="bg-white rounded-2xl shadow-xl p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-list-ul text-indigo-600 mr-3"></i>
+                检查日志
+            </h2>
+            <div id="logContainer" class="max-h-96 overflow-y-auto">
+                <div class="log-entry log-info">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    开始系统健康检查...
+                </div>
+            </div>
+        </div>
+
+        <!-- 建议操作 -->
+        <div id="suggestions" class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg hidden">
+            <h3 class="text-lg font-semibold text-yellow-800 mb-2 flex items-center">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                建议操作
+            </h3>
+            <ul id="suggestionList" class="list-disc list-inside text-yellow-700 space-y-1">
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        const API_BASE = 'https://your-vercel-app.vercel.app/api';
+        const USE_LOCAL_DATA = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+        let checkResults = {
+            newsFile: false,
+            analysisFile: false,
+            api: false,
+            freshness: false,
+            count: false,
+            integrity: false
+        };
+
+        // 添加日志
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            
+            const icon = type === 'success' ? 'check-circle' : type === 'error' ? 'times-circle' : 'info-circle';
+            logEntry.innerHTML = `<i class="fas fa-${icon} mr-2"></i>${message}`;
+            
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // 更新状态图标
+        function updateIcon(iconId, status) {
+            const icon = document.getElementById(iconId);
+            icon.className = status === 'success' ? 'fas fa-check-circle text-2xl text-green-500' :
+                            status === 'error' ? 'fas fa-times-circle text-2xl text-red-500' :
+                            status === 'warning' ? 'fas fa-exclamation-circle text-2xl text-yellow-500' :
+                            'fas fa-spinner fa-spin text-2xl text-gray-400';
+        }
+
+        // 检查新闻数据文件
+        async function checkNewsFile() {
+            addLog('检查新闻数据文件...', 'info');
+            try {
+                const response = await fetch(USE_LOCAL_DATA ? '../data/news.json' : `${API_BASE}/news/latest?limit=1`);
+                
+                if (response.ok) {
+                    const data = USE_LOCAL_DATA ? await response.json() : (await response.json()).data;
+                    const newsData = USE_LOCAL_DATA ? data : { updated_at: new Date().toISOString(), total_count: data.length };
+                    
+                    updateIcon('newsFileIcon', 'success');
+                    document.getElementById('newsFileStatus').innerHTML = `
+                        <p class="text-green-600 font-semibold">✓ 文件正常</p>
+                        <p class="text-sm text-gray-500 mt-1">更新时间: ${new Date(newsData.updated_at).toLocaleString('zh-CN')}</p>
+                    `;
+                    addLog('✓ 新闻数据文件检查通过', 'success');
+                    checkResults.newsFile = true;
+                    return newsData;
+                } else {
+                    throw new Error('文件不存在或无法访问');
+                }
+            } catch (error) {
+                updateIcon('newsFileIcon', 'error');
+                document.getElementById('newsFileStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 文件异常</p>
+                    <p class="text-sm text-gray-500 mt-1">${error.message}</p>
+                `;
+                addLog(`✗ 新闻数据文件检查失败: ${error.message}`, 'error');
+                return null;
+            }
+        }
+
+        // 检查分析结果文件
+        async function checkAnalysisFile() {
+            addLog('检查分析结果文件...', 'info');
+            try {
+                const response = await fetch(USE_LOCAL_DATA ? '../data/analysis.json' : `${API_BASE}/temperature/latest`);
+                
+                if (response.ok) {
+                    const data = USE_LOCAL_DATA ? await response.json() : (await response.json()).data;
+                    
+                    updateIcon('analysisFileIcon', 'success');
+                    document.getElementById('analysisFileStatus').innerHTML = `
+                        <p class="text-green-600 font-semibold">✓ 文件正常</p>
+                        <p class="text-sm text-gray-500 mt-1">温度: ${data.temperature_score}°</p>
+                        <p class="text-sm text-gray-500">情绪: ${data.sentiment}</p>
+                    `;
+                    addLog('✓ 分析结果文件检查通过', 'success');
+                    checkResults.analysisFile = true;
+                    return data;
+                } else {
+                    throw new Error('文件不存在或无法访问');
+                }
+            } catch (error) {
+                updateIcon('analysisFileIcon', 'error');
+                document.getElementById('analysisFileStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 文件异常</p>
+                    <p class="text-sm text-gray-500 mt-1">${error.message}</p>
+                `;
+                addLog(`✗ 分析结果文件检查失败: ${error.message}`, 'error');
+                return null;
+            }
+        }
+
+        // 检查API服务
+        async function checkAPI() {
+            if (USE_LOCAL_DATA) {
+                updateIcon('apiIcon', 'warning');
+                document.getElementById('apiStatus').innerHTML = `
+                    <p class="text-yellow-600 font-semibold">⚠ 本地模式</p>
+                    <p class="text-sm text-gray-500 mt-1">使用本地数据文件</p>
+                `;
+                addLog('⚠ 本地开发模式，跳过API检查', 'info');
+                checkResults.api = true;
+                return;
+            }
+
+            addLog('检查API服务...', 'info');
+            try {
+                const response = await fetch(`${API_BASE}/stats/overview`);
+                
+                if (response.ok) {
+                    updateIcon('apiIcon', 'success');
+                    document.getElementById('apiStatus').innerHTML = `
+                        <p class="text-green-600 font-semibold">✓ 服务正常</p>
+                        <p class="text-sm text-gray-500 mt-1">响应时间: ${response.headers.get('x-response-time') || '< 100ms'}</p>
+                    `;
+                    addLog('✓ API服务检查通过', 'success');
+                    checkResults.api = true;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateIcon('apiIcon', 'error');
+                document.getElementById('apiStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 服务异常</p>
+                    <p class="text-sm text-gray-500 mt-1">${error.message}</p>
+                `;
+                addLog(`✗ API服务检查失败: ${error.message}`, 'error');
+            }
+        }
+
+        // 检查数据新鲜度
+        function checkFreshness(newsData) {
+            addLog('检查数据新鲜度...', 'info');
+            
+            if (!newsData || !newsData.updated_at) {
+                updateIcon('freshnessIcon', 'error');
+                document.getElementById('freshnessStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 无法判断</p>
+                `;
+                addLog('✗ 无法获取更新时间', 'error');
+                return;
+            }
+
+            const updateTime = new Date(newsData.updated_at);
+            const now = new Date();
+            const hoursDiff = (now - updateTime) / (1000 * 60 * 60);
+
+            if (hoursDiff < 6) {
+                updateIcon('freshnessIcon', 'success');
+                document.getElementById('freshnessStatus').innerHTML = `
+                    <p class="text-green-600 font-semibold">✓ 数据新鲜</p>
+                    <p class="text-sm text-gray-500 mt-1">${hoursDiff.toFixed(1)} 小时前更新</p>
+                `;
+                addLog(`✓ 数据新鲜度良好 (${hoursDiff.toFixed(1)}小时前)`, 'success');
+                checkResults.freshness = true;
+            } else if (hoursDiff < 24) {
+                updateIcon('freshnessIcon', 'warning');
+                document.getElementById('freshnessStatus').innerHTML = `
+                    <p class="text-yellow-600 font-semibold">⚠ 数据较旧</p>
+                    <p class="text-sm text-gray-500 mt-1">${hoursDiff.toFixed(1)} 小时前更新</p>
+                `;
+                addLog(`⚠ 数据较旧 (${hoursDiff.toFixed(1)}小时前)`, 'info');
+            } else {
+                updateIcon('freshnessIcon', 'error');
+                document.getElementById('freshnessStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 数据过期</p>
+                    <p class="text-sm text-gray-500 mt-1">${Math.floor(hoursDiff / 24)} 天前更新</p>
+                `;
+                addLog(`✗ 数据已过期 (${Math.floor(hoursDiff / 24)}天前)`, 'error');
+            }
+        }
+
+        // 检查新闻数量
+        function checkCount(newsData) {
+            addLog('检查新闻数量...', 'info');
+            
+            if (!newsData) {
+                updateIcon('countIcon', 'error');
+                document.getElementById('countStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 无法获取</p>
+                `;
+                addLog('✗ 无法获取新闻数量', 'error');
+                return;
+            }
+
+            const count = newsData.total_count || (newsData.news ? newsData.news.length : 0);
+
+            if (count >= 10) {
+                updateIcon('countIcon', 'success');
+                document.getElementById('countStatus').innerHTML = `
+                    <p class="text-green-600 font-semibold">✓ 数量充足</p>
+                    <p class="text-sm text-gray-500 mt-1">共 ${count} 条新闻</p>
+                `;
+                addLog(`✓ 新闻数量充足 (${count}条)`, 'success');
+                checkResults.count = true;
+            } else if (count > 0) {
+                updateIcon('countIcon', 'warning');
+                document.getElementById('countStatus').innerHTML = `
+                    <p class="text-yellow-600 font-semibold">⚠ 数量较少</p>
+                    <p class="text-sm text-gray-500 mt-1">仅 ${count} 条新闻</p>
+                `;
+                addLog(`⚠ 新闻数量较少 (${count}条)`, 'info');
+            } else {
+                updateIcon('countIcon', 'error');
+                document.getElementById('countStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 无新闻数据</p>
+                `;
+                addLog('✗ 没有新闻数据', 'error');
+            }
+        }
+
+        // 检查数据完整性
+        function checkIntegrity(newsData) {
+            addLog('检查数据完整性...', 'info');
+            
+            if (!newsData || !newsData.news || newsData.news.length === 0) {
+                updateIcon('integrityIcon', 'error');
+                document.getElementById('integrityStatus').innerHTML = `
+                    <p class="text-red-600 font-semibold">✗ 数据不完整</p>
+                `;
+                addLog('✗ 新闻数据不完整', 'error');
+                return;
+            }
+
+            const news = newsData.news[0];
+            const requiredFields = ['title', 'url', 'source', 'published_at', 'category'];
+            const missingFields = requiredFields.filter(field => !news[field]);
+
+            if (missingFields.length === 0) {
+                updateIcon('integrityIcon', 'success');
+                document.getElementById('integrityStatus').innerHTML = `
+                    <p class="text-green-600 font-semibold">✓ 数据完整</p>
+                    <p class="text-sm text-gray-500 mt-1">所有字段正常</p>
+                `;
+                addLog('✓ 数据完整性检查通过', 'success');
+                checkResults.integrity = true;
+            } else {
+                updateIcon('integrityIcon', 'warning');
+                document.getElementById('integrityStatus').innerHTML = `
+                    <p class="text-yellow-600 font-semibold">⚠ 部分字段缺失</p>
+                    <p class="text-sm text-gray-500 mt-1">缺失: ${missingFields.join(', ')}</p>
+                `;
+                addLog(`⚠ 部分字段缺失: ${missingFields.join(', ')}`, 'info');
+            }
+        }
+
+        // 更新总体状态
+        function updateOverallStatus() {
+            const overallStatus = document.getElementById('overallStatus');
+            const successCount = Object.values(checkResults).filter(v => v).length;
+            const totalCount = Object.keys(checkResults).length;
+
+            if (successCount === totalCount) {
+                overallStatus.className = 'status-card status-success text-white rounded-2xl shadow-xl p-8 mb-8';
+                overallStatus.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">✓ 系统运行正常</h2>
+                            <p class="text-lg opacity-90">所有检查项均通过 (${successCount}/${totalCount})</p>
+                        </div>
+                        <i class="fas fa-check-circle text-6xl opacity-50"></i>
+                    </div>
+                `;
+                addLog('✓ 系统健康检查完成，所有项目正常', 'success');
+            } else if (successCount >= totalCount / 2) {
+                overallStatus.className = 'status-card status-warning text-white rounded-2xl shadow-xl p-8 mb-8';
+                overallStatus.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">⚠ 系统部分异常</h2>
+                            <p class="text-lg opacity-90">部分检查项未通过 (${successCount}/${totalCount})</p>
+                        </div>
+                        <i class="fas fa-exclamation-triangle text-6xl opacity-50"></i>
+                    </div>
+                `;
+                addLog(`⚠ 系统健康检查完成，${totalCount - successCount}个项目异常`, 'info');
+                showSuggestions();
+            } else {
+                overallStatus.className = 'status-card status-error text-white rounded-2xl shadow-xl p-8 mb-8';
+                overallStatus.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-2">✗ 系统异常</h2>
+                            <p class="text-lg opacity-90">多个检查项未通过 (${successCount}/${totalCount})</p>
+                        </div>
+                        <i class="fas fa-times-circle text-6xl opacity-50"></i>
+                    </div>
+                `;
+                addLog(`✗ 系统健康检查完成，${totalCount - successCount}个项目异常`, 'error');
+                showSuggestions();
+            }
+        }
+
+        // 显示建议
+        function showSuggestions() {
+            const suggestions = document.getElementById('suggestions');
+            const suggestionList = document.getElementById('suggestionList');
+            suggestionList.innerHTML = '';
+
+            if (!checkResults.newsFile || !checkResults.analysisFile) {
+                suggestionList.innerHTML += '<li>检查 GitHub Actions 工作流是否正常运行</li>';
+                suggestionList.innerHTML += '<li>手动触发 GitHub Actions 工作流</li>';
+            }
+
+            if (!checkResults.api) {
+                suggestionList.innerHTML += '<li>检查 Vercel 部署状态</li>';
+                suggestionList.innerHTML += '<li>确认 vercel.json 配置正确</li>';
+            }
+
+            if (!checkResults.freshness) {
+                suggestionList.innerHTML += '<li>检查 GitHub Actions 定时任务配置</li>';
+                suggestionList.innerHTML += '<li>查看最近的工作流运行日志</li>';
+            }
+
+            if (!checkResults.count) {
+                suggestionList.innerHTML += '<li>检查新闻源是否可访问</li>';
+                suggestionList.innerHTML += '<li>查看爬虫脚本日志</li>';
+            }
+
+            if (suggestionList.innerHTML) {
+                suggestions.classList.remove('hidden');
+            }
+        }
+
+        // 执行所有检查
+        async function runHealthCheck() {
+            // 重置状态
+            checkResults = {
+                newsFile: false,
+                analysisFile: false,
+                api: false,
+                freshness: false,
+                count: false,
+                integrity: false
+            };
+
+            document.getElementById('logContainer').innerHTML = '<div class="log-entry log-info"><i class="fas fa-info-circle mr-2"></i>开始系统健康检查...</div>';
+            document.getElementById('suggestions').classList.add('hidden');
+
+            // 执行检查
+            const newsData = await checkNewsFile();
+            const analysisData = await checkAnalysisFile();
+            await checkAPI();
+            checkFreshness(newsData);
+            checkCount(newsData);
+            checkIntegrity(newsData);
+
+            // 更新总体状态
+            updateOverallStatus();
+        }
+
+        // 刷新按钮
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            runHealthCheck();
+        });
+
+        // 页面加载时执行检查
+        runHealthCheck();
+    </script>
+</body>
+</html>

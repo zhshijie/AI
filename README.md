@@ -93,6 +93,12 @@
 3. 选择 `Fetch News and Analyze` 工作流
 4. 点击 `Enable workflow`
 
+**重要**：确保仓库的 Actions 权限设置正确：
+- 进入仓库的 `Settings` → `Actions` → `General`
+- 在 "Workflow permissions" 部分，选择 `Read and write permissions`
+- 勾选 `Allow GitHub Actions to create and approve pull requests`
+- 点击 `Save`
+
 ### 4. 部署到 Vercel
 
 1. 访问 [Vercel](https://vercel.com)，使用GitHub账号登录
@@ -225,6 +231,16 @@ GET /api/stats/overview
 3. **Vercel限制**：免费版每月100GB流量，足够个人使用
 4. **数据存储**：所有数据存储在GitHub仓库中，注意仓库大小限制（建议定期清理旧数据）
 5. **网络访问**：如果GitHub Actions无法访问某些新闻网站，可以考虑使用代理或更换新闻源
+
+## 🔧 故障排查
+
+遇到问题？查看 [故障排查指南](./TROUBLESHOOTING.md) 获取详细的解决方案。
+
+常见问题：
+- ❌ GitHub Actions 权限错误 (403)
+- ❌ Vercel 部署失败
+- ❌ 页面无法显示数据
+- ❌ 新闻爬取失败
 
 ## 🤝 贡献
 
