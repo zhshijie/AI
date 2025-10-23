@@ -281,7 +281,7 @@ def analyze_tencent_investment(news_list: List[Dict]) -> Dict:
         from ai_analyzer import AINewsAnalyzer
         
         # 创建腾讯专用AI分析器
-        ai_provider = os.getenv('AI_PROVIDER', 'groq')
+        ai_provider = os.getenv('AI_PROVIDER', 'openrouter')
         print(f"尝试使用 {ai_provider} AI服务进行腾讯投资分析...")
         
         analyzer = AINewsAnalyzer(ai_provider)
