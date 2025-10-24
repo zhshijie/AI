@@ -1,0 +1,287 @@
+{
+  "updated_at": "2025-10-24T08:14:16.529894",
+  "etfs": [
+    {
+      "code": "159770",
+      "name": "机器人ETF",
+      "full_name": "国泰中证机器人ETF",
+      "realtime": {
+        "code": "159770",
+        "name": "机器人AI",
+        "open": 1.052,
+        "pre_close": 1.045,
+        "current": 1.063,
+        "high": 1.063,
+        "low": 1.048,
+        "volume": 491533800,
+        "amount": 520065249.7,
+        "date": "2025-10-24",
+        "time": "15:00:06",
+        "change": 0.018,
+        "change_percent": 1.72
+      },
+      "historical": [
+        {
+          "date": "2025-10-13",
+          "open": 1.053,
+          "close": 1.089,
+          "high": 1.093,
+          "low": 1.053,
+          "volume": 4362704,
+          "amount": 470895363.98,
+          "change_percent": -2.42
+        },
+        {
+          "date": "2025-10-14",
+          "open": 1.094,
+          "close": 1.046,
+          "high": 1.102,
+          "low": 1.042,
+          "volume": 4773690,
+          "amount": 509636907.448,
+          "change_percent": -3.95
+        },
+        {
+          "date": "2025-10-15",
+          "open": 1.046,
+          "close": 1.071,
+          "high": 1.071,
+          "low": 1.035,
+          "volume": 3668385,
+          "amount": 386988939.227,
+          "change_percent": 2.39
+        },
+        {
+          "date": "2025-10-16",
+          "open": 1.063,
+          "close": 1.05,
+          "high": 1.064,
+          "low": 1.047,
+          "volume": 2731302,
+          "amount": 288312823.051,
+          "change_percent": -1.96
+        },
+        {
+          "date": "2025-10-17",
+          "open": 1.05,
+          "close": 1.013,
+          "high": 1.051,
+          "low": 1.011,
+          "volume": 3224588,
+          "amount": 331219324.755,
+          "change_percent": -3.52
+        },
+        {
+          "date": "2025-10-20",
+          "open": 1.025,
+          "close": 1.03,
+          "high": 1.041,
+          "low": 1.02,
+          "volume": 2524119,
+          "amount": 260153866.46,
+          "change_percent": 1.68
+        },
+        {
+          "date": "2025-10-21",
+          "open": 1.036,
+          "close": 1.048,
+          "high": 1.048,
+          "low": 1.03,
+          "volume": 3448231,
+          "amount": 359192388.728,
+          "change_percent": 1.75
+        },
+        {
+          "date": "2025-10-22",
+          "open": 1.046,
+          "close": 1.046,
+          "high": 1.057,
+          "low": 1.035,
+          "volume": 2187378,
+          "amount": 229166436.08,
+          "change_percent": -0.19
+        },
+        {
+          "date": "2025-10-23",
+          "open": 1.043,
+          "close": 1.045,
+          "high": 1.048,
+          "low": 1.028,
+          "volume": 1942943,
+          "amount": 201174869.226,
+          "change_percent": -0.1
+        },
+        {
+          "date": "2025-10-24",
+          "open": 1.052,
+          "close": 1.063,
+          "high": 1.063,
+          "low": 1.048,
+          "volume": 4915338,
+          "amount": 520065249.7,
+          "change_percent": 1.72
+        }
+      ],
+      "indicators": {
+        "ma5": 1.046,
+        "ma10": 1.05,
+        "ma20": 1.088,
+        "rsi": 42.01,
+        "macd": {
+          "dif": -0.02,
+          "dea": -0.016,
+          "macd": -0.008
+        },
+        "bollinger": {
+          "upper": 1.173,
+          "middle": 1.088,
+          "lower": 1.004
+        },
+        "volume_change": 152.98
+      },
+      "news": [],
+      "updated_at": "2025-10-24T08:14:11.432212"
+    },
+    {
+      "code": "515860",
+      "name": "信创ETF",
+      "full_name": "华夏中证信创ETF",
+      "realtime": {
+        "code": "515860",
+        "name": "科技ETF嘉实",
+        "open": 1.689,
+        "pre_close": 1.668,
+        "current": 1.724,
+        "high": 1.725,
+        "low": 1.683,
+        "volume": 2383800,
+        "amount": 4074294.0,
+        "date": "2025-10-24",
+        "time": "15:00:03",
+        "change": 0.056,
+        "change_percent": 3.36
+      },
+      "historical": [
+        {
+          "date": "2025-10-13",
+          "open": 1.7,
+          "close": 1.733,
+          "high": 1.736,
+          "low": 1.635,
+          "volume": 18821,
+          "amount": 3229933.0,
+          "change_percent": -1.42
+        },
+        {
+          "date": "2025-10-14",
+          "open": 1.749,
+          "close": 1.669,
+          "high": 1.768,
+          "low": 1.66,
+          "volume": 35164,
+          "amount": 6047800.0,
+          "change_percent": -3.69
+        },
+        {
+          "date": "2025-10-15",
+          "open": 1.666,
+          "close": 1.702,
+          "high": 1.702,
+          "low": 1.651,
+          "volume": 25548,
+          "amount": 4266377.0,
+          "change_percent": 1.98
+        },
+        {
+          "date": "2025-10-16",
+          "open": 1.702,
+          "close": 1.7,
+          "high": 1.728,
+          "low": 1.685,
+          "volume": 23603,
+          "amount": 4022525.0,
+          "change_percent": -0.12
+        },
+        {
+          "date": "2025-10-17",
+          "open": 1.7,
+          "close": 1.633,
+          "high": 1.7,
+          "low": 1.632,
+          "volume": 32168,
+          "amount": 5313849.0,
+          "change_percent": -3.94
+        },
+        {
+          "date": "2025-10-20",
+          "open": 1.661,
+          "close": 1.649,
+          "high": 1.681,
+          "low": 1.639,
+          "volume": 16618,
+          "amount": 2756380.0,
+          "change_percent": 0.98
+        },
+        {
+          "date": "2025-10-21",
+          "open": 1.66,
+          "close": 1.697,
+          "high": 1.698,
+          "low": 1.652,
+          "volume": 31819,
+          "amount": 5342351.0,
+          "change_percent": 2.91
+        },
+        {
+          "date": "2025-10-22",
+          "open": 1.697,
+          "close": 1.688,
+          "high": 1.697,
+          "low": 1.67,
+          "volume": 16809,
+          "amount": 2827287.0,
+          "change_percent": -0.53
+        },
+        {
+          "date": "2025-10-23",
+          "open": 1.694,
+          "close": 1.668,
+          "high": 1.694,
+          "low": 1.644,
+          "volume": 11288,
+          "amount": 1867511.0,
+          "change_percent": -1.18
+        },
+        {
+          "date": "2025-10-24",
+          "open": 1.689,
+          "close": 1.724,
+          "high": 1.725,
+          "low": 1.683,
+          "volume": 23838,
+          "amount": 4074294.0,
+          "change_percent": 3.36
+        }
+      ],
+      "indicators": {
+        "ma5": 1.685,
+        "ma10": 1.686,
+        "ma20": 1.72,
+        "rsi": 48.87,
+        "macd": {
+          "dif": 0.0015,
+          "dea": 0.0012,
+          "macd": 0.0006
+        },
+        "bollinger": {
+          "upper": 1.806,
+          "middle": 1.72,
+          "lower": 1.634
+        },
+        "volume_change": 111.18
+      },
+      "news": [],
+      "updated_at": "2025-10-24T08:14:16.529374"
+    }
+  ]
+}
