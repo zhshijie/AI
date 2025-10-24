@@ -1,28 +1,24 @@
 {
-  "temperature_score": 66.7,
+  "temperature_score": 68.5,
   "sentiment": "中性",
   "sentiment_emoji": "😐",
-  "analysis_text": "当前全球经济新闻喜忧参半（积极13条，消极3条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
+  "analysis_text": "当前市场呈现复杂的中性格局，多重因素交织影响。积极方面，中美关系出现缓和迹象，特朗普与习近平即将举行的会晤为贸易谈判带来转机，这有助于缓解全球贸易紧张局势。科技板块表现活跃，特斯拉、英特尔等公司出现积极动向，AI领域虽然面临Meta裁员等调整，但长期发展前景依然看好。消费和科技自给自足成为中国政策重点，为相关产业带来机遇。然而，市场也面临显著挑战：通胀数据即将公布带来不确定性，投机性股票遭受重创显示市场风险偏好下降。特朗普终止与加拿大的贸易谈判引发国际贸易关系担忧，债务问题在部分企业显现，如Blackstone支持的主题公园面临压力。糖价因供应充足而承压，反映大宗商品市场疲软。整体而言，市场处于观望状态，等待更多明确信号。",
   "key_factors": [
-    "✓ 综合财经: Meta to cut around 600 roles in Superintelligence Labs AI un...",
-    "✓ 股市动态: Intuitive Surgical Stock Jumps on Earnings. Its Newest Surgi...",
-    "✓ 综合财经: Belgium mulls energy limits for power-hungry data centres as...",
-    "✗ 股市动态: How the government shutdown impacts the housing market: Loan...",
-    "✓ 国际贸易: Trump says all U.S. trade negotiations with Canada are termi..."
+    "✓ 中美领导人会晤：贸易紧张局势有望缓解，为市场注入稳定性",
+    "✗ 通胀数据不确定性：CPI报告即将公布，可能引发市场波动",
+    "✓ 科技板块复苏：特斯拉、英特尔等科技股表现积极，AI长期前景良好",
+    "✗ 国际贸易摩擦：美加贸易谈判终止，贸易保护主义风险上升",
+    "✓ 政策支持：中国强调消费和科技自给自足，提供结构性机会"
   ],
-  "positive_count": 13,
-  "negative_count": 3,
-  "neutral_count": 14,
-  "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-24T03:38:28.246452",
-  "categories_distribution": {
-    "大宗商品": 3,
-    "股市动态": 9,
-    "综合财经": 11,
-    "经济数据": 3,
-    "国际贸易": 2,
-    "货币政策": 1,
-    "外汇市场": 1
+  "positive_count": 11,
+  "negative_count": 12,
+  "neutral_count": 7,
+  "investment_advice": {
+    "short_term": "建议保持谨慎仓位，重点关注即将公布的CPI数据对市场的影响。可适度配置防御性板块，避免过度暴露于高波动性投机股票。关注中美会谈进展带来的交易机会。",
+    "medium_term": "逐步建仓优质科技股和消费板块，特别是受益于中国政策支持的领域。关注可再生能源和AI相关标的，但需注意估值合理性。分散投资以降低地缘政治风险。",
+    "risk_warning": "主要风险包括：1)通胀数据超预期引发货币政策收紧；2)中美关系反复可能；3)企业债务问题蔓延；4)投机性资产大幅波动；5)地缘政治不确定性持续。建议严格控制仓位，设置止损点。"
   },
-  "ai_provider": "fallback_rules"
+  "analyzed_at": "2025-10-24T06:11:36.932295",
+  "analyzed_news_count": 120,
+  "ai_provider": "deepseek"
 }
