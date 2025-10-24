@@ -1,27 +1,28 @@
 {
-  "temperature_score": 71.7,
-  "sentiment": "乐观",
-  "sentiment_emoji": "😊",
-  "analysis_text": "当前全球经济新闻整体偏向积极（积极14条，消极1条），市场情绪乐观。多项经济指标表现良好，投资者信心较强。建议适度增加风险资产配置，关注科技、消费等成长性板块。同时注意控制仓位，设置止损点位。",
+  "temperature_score": 66.7,
+  "sentiment": "中性",
+  "sentiment_emoji": "😐",
+  "analysis_text": "当前全球经济新闻喜忧参半（积极13条，消极3条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
   "key_factors": [
-    "✓ 经济数据: Alphabet’s (GOOG) AI Initiatives are Driving Strong Growth...",
-    "✓ 综合财经: AT&T Adds More Wireless Subscribers as Sales Rise...",
-    "✓ 国际贸易: Soybeans Reverting Back Higher on Wednesday AM Trade...",
-    "✓ 综合财经: Corn Ticking Back Higher on Wednesday Morning...",
-    "✓ 股市动态: Asia-Pacific markets rise as White House says Trump will mee..."
+    "✓ 综合财经: Meta to cut around 600 roles in Superintelligence Labs AI un...",
+    "✓ 股市动态: Intuitive Surgical Stock Jumps on Earnings. Its Newest Surgi...",
+    "✓ 综合财经: Belgium mulls energy limits for power-hungry data centres as...",
+    "✗ 股市动态: How the government shutdown impacts the housing market: Loan...",
+    "✓ 国际贸易: Trump says all U.S. trade negotiations with Canada are termi..."
   ],
-  "positive_count": 14,
-  "negative_count": 1,
-  "neutral_count": 15,
+  "positive_count": 13,
+  "negative_count": 3,
+  "neutral_count": 14,
   "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-24T00:29:44.502695",
+  "analyzed_at": "2025-10-24T03:38:28.246452",
   "categories_distribution": {
-    "经济数据": 2,
-    "综合财经": 14,
-    "股市动态": 10,
-    "国际贸易": 1,
-    "外汇市场": 1,
-    "大宗商品": 2
+    "大宗商品": 3,
+    "股市动态": 9,
+    "综合财经": 11,
+    "经济数据": 3,
+    "国际贸易": 2,
+    "货币政策": 1,
+    "外汇市场": 1
   },
   "ai_provider": "fallback_rules"
 }
