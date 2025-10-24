@@ -296,8 +296,7 @@ def main():
     all_etf_data = []
     
     for etf in etfs:
-        print(f"
-正在获取 {etf['name']}({etf['code']}) 数据...")
+        print(f"正在获取 {etf['name']}({etf['code']}) 数据...")
         
         # 获取实时数据
         realtime_data = fetch_etf_realtime_data(etf['code'])
@@ -347,8 +346,7 @@ def main():
             'etfs': all_etf_data
         }, f, ensure_ascii=False, indent=2)
     
-    print(f"
-✅ 数据已保存到 {output_file}")
+    print(f"✅ 数据已保存到 {output_file}")
     print(f"   共获取 {len(all_etf_data)} 只ETF数据")
     print("=" * 60)
 
