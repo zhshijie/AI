@@ -12,7 +12,7 @@ from datetime import datetime
 # 添加scripts目录到路径
 sys.path.insert(0, os.path.dirname(__file__))
 
-from ai_analyzer import get_analyzer
+from etf_ai_analyzer import analyze_etf_with_ai
 
 def analyze_market_sentiment(etf_data):
     """
@@ -276,94 +276,11 @@ def identify_risks(etf_data, sentiment, signal):
     
     return risks
 
-def prepare_ai_prompt(etf_data_list):
-    """
-    准备AI分析提示词
-    """
-    prompt = "# ETF投资分析报告\n"
-    prompt += f"分析时间: {datetime.now().strftime('%Y年%m月%d日 %H:%M')}\n"
-    
-    for etf_data in etf_data_list:
-        realtime = etf_data['realtime']
-        indicators = etf_data['indicators']
-        news = etf_data.get('news', [])
-        
-        prompt += f"## {etf_data['name']}({etf_data['code']})\n"
-        prompt += f"### 实时行情\n"
-        prompt += f"- 当前价: {realtime['current']}元\n"
-        prompt += f"- 涨跌幅: {realtime['change_percent']}%\n"
-        prompt += f"- 成交量: {realtime['volume']}手\n"
-        prompt += f"- 最高价: {realtime['high']}元\n"
-        prompt += f"- 最低价: {realtime['low']}元\n"
-        
-        prompt += f"### 技术指标\n"
-        prompt += f"- RSI(14): {indicators.get('rsi', 0)}\n"
-        prompt += f"- MA5: {indicators.get('ma5', 0)}\n"
-        prompt += f"- MA10: {indicators.get('ma10', 0)}\n"
-        prompt += f"- MA20: {indicators.get('ma20', 0)}\n"
-        prompt += f"- MACD: DIF={indicators.get('macd', {}).get('dif', 0)}, DEA={indicators.get('macd', {}).get('dea', 0)}\n"
-        prompt += f"- 布林带: 上轨={indicators.get('bollinger', {}).get('upper', 0)}, 中轨={indicators.get('bollinger', {}).get('middle', 0)}, 下轨={indicators.get('bollinger', {}).get('lower', 0)}\n"
-        prompt += f"- 成交量变化: {indicators.get('volume_change', 0)}%\n"
-        
-        if news:
-            prompt += f"### 相关新闻 (最近{len(news)}条)\n"
-            for i, item in enumerate(news[:5], 1):
-                prompt += f"{i}. {item['title']}\n"
-            prompt += "\n"
-    
-    prompt += "请作为专业的投资分析师，基于以上数据，为每只ETF提供：\n"
-    prompt += "1. 市场情绪分析（看多/看空/中性）\n"
-    prompt += "2. 投资建议（买入/持有/卖出）及理由\n"
-    prompt += "3. 关键风险提示\n"
-    prompt += "4. 操作策略建议\n"
-    prompt += "请用专业、客观的语言，给出具体可操作的建议。"
-    
-    return prompt
-
 def analyze_with_ai(etf_data_list):
     """
-    使用AI进行分析
+    使用AI进行分析（调用独立的 ETF AI 分析器）
     """
-    try:
-        ai_provider = os.getenv('AI_PROVIDER', 'groq')
-        print(f"尝试使用 {ai_provider} AI 进行深度分析...")
-        
-        analyzer = get_analyzer(ai_provider)
-        
-        if analyzer.use_fallback:
-            print("  ⚠️  AI服务不可用，将使用规则分析")
-            return None
-        
-        # 准备提示词
-        prompt = prepare_ai_prompt(etf_data_list)
-        
-        # 调用AI
-        print(f"  正在调用 {ai_provider} AI API...")
-        
-        messages = [
-            {
-                'role': 'system',
-                'content': '你是一位资深的ETF投资分析师，擅长技术分析和市场研判。请基于提供的数据，给出专业、客观、可操作的投资建议。'
-            },
-            {
-                'role': 'user',
-                'content': prompt
-            }
-        ]
-        
-        # 使用analyzer的内部方法
-        response = analyzer._call_ai_api(messages)
-        
-        if response:
-            print("  ✓ AI分析完成")
-            return response
-        else:
-            print("  ❌ AI分析失败")
-            return None
-            
-    except Exception as e:
-        print(f"  ❌ AI分析出错: {e}")
-        return None
+    return analyze_etf_with_ai(etf_data_list)
 
 def main():
     print("=" * 60)
@@ -375,7 +292,7 @@ def main():
     data_file = 'data/etf_data.json'
     
     if not os.path.exists(data_file):
-        print(f"❌ 错误: 未找到数据文件 {data_file}")
+        print(f"\n❌ 错误: 未找到数据文件 {data_file}")
         print("   请先运行: python scripts/fetch_etf_data.py")
         return
     
@@ -385,16 +302,16 @@ def main():
     etf_data_list = data.get('etfs', [])
     
     if not etf_data_list:
-        print("❌ 错误: 数据文件为空")
+        print("\n❌ 错误: 数据文件为空")
         return
     
-    print(f"加载了 {len(etf_data_list)} 只ETF数据")
+    print(f"\n加载了 {len(etf_data_list)} 只ETF数据")
     
     # 分析每只ETF
     analysis_results = []
     
     for etf_data in etf_data_list:
-        print(f"分析 {etf_data['name']}({etf_data['code']})...")
+        print(f"\n分析 {etf_data['name']}({etf_data['code']})...")
         
         # 市场情绪分析
         sentiment = analyze_market_sentiment(etf_data)
@@ -438,20 +355,19 @@ def main():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    print(f"✅ 分析结果已保存到 {output_file}")
-    print("" + "=" * 60)
+    print(f"\n✅ 分析结果已保存到 {output_file}")
+    print("\n" + "=" * 60)
     print("分析汇总")
     print("=" * 60)
     
     for result in analysis_results:
-        print(f"{result['name']}({result['code']})")
+        print(f"\n{result['name']}({result['code']})")
         print(f"  当前价: {result['realtime']['current']}元 ({result['realtime']['change_percent']:+.2f}%)")
         print(f"  市场情绪: {result['sentiment']['emoji']} {result['sentiment']['sentiment']}")
         print(f"  投资建议: {result['signal']['action']}")
         print(f"  主要风险: {result['risks'][0]['description']}")
     
-    print("=" * 60)
+    print("\n" + "=" * 60)
 
 if __name__ == '__main__':
     main()
-
