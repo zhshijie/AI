@@ -1,9 +1,6 @@
 // API基础URL - 替换为你的Vercel部署URL
 const API_BASE = 'https://ai-394y.vercel.app/api';
 
-// 智能检测数据源
-const USE_LOCAL_DATA = window.location.hostname === 'localhost' || 
-                       window.location.hostname === '127.0.0.1';
 
 // 全局变量
 let temperatureChart = null;
@@ -32,40 +29,27 @@ function setupEventListeners() {
 async function loadData() {
     try {
         let newsData, analysisData;
-        
+
         // 尝试加载数据
         try {
-            if (USE_LOCAL_DATA) {
-                // 从本地文件读取
-                const newsResponse = await fetch('../data/tencent_news.json');
-                const analysisResponse = await fetch('../data/tencent_analysis.json');
-                
-                if (!newsResponse.ok || !analysisResponse.ok) {
-                    throw new Error('数据文件不存在');
-                }
-                
-                newsData = await newsResponse.json();
-                analysisData = await analysisResponse.json();
-            } else {
-                // 生产环境：调用Vercel API
-                // 注意：需要在 api/index.py 中添加腾讯新闻相关的API端点
-                const newsResponse = await fetch(`${API_BASE}/tencent/news`);
-                const analysisResponse = await fetch(`${API_BASE}/tencent/analysis`);
-                
-                if (!newsResponse.ok || !analysisResponse.ok) {
-                    throw new Error('API请求失败');
-                }
-                
-                const newsResult = await newsResponse.json();
-                const analysisResult = await analysisResponse.json();
-                
-                if (!newsResult.success || !analysisResult.success) {
-                    throw new Error(newsResult.error || analysisResult.error || 'API返回错误');
-                }
-                
-                newsData = newsResult.data;
-                analysisData = analysisResult.data;
+            // 生产环境：调用Vercel API
+            // 注意：需要在 api/index.py 中添加腾讯新闻相关的API端点
+            const newsResponse = await fetch(`${API_BASE}/tencent/news`);
+            const analysisResponse = await fetch(`${API_BASE}/tencent/analysis`);
+
+            if (!newsResponse.ok || !analysisResponse.ok) {
+                throw new Error('API请求失败');
             }
+
+            const newsResult = await newsResponse.json();
+            const analysisResult = await analysisResponse.json();
+
+            if (!newsResult.success || !analysisResult.success) {
+                throw new Error(newsResult.error || analysisResult.error || 'API返回错误');
+            }
+
+            newsData = newsResult.data;
+            analysisData = analysisResult.data;
         } catch (fetchError) {
             console.warn('数据加载失败，使用演示数据:', fetchError);
             // 使用演示数据
@@ -74,13 +58,13 @@ async function loadData() {
             analysisData = demoData.analysis;
             showNotification('使用演示数据，请运行爬虫脚本获取真实数据', 'info');
         }
-        
+
         // 更新UI
         updateStats(newsData, analysisData);
         updateAdvice(analysisData);
         updateCharts(analysisData);
         updateNewsList(newsData);
-        
+
     } catch (error) {
         console.error('加载数据失败:', error);
         showNotification('加载数据失败: ' + error.message, 'error');
@@ -93,10 +77,10 @@ function updateStats(newsData, analysisData) {
     document.getElementById('tempScore').textContent = analysisData.temperature_score.toFixed(1) + '°';
     document.getElementById('sentiment').textContent = analysisData.sentiment + ' ' + analysisData.sentiment_emoji;
     document.getElementById('rating').textContent = analysisData.investment_advice.overall_rating;
-    
+
     if (newsData.updated_at) {
         const updateTime = new Date(newsData.updated_at);
-        document.getElementById('updateTime').textContent = 
+        document.getElementById('updateTime').textContent =
             `更新于: ${updateTime.toLocaleString('zh-CN')}`;
     }
 }
@@ -104,19 +88,19 @@ function updateStats(newsData, analysisData) {
 // 更新投资建议
 function updateAdvice(analysisData) {
     const advice = analysisData.investment_advice;
-    
+
     // 更新风险等级徽章
     const riskBadge = document.getElementById('riskBadge');
     riskBadge.textContent = advice.risk_level;
     riskBadge.className = 'risk-badge ' + getRiskClass(advice.risk_level);
-    
+
     // 更新综合评估
     document.getElementById('recommendation').textContent = advice.recommendation;
     document.getElementById('riskLevel').textContent = advice.risk_level;
     document.getElementById('positiveCount').textContent = analysisData.positive_count;
     document.getElementById('negativeCount').textContent = analysisData.negative_count;
     document.getElementById('detailedAnalysis').textContent = advice.detailed_analysis;
-    
+
     // 更新投资机会
     const opportunitiesList = document.getElementById('opportunities');
     opportunitiesList.innerHTML = advice.key_opportunities.map(item => `
@@ -125,7 +109,7 @@ function updateAdvice(analysisData) {
             <span class="text-gray-700">${item}</span>
         </li>
     `).join('');
-    
+
     // 更新投资风险
     const risksList = document.getElementById('risks');
     risksList.innerHTML = advice.key_risks.map(item => `
@@ -134,7 +118,7 @@ function updateAdvice(analysisData) {
             <span class="text-gray-700">${item}</span>
         </li>
     `).join('');
-    
+
     // 更新行动建议
     const actionItems = document.getElementById('actionItems');
     actionItems.innerHTML = advice.action_items.map((item, index) => `
@@ -147,7 +131,7 @@ function updateAdvice(analysisData) {
             </div>
         </div>
     `).join('');
-    
+
     // 更新关键因素
     const keyFactors = document.getElementById('keyFactors');
     keyFactors.innerHTML = analysisData.key_factors.map(factor => {
@@ -176,7 +160,7 @@ function initCharts() {
     // 温度计图表
     const tempDom = document.getElementById('temperatureGauge');
     temperatureChart = echarts.init(tempDom);
-    
+
     const tempOption = {
         series: [{
             type: 'gauge',
@@ -256,13 +240,13 @@ function initCharts() {
             }]
         }]
     };
-    
+
     temperatureChart.setOption(tempOption);
-    
+
     // 分类图表
     const catDom = document.getElementById('categoryChart');
     categoryChart = echarts.init(catDom);
-    
+
     const catOption = {
         title: {
             text: '新闻分类分布',
@@ -307,9 +291,9 @@ function initCharts() {
             data: []
         }]
     };
-    
+
     categoryChart.setOption(catOption);
-    
+
     // 响应式
     window.addEventListener('resize', () => {
         temperatureChart.resize();
@@ -330,14 +314,14 @@ function updateCharts(analysisData) {
             }]
         });
     }
-    
+
     // 更新分类图表
     if (categoryChart && analysisData.categories_distribution) {
         const categoryData = Object.entries(analysisData.categories_distribution).map(([name, value]) => ({
             name,
             value
         }));
-        
+
         categoryChart.setOption({
             series: [{
                 data: categoryData
@@ -350,13 +334,13 @@ function updateCharts(analysisData) {
 function updateNewsList(newsData) {
     const container = document.getElementById('newsList');
     const loading = document.getElementById('loading');
-    
+
     loading.classList.remove('hidden');
     container.innerHTML = '';
-    
+
     try {
         const newsList = newsData.news || [];
-        
+
         if (newsList.length > 0) {
             newsList.forEach((news, index) => {
                 const card = createNewsCard(news, index);
@@ -389,10 +373,10 @@ function createNewsCard(news, index) {
     const card = document.createElement('div');
     card.className = 'news-card fade-in';
     card.style.animationDelay = `${index * 0.05}s`;
-    
+
     const publishedDate = new Date(news.published_at);
     const timeAgo = getTimeAgo(publishedDate);
-    
+
     card.innerHTML = `
         <img src="${news.image_url || 'https://via.placeholder.com/400x200?text=Tencent+News'}" 
              alt="${news.title}" 
@@ -410,13 +394,13 @@ function createNewsCard(news, index) {
             </div>
         </div>
     `;
-    
+
     if (news.url) {
         card.addEventListener('click', () => {
             window.open(news.url, '_blank');
         });
     }
-    
+
     return card;
 }
 
@@ -424,7 +408,7 @@ function createNewsCard(news, index) {
 function getTimeAgo(date) {
     const now = new Date();
     const diff = Math.floor((now - date) / 1000);
-    
+
     if (diff < 60) return '刚刚';
     if (diff < 3600) return `${Math.floor(diff / 60)}分钟前`;
     if (diff < 86400) return `${Math.floor(diff / 3600)}小时前`;
@@ -439,7 +423,7 @@ function showNotification(message, type = 'info') {
         error: 'bg-red-500',
         info: 'bg-blue-500'
     };
-    
+
     const notification = document.createElement('div');
     notification.className = `fixed top-20 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in`;
     notification.innerHTML = `
@@ -448,9 +432,9 @@ function showNotification(message, type = 'info') {
             <span>${message}</span>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateX(100%)';
@@ -462,7 +446,7 @@ function showNotification(message, type = 'info') {
 // 生成演示数据
 function generateDemoData() {
     const now = new Date().toISOString();
-    
+
     return {
         news: {
             updated_at: now,

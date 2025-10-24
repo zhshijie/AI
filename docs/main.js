@@ -2,10 +2,10 @@
 const API_BASE = 'https://your-vercel-app.vercel.app/api';
 
 // 智能检测数据源
-const USE_LOCAL_DATA = window.location.hostname === 'localhost' || 
-                       window.location.hostname === '127.0.0.1' ||
-                       window.location.hostname.includes('github.io') ||
-                       window.location.protocol === 'file:';
+const USE_LOCAL_DATA = window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.includes('github.io') ||
+    window.location.protocol === 'file:';
 
 // 全局状态
 let currentCategory = '';
@@ -41,76 +41,25 @@ async function loadStats() {
     try {
         let data;
         let dataSource = '未知';
-        
+
         // 尝试多种数据源
         try {
-            if (USE_LOCAL_DATA) {
-                console.log('📂 尝试从本地文件加载统计数据...');
-                
-                // 尝试多个可能的路径
-                const possiblePaths = [
-                    { news: '../data/news.json', analysis: '../data/analysis.json' },
-                    { news: './data/news.json', analysis: './data/analysis.json' },
-                    { news: 'data/news.json', analysis: 'data/analysis.json' }
-                ];
-                
-                let loaded = false;
-                for (const paths of possiblePaths) {
-                    try {
-                        console.log(`  尝试路径: ${paths.news}`);
-                        const newsResponse = await fetch(paths.news);
-                        const analysisResponse = await fetch(paths.analysis);
-                        
-                        if (newsResponse.ok && analysisResponse.ok) {
-                            const newsData = await newsResponse.json();
-                            const analysisData = await analysisResponse.json();
-                            
-                            const today = new Date().toISOString().split('T')[0];
-                            const newsToday = newsData.news.filter(n => 
-                                n.published_at && n.published_at.startsWith(today)
-                            ).length;
-                            
-                            data = {
-                                news_total: newsData.total_count || newsData.news.length,
-                                news_today: newsToday,
-                                latest_temperature: {
-                                    temperature_score: analysisData.temperature_score || 50,
-                                    sentiment: analysisData.sentiment || '中性'
-                                },
-                                updated_at: newsData.updated_at
-                            };
-                            dataSource = '本地文件';
-                            loaded = true;
-                            console.log('✅ 成功从本地文件加载统计数据');
-                            break;
-                        }
-                    } catch (e) {
-                        console.log(`  ❌ 路径失败: ${e.message}`);
-                        continue;
-                    }
-                }
-                
-                if (!loaded) {
-                    throw new Error('所有本地路径都无法访问');
-                }
-            } else {
-                console.log('🌐 尝试从 API 加载统计数据...');
-                // 生产模式：调用Vercel API
-                const response = await fetch(`${API_BASE}/stats/overview`);
-                if (!response.ok) throw new Error(`API请求失败: ${response.status}`);
-                const result = await response.json();
-                
-                if (!result.success) {
-                    throw new Error(result.error || 'API返回错误');
-                }
-                
-                data = result.data;
-                dataSource = 'Vercel API';
-                console.log('✅ 成功从 API 加载统计数据');
+            console.log('🌐 尝试从 API 加载统计数据...');
+            // 生产模式：调用Vercel API
+            const response = await fetch(`${API_BASE}/stats/overview`);
+            if (!response.ok) throw new Error(`API请求失败: ${response.status}`);
+            const result = await response.json();
+
+            if (!result.success) {
+                throw new Error(result.error || 'API返回错误');
             }
+
+            data = result.data;
+            dataSource = 'Vercel API';
+            console.log('✅ 成功从 API 加载统计数据');
         } catch (fetchError) {
             console.warn('⚠️ 主数据源加载失败，使用模拟数据:', fetchError.message);
-            
+
             // 备用方案：使用模拟数据
             data = {
                 news_total: 6,
@@ -121,30 +70,30 @@ async function loadStats() {
                 },
                 updated_at: new Date().toISOString()
             };
-            
+
             showNotification('使用演示数据，请稍后刷新获取最新数据', 'info');
         }
-        
+
         // 更新UI
         document.getElementById('newsTotal').textContent = data.news_total || 0;
         document.getElementById('newsToday').textContent = data.news_today || 0;
-        
+
         if (data.latest_temperature) {
-            document.getElementById('tempScore').textContent = 
+            document.getElementById('tempScore').textContent =
                 (data.latest_temperature.temperature_score || 50).toFixed(1);
-            document.getElementById('sentiment').textContent = 
+            document.getElementById('sentiment').textContent =
                 data.latest_temperature.sentiment || '中性';
         }
-        
+
         if (data.updated_at) {
             const updateTime = new Date(data.updated_at);
-            document.getElementById('updateTime').textContent = 
+            document.getElementById('updateTime').textContent =
                 `更新于: ${updateTime.toLocaleString('zh-CN')}`;
         }
     } catch (error) {
         console.error('加载统计数据失败:', error);
         showNotification('加载统计数据失败: ' + error.message, 'error');
-        
+
         // 显示默认值
         document.getElementById('newsTotal').textContent = '0';
         document.getElementById('newsToday').textContent = '0';
@@ -157,19 +106,19 @@ async function loadStats() {
 async function loadCategories() {
     try {
         let categories;
-        
+
         try {
             if (USE_LOCAL_DATA) {
                 const response = await fetch('../data/news.json');
                 if (!response.ok) throw new Error('数据文件不存在');
                 const newsData = await response.json();
-                
+
                 const categoryCount = {};
                 (newsData.news || []).forEach(news => {
                     const cat = news.category || '其他';
                     categoryCount[cat] = (categoryCount[cat] || 0) + 1;
                 });
-                
+
                 categories = Object.entries(categoryCount)
                     .map(([category, count]) => ({ category, count }))
                     .sort((a, b) => b.count - a.count);
@@ -177,11 +126,11 @@ async function loadCategories() {
                 const response = await fetch(`${API_BASE}/news/categories`);
                 if (!response.ok) throw new Error('API请求失败');
                 const result = await response.json();
-                
+
                 if (!result.success) {
                     throw new Error(result.error);
                 }
-                
+
                 categories = result.data;
             }
         } catch (fetchError) {
@@ -193,10 +142,10 @@ async function loadCategories() {
                 { category: '大宗商品', count: 1 }
             ];
         }
-        
+
         if (categories && categories.length > 0) {
             const container = document.getElementById('categoryFilter');
-            
+
             categories.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = 'category-btn';
@@ -217,13 +166,13 @@ async function loadCategories() {
 // 按分类筛选
 function filterByCategory(category, btn) {
     currentCategory = category;
-    
+
     // 更新按钮状态
     document.querySelectorAll('.category-btn').forEach(b => {
         b.classList.remove('active');
     });
     btn.classList.add('active');
-    
+
     // 重新加载新闻
     loadNews();
 }
@@ -232,39 +181,39 @@ function filterByCategory(category, btn) {
 async function loadNews() {
     const container = document.getElementById('newsList');
     const loading = document.getElementById('loading');
-    
+
     loading.classList.remove('hidden');
     container.innerHTML = '';
-    
+
     try {
         let newsList;
-        
+
         try {
             if (USE_LOCAL_DATA) {
                 const response = await fetch('../data/news.json');
                 if (!response.ok) throw new Error('数据文件不存在');
                 const newsData = await response.json();
                 newsList = newsData.news || [];
-                
+
                 if (currentCategory) {
                     newsList = newsList.filter(n => n.category === currentCategory);
                 }
-                
+
                 newsList = newsList.slice(0, 20);
             } else {
                 let url = `${API_BASE}/news/latest?limit=20`;
                 if (currentCategory) {
                     url += `&category=${encodeURIComponent(currentCategory)}`;
                 }
-                
+
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('API请求失败');
                 const result = await response.json();
-                
+
                 if (!result.success) {
                     throw new Error(result.error);
                 }
-                
+
                 newsList = result.data;
             }
         } catch (fetchError) {
@@ -277,7 +226,7 @@ async function loadNews() {
                 throw new Error('无法加载任何数据源');
             }
         }
-        
+
         if (newsList && newsList.length > 0) {
             newsList.forEach((news, index) => {
                 const card = createNewsCard(news, index);
@@ -311,10 +260,10 @@ function createNewsCard(news, index) {
     const card = document.createElement('div');
     card.className = 'news-card fade-in';
     card.style.animationDelay = `${index * 0.05}s`;
-    
+
     const publishedDate = new Date(news.published_at);
     const timeAgo = getTimeAgo(publishedDate);
-    
+
     card.innerHTML = `
         <img src="${news.image_url || 'https://via.placeholder.com/400x200?text=News'}" 
              alt="${news.title}" 
@@ -335,13 +284,13 @@ function createNewsCard(news, index) {
             </div>
         </div>
     `;
-    
+
     if (news.url) {
         card.addEventListener('click', () => {
             window.open(news.url, '_blank');
         });
     }
-    
+
     return card;
 }
 
@@ -349,7 +298,7 @@ function createNewsCard(news, index) {
 function getTimeAgo(date) {
     const now = new Date();
     const diff = Math.floor((now - date) / 1000);
-    
+
     if (diff < 60) return '刚刚';
     if (diff < 3600) return `${Math.floor(diff / 60)}分钟前`;
     if (diff < 86400) return `${Math.floor(diff / 3600)}小时前`;
@@ -361,7 +310,7 @@ function getTimeAgo(date) {
 async function loadAnalysis() {
     try {
         let analysisData;
-        
+
         try {
             if (USE_LOCAL_DATA) {
                 const response = await fetch('../data/analysis.json');
@@ -371,11 +320,11 @@ async function loadAnalysis() {
                 const response = await fetch(`${API_BASE}/temperature/latest`);
                 if (!response.ok) throw new Error('API请求失败');
                 const result = await response.json();
-                
+
                 if (!result.success) {
                     throw new Error(result.error);
                 }
-                
+
                 analysisData = result.data;
             }
         } catch (fetchError) {
@@ -400,7 +349,7 @@ async function loadAnalysis() {
                 };
             }
         }
-        
+
         if (analysisData) {
             // 更新温度计
             if (temperatureChart) {
@@ -421,11 +370,11 @@ async function loadAnalysis() {
                     }]
                 });
             }
-            
+
             // 更新分析文本
-            document.getElementById('analysisText').textContent = 
+            document.getElementById('analysisText').textContent =
                 analysisData.analysis_text || '暂无分析数据';
-            
+
             // 更新关键因素
             const factorsList = document.getElementById('keyFactors');
             if (analysisData.key_factors && analysisData.key_factors.length > 0) {
@@ -436,7 +385,7 @@ async function loadAnalysis() {
                     </li>
                 `).join('');
             }
-            
+
             // 更新积极/消极计数
             document.getElementById('positiveCount').textContent = analysisData.positive_count || 0;
             document.getElementById('negativeCount').textContent = analysisData.negative_count || 0;
@@ -451,7 +400,7 @@ async function loadAnalysis() {
 function initTemperatureChart() {
     const chartDom = document.getElementById('temperatureGauge');
     temperatureChart = echarts.init(chartDom);
-    
+
     const option = {
         series: [
             {
@@ -535,9 +484,9 @@ function initTemperatureChart() {
             }
         ]
     };
-    
+
     temperatureChart.setOption(option);
-    
+
     // 响应式
     window.addEventListener('resize', () => {
         temperatureChart.resize();
@@ -558,7 +507,7 @@ function showNotification(message, type = 'info') {
         error: 'bg-red-500',
         info: 'bg-blue-500'
     };
-    
+
     const notification = document.createElement('div');
     notification.className = `fixed top-20 right-4 ${colors[type]} text-white px-6 py-3 rounded-lg shadow-lg z-50 fade-in`;
     notification.innerHTML = `
@@ -567,9 +516,9 @@ function showNotification(message, type = 'info') {
             <span>${message}</span>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateX(100%)';

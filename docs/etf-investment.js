@@ -17,10 +17,8 @@ console.log('🌐 使用Vercel API:', USE_VERCEL_API);
 async function loadData() {
     try {
         console.log('📂 开始加载数据...');
-        
-        // 优先尝试从 Vercel API 获取
-        if (USE_VERCEL_API) {
-            try {
+                // 优先尝试从 Vercel API 获取
+         try {
                 console.log('  尝试从 Vercel API 获取数据...');
                 const apiBase = window.location.origin;
                 
@@ -46,37 +44,6 @@ async function loadData() {
             } catch (e) {
                 console.log(`  ⚠️ Vercel API 失败: ${e.message}，尝试本地文件...`);
             }
-        }
-        
-        // 回退到本地文件
-        if (USE_LOCAL_DATA || USE_VERCEL_API) {
-            // 尝试多个可能的路径
-            const possiblePaths = [
-                { strategy: '../data/etf_strategy.json', data: '../data/etf_data.json' },
-                { strategy: './data/etf_strategy.json', data: './data/etf_data.json' },
-                { strategy: 'data/etf_strategy.json', data: 'data/etf_data.json' }
-            ];
-            
-            for (const paths of possiblePaths) {
-                try {
-                    console.log(`  尝试路径: ${paths.strategy}`);
-                    const strategyResponse = await fetch(paths.strategy);
-                    const dataResponse = await fetch(paths.data);
-                    
-                    if (strategyResponse.ok && dataResponse.ok) {
-                        const strategyData = await strategyResponse.json();
-                        const etfData = await dataResponse.json();
-                        console.log('✅ 成功从本地文件加载数据');
-                        return { strategy: strategyData, etfData: etfData };
-                    }
-                } catch (e) {
-                    console.log(`  ❌ 路径失败: ${e.message}`);
-                    continue;
-                }
-            }
-            
-            throw new Error('所有数据源都无法访问');
-        }
         
     } catch (error) {
         console.error('❌ 数据加载失败:', error);
