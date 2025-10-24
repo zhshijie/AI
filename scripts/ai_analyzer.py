@@ -28,7 +28,7 @@ AI_PROVIDERS = {
     'deepseek': {
         'api_url': 'https://api.deepseek.com/v1/chat/completions',
         'api_key_env': 'DEEPSEEK_API_KEY',
-        'model': 'deepseek-chat',
+        'model': 'deepseek-reasoner',
         'free': False  # 需要付费，但价格很低
     }
 }
