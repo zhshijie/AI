@@ -20,7 +20,7 @@ AI_PROVIDERS = {
     'openrouter': {
         'api_url': 'https://openrouter.ai/api/v1/chat/completions',
         'api_key_env': 'OPENROUTER_API_KEY',
-        'model': 'meta-llama/llama-3.1-8b-instruct:free',
+        'model': 'deepseek/deepseek-r1:free',  # 更新为2025年可用的免费模型
         'free': True,
         'site_url': 'https://github.com',
         'site_name': 'Economic News Analyzer'
@@ -28,7 +28,7 @@ AI_PROVIDERS = {
     'deepseek': {
         'api_url': 'https://api.deepseek.com/v1/chat/completions',
         'api_key_env': 'DEEPSEEK_API_KEY',
-        'model': 'deepseek-reasoner',
+        'model': 'deepseek-chat',
         'free': False  # 需要付费，但价格很低
     }
 }
@@ -57,7 +57,7 @@ class AINewsAnalyzer:
             self.use_fallback = True
         else:
             self.use_fallback = False
-            print(f"✓ 使用 {provider} AI服务进行分析")
+            print(f"✓ 使用 {provider} AI 服务进行分析")
     
     def analyze_news(self, news_list: List[Dict]) -> Dict:
         """
@@ -112,10 +112,8 @@ class AINewsAnalyzer:
     def _call_ai_api(self, news_summary: str) -> Dict:
         """调用AI API进行分析"""
         
-        # 构建提示词
-        prompt = f"""你是一位专业的金融分析师和投资顾问。请基于以下最新的全球经济新闻，进行深入分析并给出投资建议。
-
-【新闻列表】
+        prompt = f"""
+【新闻摘要】
 {news_summary}
 
 【分析要求】
@@ -156,6 +154,8 @@ class AINewsAnalyzer:
 - analysis_text要详细、专业，至少200字
 """
 
+        content = None  # 初始化 content 变量
+        
         try:
             headers = {
                 'Authorization': f'Bearer {self.api_key}',
@@ -172,7 +172,7 @@ class AINewsAnalyzer:
                 'messages': [
                     {
                         'role': 'system',
-                        'content': '你是一位专业的金融分析师，擅长分析全球经济新闻并给出投资建议。'
+                        'content': '你是一位专业的金融分析师，擅长分析全球经济新闻并给出投资建议。请严格按照JSON格式输出结果。'
                     },
                     {
                         'role': 'user',
@@ -197,37 +197,97 @@ class AINewsAnalyzer:
             print(f"响应状态码: {response.status_code}")
             
             if response.status_code == 200:
-                result = response.json()
-                content = result['choices'][0]['message']['content']
-                
-                # 提取JSON内容
-                content = content.strip()
-                if '```json' in content:
-                    content = content.split('```json')[1].split('```')[0].strip()
-                elif '```' in content:
-                    content = content.split('```')[1].split('```')[0].strip()
-                
-                # 解析JSON
-                analysis_data = json.loads(content)
-                
-                # 添加元数据
-                from datetime import datetime
-                analysis_data['analyzed_at'] = datetime.now().isoformat()
-                analysis_data['analyzed_news_count'] = len(news_summary.split('\n\n'))
-                analysis_data['ai_provider'] = self.provider
-                
-                return analysis_data
+                try:
+                    result = response.json()
+                    
+                    # 检查响应结构
+                    if 'choices' not in result or len(result['choices']) == 0:
+                        print(f"❌ API响应格式错误: 缺少 choices 字段")
+                        print(f"完整响应: {json.dumps(result, indent=2, ensure_ascii=False)[:1000]}")
+                        return None
+                    
+                    content = result['choices'][0]['message']['content']
+                    print(f"✓ 获取到AI响应内容，长度: {len(content)} 字符")
+                    
+                    # 提取JSON内容
+                    content = content.strip()
+                    
+                    # 尝试多种方式提取JSON
+                    if '```json' in content:
+                        content = content.split('```json')[1].split('```')[0].strip()
+                    elif '```' in content:
+                        content = content.split('```')[1].split('```')[0].strip()
+                    
+                    # 如果内容以 { 开头但不完整，尝试找到完整的JSON
+                    if content.startswith('{') and not content.endswith('}'):
+                        print(f"⚠️  检测到不完整的JSON响应")
+                        # 尝试找到最后一个完整的 }
+                        last_brace = content.rfind('}')
+                        if last_brace > 0:
+                            content = content[:last_brace + 1]
+                            print(f"✓ 修复后的内容长度: {len(content)} 字符")
+                    
+                    print(f"准备解析的JSON内容（前200字符）: {content[:200]}")
+                    
+                    # 解析JSON
+                    analysis_data = json.loads(content)
+                    
+                    # 验证必需字段
+                    required_fields = ['temperature_score', 'sentiment', 'analysis_text']
+                    missing_fields = [f for f in required_fields if f not in analysis_data]
+                    if missing_fields:
+                        print(f"❌ 缺少必需字段: {missing_fields}")
+                        return None
+                    
+                    # 添加元数据
+                    from datetime import datetime
+                    analysis_data['analyzed_at'] = datetime.now().isoformat()
+                    analysis_data['analyzed_news_count'] = len(news_summary.split('\n'))
+                    analysis_data['ai_provider'] = self.provider
+                    
+                    print(f"✓ JSON解析成功，温度评分: {analysis_data.get('temperature_score')}")
+                    return analysis_data
+                    
+                except json.JSONDecodeError as e:
+                    print(f"❌ JSON解析失败: {str(e)}")
+                    if content:
+                        print(f"AI返回内容（前500字符）: {content[:500]}")
+                        print(f"AI返回内容（后100字符）: {content[-100:]}")
+                    else:
+                        print(f"AI返回的原始响应: {response.text[:1000]}")
+                    return None
+                    
             else:
-                print(f"API请求失败: {response.status_code}")
-                print(f"错误信息: {response.text}")
+                print(f"❌ API请求失败: {response.status_code}")
+                print(f"错误详情: {response.text[:500]}")
+                print(f"请求URL: {self.config['api_url']}")
+                print(f"使用模型: {self.config['model']}")
+                
+                if response.status_code == 404:
+                    print("可能的原因:")
+                    print("1. API URL 不正确")
+                    print("2. 模型名称不正确或不可用")
+                    print("3. API 端点已更改")
+                    print("建议:")
+                    print("- 运行测试脚本: python test_openrouter_debug.py")
+                    print("- 或切换到 Groq: export AI_PROVIDER='groq'")
+                elif response.status_code == 401:
+                    print("认证失败，请检查API密钥是否正确")
+                elif response.status_code == 429:
+                    print("请求过于频繁，请稍后再试")
+                
                 return None
                 
-        except json.JSONDecodeError as e:
-            print(f"JSON解析失败: {str(e)}")
-            print(f"AI返回内容: {content[:500]}")
+        except requests.exceptions.Timeout:
+            print(f"❌ API请求超时（60秒）")
+            return None
+        except requests.exceptions.ConnectionError as e:
+            print(f"❌ 网络连接错误: {str(e)}")
             return None
         except Exception as e:
-            print(f"API调用失败: {str(e)}")
+            print(f"❌ API调用失败: {type(e).__name__}: {str(e)}")
+            import traceback
+            print(f"详细错误信息:{traceback.format_exc()}")
             return None
     
     def _fallback_analysis(self, news_list: List[Dict]) -> Dict:
