@@ -39,6 +39,10 @@ class handler(BaseHTTPRequestHandler):
                 response = self.get_tencent_news(query)
             elif path == '/api/tencent/analysis':
                 response = self.get_tencent_analysis()
+            elif path == '/api/etf/data':
+                response = self.get_etf_data()
+            elif path == '/api/etf/strategy':
+                response = self.get_etf_strategy()
             elif path == '/api/health' or path == '/api':
                 response = {'success': True, 'message': 'API is running', 'endpoints': [
                     '/api/news/latest',
@@ -46,7 +50,9 @@ class handler(BaseHTTPRequestHandler):
                     '/api/temperature/latest',
                     '/api/stats/overview',
                     '/api/tencent/news',
-                    '/api/tencent/analysis'
+                    '/api/tencent/analysis',
+                    '/api/etf/data',
+                    '/api/etf/strategy'
                 ]}
             else:
                 response = {'success': False, 'error': f'Endpoint not found: {path}', 'available_endpoints': [
@@ -55,7 +61,9 @@ class handler(BaseHTTPRequestHandler):
                     '/api/temperature/latest',
                     '/api/stats/overview',
                     '/api/tencent/news',
-                    '/api/tencent/analysis'
+                    '/api/tencent/analysis',
+                    '/api/etf/data',
+                    '/api/etf/strategy'
                 ]}
         except Exception as e:
             response = {'success': False, 'error': str(e)}
@@ -206,6 +214,30 @@ class handler(BaseHTTPRequestHandler):
                 return {'success': False, 'error': 'No Tencent analysis data available'}
             
             return {'success': True, 'data': analysis_data}
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    
+    def get_etf_data(self):
+        """获取ETF数据"""
+        try:
+            etf_data = self.load_json_file('data/etf_data.json')
+            
+            if not etf_data:
+                return {'success': False, 'error': 'No ETF data available'}
+            
+            return {'success': True, 'data': etf_data}
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    
+    def get_etf_strategy(self):
+        """获取ETF投资策略"""
+        try:
+            strategy_data = self.load_json_file('data/etf_strategy.json')
+            
+            if not strategy_data:
+                return {'success': False, 'error': 'No ETF strategy data available'}
+            
+            return {'success': True, 'data': strategy_data}
         except Exception as e:
             return {'success': False, 'error': str(e)}
     

@@ -112,14 +112,93 @@ def fetch_etf_historical_data(etf_code, days=30):
 
 def fetch_etf_news(etf_name, limit=10):
     """
-    获取ETF相关新闻
+    获取ETF相关新闻（优化版）
+    使用多个权威财经新闻源：新浪财经、东方财富、金融界
     """
+    all_news = []
+    
+    # 根据ETF名称生成丰富的搜索关键词
+    keywords = generate_search_keywords(etf_name)
+    
+    # 1. 从新浪财经获取新闻
+    sina_news = fetch_sina_finance_news(keywords, limit=5)
+    all_news.extend(sina_news)
+    
+    # 2. 从东方财富获取新闻
+    time.sleep(1)  # 避免请求过快
+    eastmoney_news = fetch_eastmoney_news(keywords, limit=5)
+    all_news.extend(eastmoney_news)
+    
+    # 3. 从金融界获取新闻
+    time.sleep(1)
+    jrj_news = fetch_jrj_news(keywords, limit=5)
+    all_news.extend(jrj_news)
+    
+    # 去重并按时间排序
+    unique_news = []
+    seen_titles = set()
+    
+    for news in all_news:
+        title_key = news['title'][:30]  # 使用标题前30字符作为去重依据
+        if title_key not in seen_titles:
+            seen_titles.add(title_key)
+            unique_news.append(news)
+    
+    # 返回指定数量的新闻
+    return unique_news[:limit]
+
+def generate_search_keywords(etf_name):
+    """
+    根据ETF名称生成丰富的搜索关键词
+    """
+    keywords = [etf_name]
+    
+    # 机器人ETF相关关键词
+    if '机器人' in etf_name:
+        keywords.extend([
+            '机器人ETF',
+            '机器人产业',
+            '工业机器人',
+            '服务机器人',
+            '人形机器人',
+            '机器人概念股',
+            '智能制造',
+            '自动化设备',
+            '机器人行业',
+            '机器人板块'
+        ])
+    
+    # 信创ETF相关关键词
+    elif '信创' in etf_name:
+        keywords.extend([
+            '信创ETF',
+            '信创产业',
+            '信息技术创新',
+            '国产替代',
+            '自主可控',
+            '信创概念股',
+            '软件国产化',
+            '芯片国产化',
+            '信创板块',
+            '信创行业'
+        ])
+    
+    return keywords
+
+def fetch_sina_finance_news(keywords, limit=5):
+    """
+    从新浪财经获取新闻
+    """
+    news_items = []
+    
     try:
-        # 使用百度新闻搜索
-        search_url = f'https://www.baidu.com/s?tn=news&word={etf_name}'
+        # 使用第一个关键词搜索
+        keyword = keywords[0] if keywords else ''
+        search_url = f'https://search.sina.com.cn/?q={keyword}&c=news&from=channel&col=finance'
         
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Referer': 'https://finance.sina.com.cn/'
         }
         
         response = requests.get(search_url, headers=headers, timeout=10)
@@ -127,23 +206,21 @@ def fetch_etf_news(etf_name, limit=10):
         
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            news_items = []
             
-            # 解析新闻结果
-            results = soup.find_all('div', class_='result')[:limit]
+            # 解析搜索结果
+            results = soup.find_all('div', class_='box-result')[:limit]
             
             for result in results:
                 try:
-                    title_elem = result.find('h3')
-                    if title_elem:
+                    title_elem = result.find('h2')
+                    if title_elem and title_elem.find('a'):
                         title = title_elem.get_text().strip()
-                        link_elem = title_elem.find('a')
-                        link = link_elem.get('href') if link_elem else ''
+                        link = title_elem.find('a').get('href', '')
                         
-                        desc_elem = result.find('div', class_='c-abstract')
+                        desc_elem = result.find('p', class_='content')
                         description = desc_elem.get_text().strip() if desc_elem else ''
                         
-                        time_elem = result.find('span', class_='c-color-gray2')
+                        time_elem = result.find('span', class_='fgray_time')
                         pub_time = time_elem.get_text().strip() if time_elem else ''
                         
                         news_items.append({
@@ -151,16 +228,118 @@ def fetch_etf_news(etf_name, limit=10):
                             'description': description,
                             'url': link,
                             'published_at': pub_time,
-                            'source': '百度新闻'
+                            'source': '新浪财经'
                         })
                 except Exception as e:
                     continue
-            
-            return news_items
     except Exception as e:
-        print(f"获取{etf_name}新闻失败: {e}")
+        print(f"  ⚠️  新浪财经新闻获取失败: {e}")
     
-    return []
+    return news_items
+
+def fetch_eastmoney_news(keywords, limit=5):
+    """
+    从东方财富获取新闻
+    """
+    news_items = []
+    
+    try:
+        # 使用第一个关键词搜索
+        keyword = keywords[0] if keywords else ''
+        search_url = f'https://so.eastmoney.com/news/s?keyword={keyword}'
+        
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Referer': 'https://www.eastmoney.com/'
+        }
+        
+        response = requests.get(search_url, headers=headers, timeout=10)
+        response.encoding = 'utf-8'
+        
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # 解析搜索结果
+            results = soup.find_all('div', class_='news-item')[:limit]
+            
+            for result in results:
+                try:
+                    title_elem = result.find('a', class_='title')
+                    if title_elem:
+                        title = title_elem.get_text().strip()
+                        link = title_elem.get('href', '')
+                        
+                        desc_elem = result.find('p', class_='info')
+                        description = desc_elem.get_text().strip() if desc_elem else ''
+                        
+                        time_elem = result.find('span', class_='time')
+                        pub_time = time_elem.get_text().strip() if time_elem else ''
+                        
+                        news_items.append({
+                            'title': title,
+                            'description': description,
+                            'url': link,
+                            'published_at': pub_time,
+                            'source': '东方财富'
+                        })
+                except Exception as e:
+                    continue
+    except Exception as e:
+        print(f"  ⚠️  东方财富新闻获取失败: {e}")
+    
+    return news_items
+
+def fetch_jrj_news(keywords, limit=5):
+    """
+    从金融界获取新闻
+    """
+    news_items = []
+    
+    try:
+        # 使用第一个关键词搜索
+        keyword = keywords[0] if keywords else ''
+        search_url = f'http://search.jrj.com.cn/search.php?q={keyword}'
+        
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Referer': 'http://www.jrj.com.cn/'
+        }
+        
+        response = requests.get(search_url, headers=headers, timeout=10)
+        response.encoding = 'gbk'
+        
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # 解析搜索结果
+            results = soup.find_all('div', class_='search-list')[:limit]
+            
+            for result in results:
+                try:
+                    title_elem = result.find('h3')
+                    if title_elem and title_elem.find('a'):
+                        title = title_elem.get_text().strip()
+                        link = title_elem.find('a').get('href', '')
+                        
+                        desc_elem = result.find('p', class_='txt')
+                        description = desc_elem.get_text().strip() if desc_elem else ''
+                        
+                        time_elem = result.find('span', class_='time')
+                        pub_time = time_elem.get_text().strip() if time_elem else ''
+                        
+                        news_items.append({
+                            'title': title,
+                            'description': description,
+                            'url': link,
+                            'published_at': pub_time,
+                            'source': '金融界'
+                        })
+                except Exception as e:
+                    continue
+    except Exception as e:
+        print(f"  ⚠️  金融界新闻获取失败: {e}")
+    
+    return news_items
 
 def calculate_technical_indicators(historical_data):
     """
@@ -289,9 +468,8 @@ def main():
     
     # ETF配置
     etfs = [
-        {'code': '562500', 'name': '机器人ETF', 'full_name': '机器人ETF'},
-        # {'code': '515860', 'name': '信创ETF', 'full_name': '华夏中证信创ETF'},
-        {'code': '562570', 'name': '信创ETF', 'full_name': '信创ETF'},
+        {'code': '159770', 'name': '机器人ETF', 'full_name': '国泰中证机器人ETF'},
+        {'code': '515860', 'name': '信创ETF', 'full_name': '华夏中证信创ETF'}
     ]
     
     all_etf_data = []
@@ -353,4 +531,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

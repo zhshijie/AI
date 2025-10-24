@@ -3,19 +3,53 @@
 // 检测环境
 const USE_LOCAL_DATA = window.location.hostname === 'localhost' || 
                        window.location.hostname === '127.0.0.1' ||
-                       window.location.hostname.includes('github.io') ||
                        window.location.protocol === 'file:';
+
+const USE_VERCEL_API = window.location.hostname.includes('vercel.app') ||
+                       window.location.hostname.includes('github.io');
 
 console.log('🚀 ETF投资助手初始化...');
 console.log('📍 当前环境:', window.location.hostname);
 console.log('📂 使用本地数据:', USE_LOCAL_DATA);
+console.log('🌐 使用Vercel API:', USE_VERCEL_API);
 
 // 加载数据
 async function loadData() {
     try {
         console.log('📂 开始加载数据...');
         
-        if (USE_LOCAL_DATA) {
+        // 优先尝试从 Vercel API 获取
+        if (USE_VERCEL_API) {
+            try {
+                console.log('  尝试从 Vercel API 获取数据...');
+                const apiBase = window.location.origin;
+                
+                const [strategyResponse, dataResponse] = await Promise.all([
+                    fetch(`${apiBase}/api/etf/strategy`),
+                    fetch(`${apiBase}/api/etf/data`)
+                ]);
+                
+                if (strategyResponse.ok && dataResponse.ok) {
+                    const strategyResult = await strategyResponse.json();
+                    const dataResult = await dataResponse.json();
+                    
+                    if (strategyResult.success && dataResult.success) {
+                        console.log('✅ 成功从 Vercel API 加载数据');
+                        return { 
+                            strategy: strategyResult.data, 
+                            etfData: dataResult.data 
+                        };
+                    }
+                }
+                
+                console.log('  ⚠️ Vercel API 响应异常，尝试本地文件...');
+            } catch (e) {
+                console.log(`  ⚠️ Vercel API 失败: ${e.message}，尝试本地文件...`);
+            }
+        }
+        
+        // 回退到本地文件
+        if (USE_LOCAL_DATA || USE_VERCEL_API) {
             // 尝试多个可能的路径
             const possiblePaths = [
                 { strategy: '../data/etf_strategy.json', data: '../data/etf_data.json' },
@@ -41,7 +75,7 @@ async function loadData() {
                 }
             }
             
-            throw new Error('所有本地路径都无法访问');
+            throw new Error('所有数据源都无法访问');
         }
         
     } catch (error) {
@@ -311,4 +345,3 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
-
