@@ -29,6 +29,10 @@ class handler(BaseHTTPRequestHandler):
                 response = self.get_latest_temperature()
             elif path == '/api/stats/overview':
                 response = self.get_stats_overview()
+            elif path == '/api/tencent/news':
+                response = self.get_tencent_news(query)
+            elif path == '/api/tencent/analysis':
+                response = self.get_tencent_analysis()
             else:
                 response = {'success': False, 'error': 'Endpoint not found'}
         except Exception as e:
@@ -169,6 +173,34 @@ class handler(BaseHTTPRequestHandler):
                     'updated_at': news_data.get('updated_at')
                 }
             }
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    
+    def get_tencent_news(self, query):
+        """获取腾讯相关新闻"""
+        try:
+            # 读取腾讯新闻数据
+            news_data = self.load_json_file('data/tencent_news.json')
+            
+            if not news_data:
+                return {'success': False, 'error': 'No Tencent news data available'}
+            
+            return {
+                'success': True,
+                'data': news_data
+            }
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    
+    def get_tencent_analysis(self):
+        """获取腾讯投资分析"""
+        try:
+            analysis_data = self.load_json_file('data/tencent_analysis.json')
+            
+            if not analysis_data:
+                return {'success': False, 'error': 'No Tencent analysis data available'}
+            
+            return {'success': True, 'data': analysis_data}
         except Exception as e:
             return {'success': False, 'error': str(e)}
     

@@ -1,3 +1,6 @@
+// API基础URL - 替换为你的Vercel部署URL
+const API_BASE = 'https://ai-394y.vercel.app/api';
+
 // 智能检测数据源
 const USE_LOCAL_DATA = window.location.hostname === 'localhost' || 
                        window.location.hostname === '127.0.0.1' ||
@@ -45,8 +48,24 @@ async function loadData() {
                 newsData = await newsResponse.json();
                 analysisData = await analysisResponse.json();
             } else {
-                // 生产环境：调用API
-                throw new Error('API模式暂未实现');
+                // 生产环境：调用Vercel API
+                // 注意：需要在 api/index.py 中添加腾讯新闻相关的API端点
+                const newsResponse = await fetch(`${API_BASE}/tencent/news`);
+                const analysisResponse = await fetch(`${API_BASE}/tencent/analysis`);
+                
+                if (!newsResponse.ok || !analysisResponse.ok) {
+                    throw new Error('API请求失败');
+                }
+                
+                const newsResult = await newsResponse.json();
+                const analysisResult = await analysisResponse.json();
+                
+                if (!newsResult.success || !analysisResult.success) {
+                    throw new Error(newsResult.error || analysisResult.error || 'API返回错误');
+                }
+                
+                newsData = newsResult.data;
+                analysisData = analysisResult.data;
             }
         } catch (fetchError) {
             console.warn('数据加载失败，使用演示数据:', fetchError);
@@ -613,4 +632,3 @@ function generateDemoData() {
         }
     };
 }
-
