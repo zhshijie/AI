@@ -12,6 +12,9 @@ class handler(BaseHTTPRequestHandler):
         path = parsed_path.path
         query = parse_qs(parsed_path.query)
         
+        # 打印调试信息
+        print(f"Received request: {path}")
+        
         # 设置CORS头
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
@@ -21,37 +24,39 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         
         try:
-            if path == '/api/news/latest':
+            # 标准化路径（移除尾部斜杠）
+            path = path.rstrip('/')
+            
+            if path == '/api/news/latest' or path == '/api/news':
                 response = self.get_latest_news(query)
             elif path == '/api/news/categories':
                 response = self.get_categories()
-            elif path == '/api/temperature/latest':
+            elif path == '/api/temperature/latest' or path == '/api/temperature':
                 response = self.get_latest_temperature()
-            elif path == '/api/stats/overview':
+            elif path == '/api/stats/overview' or path == '/api/stats':
                 response = self.get_stats_overview()
             elif path == '/api/tencent/news':
                 response = self.get_tencent_news(query)
             elif path == '/api/tencent/analysis':
                 response = self.get_tencent_analysis()
+            elif path == '/api/health' or path == '/api':
+                response = {'success': True, 'message': 'API is running', 'endpoints': [
+                    '/api/news/latest',
+                    '/api/news/categories',
+                    '/api/temperature/latest',
+                    '/api/stats/overview',
+                    '/api/tencent/news',
+                    '/api/tencent/analysis'
+                ]}
             else:
-                response = {'success': False, 'error': 'Endpoint not found'}
-        except Exception as e:
-            response = {'success': False, 'error': str(e)}
-        
-        self.wfile.write(json.dumps(response, ensure_ascii=False).encode('utf-8'))
-    
-    def do_POST(self):
-        """处理POST请求"""
-        self.send_response(200)
-        self.send_header('Content-type', 'application/json')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-        self.end_headers()
-        
-        # POST请求直接返回最新分析结果
-        try:
-            response = self.get_latest_temperature()
+                response = {'success': False, 'error': f'Endpoint not found: {path}', 'available_endpoints': [
+                    '/api/news/latest',
+                    '/api/news/categories',
+                    '/api/temperature/latest',
+                    '/api/stats/overview',
+                    '/api/tencent/news',
+                    '/api/tencent/analysis'
+                ]}
         except Exception as e:
             response = {'success': False, 'error': str(e)}
         
