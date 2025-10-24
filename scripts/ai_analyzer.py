@@ -102,17 +102,28 @@ class AINewsAnalyzer:
             source = news.get('source', '')
             
             summary_parts.append(
-                f"{i}. [{category}] {title}\n"
-                f"   来源: {source}\n"
-                f"   摘要: {description[:150]}\n"
+                f"{i}. [{category}] {title}"
+                f"   来源: {source}"
+                f"   摘要: {description[:150]}"
             )
         
         return "\n".join(summary_parts)
     
-    def _call_ai_api(self, news_summary: str) -> Dict:
-        """调用AI API进行分析"""
+    def _call_ai_api(self, news_summary) -> Dict:
+        """调用AI API进行分析
         
-        prompt = f"""
+        Args:
+            news_summary: 可以是字符串（新闻摘要）或列表（消息列表）
+        """
+        
+        # 判断 news_summary 的类型
+        if isinstance(news_summary, list):
+            # 如果是列表，说明是直接传入的 messages
+            messages = news_summary
+            news_count = 0  # 无法从 messages 中准确计算新闻数量
+        else:
+            # 如果是字符串，构建标准的 prompt
+            prompt = f"""
 【新闻摘要】
 {news_summary}
 
@@ -153,6 +164,18 @@ class AINewsAnalyzer:
 - key_factors用✓表示积极因素，✗表示消极因素
 - analysis_text要详细、专业，至少200字
 """
+            messages = [
+                {
+                    'role': 'system',
+                    'content': '你是一位专业的金融分析师，擅长分析全球经济新闻并给出投资建议。'
+                },
+                {
+                    'role': 'user',
+                    'content': prompt
+                }
+            ]
+            # 计算新闻数量
+            news_count = len(news_summary.split('\n')) if isinstance(news_summary, str) else 0
 
         content = None  # 初始化 content 变量
         
@@ -169,16 +192,7 @@ class AINewsAnalyzer:
             
             payload = {
                 'model': self.config['model'],
-                'messages': [
-                    {
-                        'role': 'system',
-                        'content': '你是一位专业的金融分析师，擅长分析全球经济新闻并给出投资建议。请严格按照JSON格式输出结果。'
-                    },
-                    {
-                        'role': 'user',
-                        'content': prompt
-                    }
-                ],
+                'messages': messages,
                 'temperature': 0.7,
                 'max_tokens': 2000
             }
@@ -242,7 +256,12 @@ class AINewsAnalyzer:
                     # 添加元数据
                     from datetime import datetime
                     analysis_data['analyzed_at'] = datetime.now().isoformat()
-                    analysis_data['analyzed_news_count'] = len(news_summary.split('\n'))
+                    # 修复：根据 news_summary 的类型来计算新闻数量
+                    if isinstance(news_summary, str):
+                        analysis_data['analyzed_news_count'] = len(news_summary.split('\n'))
+                    else:
+                        # 如果是列表，尝试从 analysis_data 中获取，或设为0
+                        analysis_data['analyzed_news_count'] = analysis_data.get('analyzed_news_count', 0)
                     analysis_data['ai_provider'] = self.provider
                     
                     print(f"✓ JSON解析成功，温度评分: {analysis_data.get('temperature_score')}")

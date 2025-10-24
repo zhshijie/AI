@@ -289,8 +289,9 @@ def main():
     
     # ETF配置
     etfs = [
-        {'code': '159770', 'name': '机器人ETF', 'full_name': '国泰中证机器人ETF'},
-        {'code': '515860', 'name': '信创ETF', 'full_name': '华夏中证信创ETF'}
+        {'code': '562500', 'name': '机器人ETF', 'full_name': '机器人ETF'},
+        # {'code': '515860', 'name': '信创ETF', 'full_name': '华夏中证信创ETF'},
+        {'code': '562570', 'name': '信创ETF', 'full_name': '信创ETF'},
     ]
     
     all_etf_data = []
