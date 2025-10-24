@@ -1,287 +1,359 @@
 {
-  "updated_at": "2025-10-24T08:48:33.972556",
+  "updated_at": "2025-10-24T09:04:28.013358",
   "etfs": [
     {
-      "code": "562500",
+      "code": "159770",
       "name": "机器人ETF",
-      "full_name": "机器人ETF",
+      "full_name": "国泰中证机器人ETF",
       "realtime": {
-        "code": "562500",
-        "name": "机器人ETF",
-        "open": 1.014,
-        "pre_close": 1.009,
-        "current": 1.024,
-        "high": 1.025,
-        "low": 1.011,
-        "volume": 1519252899,
-        "amount": 1548499778.0,
+        "code": "159770",
+        "name": "机器人AI",
+        "open": 1.052,
+        "pre_close": 1.045,
+        "current": 1.063,
+        "high": 1.063,
+        "low": 1.048,
+        "volume": 491533800,
+        "amount": 520065249.7,
         "date": "2025-10-24",
-        "time": "15:00:01",
-        "change": 0.015,
-        "change_percent": 1.49
+        "time": "15:00:06",
+        "change": 0.018,
+        "change_percent": 1.72
       },
       "historical": [
         {
           "date": "2025-10-13",
-          "open": 1.02,
-          "close": 1.052,
-          "high": 1.054,
-          "low": 1.016,
-          "volume": 18021536,
-          "amount": 1875151467.0,
-          "change_percent": -2.14
+          "open": 1.053,
+          "close": 1.089,
+          "high": 1.093,
+          "low": 1.053,
+          "volume": 4362704,
+          "amount": 470895363.98,
+          "change_percent": -2.42
         },
         {
           "date": "2025-10-14",
-          "open": 1.056,
-          "close": 1.009,
-          "high": 1.063,
-          "low": 1.005,
-          "volume": 17717098,
-          "amount": 1825354423.0,
-          "change_percent": -4.09
+          "open": 1.094,
+          "close": 1.046,
+          "high": 1.102,
+          "low": 1.042,
+          "volume": 4773690,
+          "amount": 509636907.448,
+          "change_percent": -3.95
         },
         {
           "date": "2025-10-15",
-          "open": 1.009,
-          "close": 1.033,
-          "high": 1.034,
-          "low": 0.998,
-          "volume": 14697010,
-          "amount": 1496633968.0,
-          "change_percent": 2.38
+          "open": 1.046,
+          "close": 1.071,
+          "high": 1.071,
+          "low": 1.035,
+          "volume": 3668385,
+          "amount": 386988939.227,
+          "change_percent": 2.39
         },
         {
           "date": "2025-10-16",
-          "open": 1.023,
-          "close": 1.013,
-          "high": 1.027,
-          "low": 1.01,
-          "volume": 11103110,
-          "amount": 1130459398.0,
-          "change_percent": -1.94
+          "open": 1.063,
+          "close": 1.05,
+          "high": 1.064,
+          "low": 1.047,
+          "volume": 2731302,
+          "amount": 288312823.051,
+          "change_percent": -1.96
         },
         {
           "date": "2025-10-17",
-          "open": 1.011,
-          "close": 0.977,
-          "high": 1.014,
-          "low": 0.975,
-          "volume": 16150958,
-          "amount": 1600728125.0,
-          "change_percent": -3.55
+          "open": 1.05,
+          "close": 1.013,
+          "high": 1.051,
+          "low": 1.011,
+          "volume": 3224588,
+          "amount": 331219324.755,
+          "change_percent": -3.52
         },
         {
           "date": "2025-10-20",
-          "open": 0.989,
-          "close": 0.99,
-          "high": 1.004,
-          "low": 0.984,
-          "volume": 12901987,
-          "amount": 1281905261.0,
-          "change_percent": 1.33
+          "open": 1.025,
+          "close": 1.03,
+          "high": 1.041,
+          "low": 1.02,
+          "volume": 2524119,
+          "amount": 260153866.46,
+          "change_percent": 1.68
         },
         {
           "date": "2025-10-21",
-          "open": 0.998,
-          "close": 1.008,
-          "high": 1.01,
-          "low": 0.993,
-          "volume": 13219241,
-          "amount": 1327547922.0,
-          "change_percent": 1.82
+          "open": 1.036,
+          "close": 1.048,
+          "high": 1.048,
+          "low": 1.03,
+          "volume": 3448231,
+          "amount": 359192388.728,
+          "change_percent": 1.75
         },
         {
           "date": "2025-10-22",
-          "open": 1.005,
-          "close": 1.01,
-          "high": 1.02,
-          "low": 1.0,
-          "volume": 10946875,
-          "amount": 1107022218.0,
-          "change_percent": 0.2
+          "open": 1.046,
+          "close": 1.046,
+          "high": 1.057,
+          "low": 1.035,
+          "volume": 2187378,
+          "amount": 229166436.08,
+          "change_percent": -0.19
         },
         {
           "date": "2025-10-23",
-          "open": 1.006,
-          "close": 1.009,
-          "high": 1.011,
-          "low": 0.991,
-          "volume": 8938605,
-          "amount": 892793832.0,
+          "open": 1.043,
+          "close": 1.045,
+          "high": 1.048,
+          "low": 1.028,
+          "volume": 1942943,
+          "amount": 201174869.226,
           "change_percent": -0.1
         },
         {
           "date": "2025-10-24",
-          "open": 1.014,
-          "close": 1.024,
-          "high": 1.025,
-          "low": 1.011,
-          "volume": 15192529,
-          "amount": 1548499778.0,
-          "change_percent": 1.49
+          "open": 1.052,
+          "close": 1.063,
+          "high": 1.063,
+          "low": 1.048,
+          "volume": 4915338,
+          "amount": 520065249.7,
+          "change_percent": 1.72
         }
       ],
       "indicators": {
-        "ma5": 1.008,
-        "ma10": 1.012,
-        "ma20": 1.049,
-        "rsi": 41.39,
+        "ma5": 1.046,
+        "ma10": 1.05,
+        "ma20": 1.088,
+        "rsi": 42.01,
         "macd": {
-          "dif": -0.0193,
-          "dea": -0.0155,
-          "macd": -0.0077
+          "dif": -0.02,
+          "dea": -0.016,
+          "macd": -0.008
         },
         "bollinger": {
-          "upper": 1.131,
-          "middle": 1.049,
-          "lower": 0.967
+          "upper": 1.173,
+          "middle": 1.088,
+          "lower": 1.004
         },
-        "volume_change": 69.97
+        "volume_change": 152.98
       },
-      "news": [],
-      "updated_at": "2025-10-24T08:48:28.739556"
+      "news": [
+        {
+          "title": "机器人指数ETF（560770）涨1.41%，成交额5137.92万元\n10月24日，招商中证机器人ETF（560770）收盘涨1.41%，成交额5137.92万元。机器人指数ETF（560770）业绩比较基准为中证机器人指数收益率...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t实时速报\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "description": "10月24日，招商中证机器人ETF（560770）收盘涨1.41%，成交额5137.92万元。机器人指数ETF（560770）业绩比较基准为中证机器人指数收益率...",
+          "url": "https://k.sina.com.cn/article_5952915720_162d2490806702myy8.html",
+          "published_at": "实时速报\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "机器人ETF南方（159258）涨1.42%，成交额4024.11万元\n10月24日，南方中证机器人ETF（159258）收盘涨1.42%，成交额4024.11万元。机器人ETF南方（159258）业绩比较基准为中证机器人指数收益率...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t资讯动态\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "description": "10月24日，南方中证机器人ETF（159258）收盘涨1.42%，成交额4024.11万元。机器人ETF南方（159258）业绩比较基准为中证机器人指数收益率...",
+          "url": "https://k.sina.com.cn/article_5953189932_162d6782c06703bs6q.html",
+          "published_at": "资讯动态\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "机器人ETF基金（159213）涨1.56%，成交额2384.11万元\n10月24日，汇添富中证机器人ETF（159213）收盘涨1.56%，成交额2384.11万元。机器人ETF基金（159213）业绩比较基准为中证机器人指数收益率...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t实时速报\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "description": "10月24日，汇添富中证机器人ETF（159213）收盘涨1.56%，成交额2384.11万元。机器人ETF基金（159213）业绩比较基准为中证机器人指数收益率...",
+          "url": "https://k.sina.com.cn/article_5952915720_162d2490806702myw4.html",
+          "published_at": "实时速报\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "机器人产业ETF（560630）涨1.54%，成交额1469.86万元\n10月24日，万家中证机器人ETF（560630）收盘涨1.54%，成交额1469.86万元。机器人产业ETF（560630）成立于2025年3月19日，基金全称为万家中证机器人交易型开放式指数证券投资基金，基金简称为万家中证机器人ETF...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t新闻眼\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "description": "10月24日，万家中证机器人ETF（560630）收盘涨1.54%，成交额1469.86万元。机器人产业ETF（560630）成立于2025年3月19日，基金全称为万家中证机器人交易型开放式指数证券投资基金，基金简称为万家中证机器人ETF...",
+          "url": "https://k.sina.com.cn/article_5953190046_162d6789e067027dhs.html",
+          "published_at": "新闻眼\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "机器人ETF嘉实（159526）涨1.49%，成交额4027.45万元\n10月24日，嘉实中证机器人ETF（159526）收盘涨1.49%，成交额4027.45万元。规模方面，截止10月23日，机器人ETF嘉实（159526）最新份额为5.99亿份，最新规模为8.85亿元...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t资讯滚动\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "description": "10月24日，嘉实中证机器人ETF（159526）收盘涨1.49%，成交额4027.45万元。规模方面，截止10月23日，机器人ETF嘉实（159526）最新份额为5.99亿份，最新规模为8.85亿元...",
+          "url": "https://k.sina.com.cn/article_5953741034_162dee0ea06702m2rk.html",
+          "published_at": "资讯滚动\n                        \t\t\t\t\t\n                        \t\t\t\t1小时前",
+          "source": "新浪财经"
+        }
+      ],
+      "updated_at": "2025-10-24T09:04:19.260315"
     },
     {
-      "code": "562570",
+      "code": "515860",
       "name": "信创ETF",
-      "full_name": "信创ETF",
+      "full_name": "华夏中证信创ETF",
       "realtime": {
-        "code": "562570",
-        "name": "信创ETF",
-        "open": 1.427,
-        "pre_close": 1.423,
-        "current": 1.453,
-        "high": 1.455,
-        "low": 1.427,
-        "volume": 26834600,
-        "amount": 38760810.0,
+        "code": "515860",
+        "name": "科技ETF嘉实",
+        "open": 1.689,
+        "pre_close": 1.668,
+        "current": 1.724,
+        "high": 1.725,
+        "low": 1.683,
+        "volume": 2383800,
+        "amount": 4074294.0,
         "date": "2025-10-24",
-        "time": "15:00:01",
-        "change": 0.03,
-        "change_percent": 2.11
+        "time": "15:00:03",
+        "change": 0.056,
+        "change_percent": 3.36
       },
       "historical": [
         {
           "date": "2025-10-13",
-          "open": 1.474,
-          "close": 1.506,
-          "high": 1.54,
-          "low": 1.458,
-          "volume": 534926,
-          "amount": 80799131.0,
-          "change_percent": 1.41
+          "open": 1.7,
+          "close": 1.733,
+          "high": 1.736,
+          "low": 1.635,
+          "volume": 18821,
+          "amount": 3229933.0,
+          "change_percent": -1.42
         },
         {
           "date": "2025-10-14",
-          "open": 1.507,
-          "close": 1.45,
-          "high": 1.51,
-          "low": 1.436,
-          "volume": 581762,
-          "amount": 85990850.0,
-          "change_percent": -3.72
+          "open": 1.749,
+          "close": 1.669,
+          "high": 1.768,
+          "low": 1.66,
+          "volume": 35164,
+          "amount": 6047800.0,
+          "change_percent": -3.69
         },
         {
           "date": "2025-10-15",
-          "open": 1.439,
-          "close": 1.474,
-          "high": 1.475,
-          "low": 1.429,
-          "volume": 434513,
-          "amount": 63367491.0,
-          "change_percent": 1.66
+          "open": 1.666,
+          "close": 1.702,
+          "high": 1.702,
+          "low": 1.651,
+          "volume": 25548,
+          "amount": 4266377.0,
+          "change_percent": 1.98
         },
         {
           "date": "2025-10-16",
-          "open": 1.458,
-          "close": 1.446,
-          "high": 1.463,
-          "low": 1.438,
-          "volume": 373273,
-          "amount": 54067210.0,
-          "change_percent": -1.9
+          "open": 1.702,
+          "close": 1.7,
+          "high": 1.728,
+          "low": 1.685,
+          "volume": 23603,
+          "amount": 4022525.0,
+          "change_percent": -0.12
         },
         {
           "date": "2025-10-17",
-          "open": 1.446,
-          "close": 1.396,
-          "high": 1.446,
-          "low": 1.395,
-          "volume": 302935,
-          "amount": 42953098.0,
-          "change_percent": -3.46
+          "open": 1.7,
+          "close": 1.633,
+          "high": 1.7,
+          "low": 1.632,
+          "volume": 32168,
+          "amount": 5313849.0,
+          "change_percent": -3.94
         },
         {
           "date": "2025-10-20",
-          "open": 1.405,
-          "close": 1.402,
-          "high": 1.424,
-          "low": 1.395,
-          "volume": 261019,
-          "amount": 36833477.0,
-          "change_percent": 0.43
+          "open": 1.661,
+          "close": 1.649,
+          "high": 1.681,
+          "low": 1.639,
+          "volume": 16618,
+          "amount": 2756380.0,
+          "change_percent": 0.98
         },
         {
           "date": "2025-10-21",
-          "open": 1.403,
-          "close": 1.423,
-          "high": 1.426,
-          "low": 1.4,
-          "volume": 256588,
-          "amount": 36370182.0,
-          "change_percent": 1.5
+          "open": 1.66,
+          "close": 1.697,
+          "high": 1.698,
+          "low": 1.652,
+          "volume": 31819,
+          "amount": 5342351.0,
+          "change_percent": 2.91
         },
         {
           "date": "2025-10-22",
-          "open": 1.418,
-          "close": 1.417,
-          "high": 1.43,
-          "low": 1.408,
-          "volume": 230120,
-          "amount": 32652985.0,
-          "change_percent": -0.42
+          "open": 1.697,
+          "close": 1.688,
+          "high": 1.697,
+          "low": 1.67,
+          "volume": 16809,
+          "amount": 2827287.0,
+          "change_percent": -0.53
         },
         {
           "date": "2025-10-23",
-          "open": 1.433,
-          "close": 1.423,
-          "high": 1.433,
-          "low": 1.393,
-          "volume": 182176,
-          "amount": 25624274.0,
-          "change_percent": 0.42
+          "open": 1.694,
+          "close": 1.668,
+          "high": 1.694,
+          "low": 1.644,
+          "volume": 11288,
+          "amount": 1867511.0,
+          "change_percent": -1.18
         },
         {
           "date": "2025-10-24",
-          "open": 1.427,
-          "close": 1.453,
-          "high": 1.455,
-          "low": 1.427,
-          "volume": 268346,
-          "amount": 38760810.0,
-          "change_percent": 2.11
+          "open": 1.689,
+          "close": 1.724,
+          "high": 1.725,
+          "low": 1.683,
+          "volume": 23838,
+          "amount": 4074294.0,
+          "change_percent": 3.36
         }
       ],
       "indicators": {
-        "ma5": 1.424,
-        "ma10": 1.439,
-        "ma20": 1.472,
-        "rsi": 44.73,
+        "ma5": 1.685,
+        "ma10": 1.686,
+        "ma20": 1.72,
+        "rsi": 48.87,
         "macd": {
-          "dif": -0.0114,
-          "dea": -0.0091,
-          "macd": -0.0046
+          "dif": 0.0015,
+          "dea": 0.0012,
+          "macd": 0.0006
         },
         "bollinger": {
-          "upper": 1.563,
-          "middle": 1.472,
-          "lower": 1.381
+          "upper": 1.806,
+          "middle": 1.72,
+          "lower": 1.634
         },
-        "volume_change": 47.3
+        "volume_change": 111.18
       },
-      "news": [],
-      "updated_at": "2025-10-24T08:48:33.972026"
+      "news": [
+        {
+          "title": "ETF主力榜 | 科创债ETF华夏(551550)主力资金净流入1.14亿元，居全市场第一梯队-20251024\n2025年10月24日，科创债ETF华夏（551550.SH）收涨0.07%，主力资金（单笔成交额100万元以上）净流入1.14亿元，居全市场第一梯队...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t界面新闻\n                        \t\t\t\t\t\n                        \t\t\t\t27分钟前",
+          "description": "2025年10月24日，科创债ETF华夏（551550.SH）收涨0.07%，主力资金（单笔成交额100万元以上）净流入1.14亿元，居全市场第一梯队...",
+          "url": "https://finance.sina.com.cn/jjxw/2025-10-24/doc-infuyrfm6071874.shtml",
+          "published_at": "界面新闻\n                        \t\t\t\t\t\n                        \t\t\t\t27分钟前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "大连东软信息学院获两项数字教育创新成果",
+          "description": "近日，中国教育技术协会公布2025年“数字教育创新成果奖”获奖名单。大连东软信息学院凭借在数智校园全场景的创新建设成果，荣获一等奖1项、三等奖1项，充分彰显了学校在推动教育数字化转型与智慧教学环境建设方面的综合实力...",
+          "url": "https://k.sina.com.cn/article_5895814239_15f6afc5f02001e9ba.html",
+          "published_at": "未来网教育看点   29分钟前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "ETF甄选 | “十五五”时期全面实施“人工智能+”行动，5G通信、人工智能、消费电子等相关ETF表现亮眼\n主力资金上，半导体、电子元件、消费电子等行业概念流入居前。ETF方面，或受相关消息刺激，5G通信、人工智能、消费电子等相关ETF表现亮眼...\n\n                        \t\t\t\t\t\n                        \t\t\t\t\t\t界面新闻\n                        \t\t\t\t\t\n                        \t\t\t\t33分钟前",
+          "description": "主力资金上，半导体、电子元件、消费电子等行业概念流入居前。ETF方面，或受相关消息刺激，5G通信、人工智能、消费电子等相关ETF表现亮眼...",
+          "url": "https://finance.sina.com.cn/jjxw/2025-10-24/doc-infuyrfq6979013.shtml",
+          "published_at": "界面新闻\n                        \t\t\t\t\t\n                        \t\t\t\t33分钟前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "三未信安：北京立达高新创业投资中心（有限合伙）已减持1.07%股份",
+          "description": "减持后，立达高新的持股比例降至6.75%...",
+          "url": "https://finance.sina.com.cn/roll/2025-10-24/doc-infuyrfm6068757.shtml",
+          "published_at": "每日经济新闻   34分钟前",
+          "source": "新浪财经"
+        },
+        {
+          "title": "美国学者：中国经济下一个五年，稳定、创新与信心的交汇点丨世界观",
+          "description": "正因此，二十届四中全会更可能是一次“预期的调整”，而非“方向的改变”。通过对“十四五”时期取得的成就进行系统回顾，二十届四中全会将为未来五年设定可衡量的指标和务实的目标...",
+          "url": "https://finance.sina.com.cn/roll/2025-10-24/doc-infuyrfi1397944.shtml",
+          "published_at": "中国新闻网   52分钟前",
+          "source": "新浪财经"
+        }
+      ],
+      "updated_at": "2025-10-24T09:04:28.013217"
     }
   ]
 }
