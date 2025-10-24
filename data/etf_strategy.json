@@ -1,8 +1,8 @@
 {
-  "updated_at": "2025-10-24T08:14:39.422230",
+  "updated_at": "2025-10-24T08:24:01.160860",
   "analysis": [
     {
-      "code": "159770",
+      "code": "562500",
       "name": "机器人ETF",
       "sentiment": {
         "score": 60,
@@ -24,99 +24,99 @@
         }
       ],
       "realtime": {
-        "code": "159770",
-        "name": "机器人AI",
-        "open": 1.052,
-        "pre_close": 1.045,
-        "current": 1.063,
-        "high": 1.063,
-        "low": 1.048,
-        "volume": 491533800,
-        "amount": 520065249.7,
+        "code": "562500",
+        "name": "机器人ETF",
+        "open": 1.014,
+        "pre_close": 1.009,
+        "current": 1.024,
+        "high": 1.025,
+        "low": 1.011,
+        "volume": 1519252899,
+        "amount": 1548499778.0,
         "date": "2025-10-24",
-        "time": "15:00:06",
-        "change": 0.018,
-        "change_percent": 1.72
+        "time": "15:00:01",
+        "change": 0.015,
+        "change_percent": 1.49
       },
       "indicators": {
-        "ma5": 1.046,
-        "ma10": 1.05,
-        "ma20": 1.088,
-        "rsi": 42.01,
+        "ma5": 1.008,
+        "ma10": 1.012,
+        "ma20": 1.049,
+        "rsi": 41.39,
         "macd": {
-          "dif": -0.02,
-          "dea": -0.016,
-          "macd": -0.008
+          "dif": -0.0193,
+          "dea": -0.0155,
+          "macd": -0.0077
         },
         "bollinger": {
-          "upper": 1.173,
-          "middle": 1.088,
-          "lower": 1.004
+          "upper": 1.131,
+          "middle": 1.049,
+          "lower": 0.967
         },
-        "volume_change": 152.98
+        "volume_change": 69.97
       }
     },
     {
-      "code": "515860",
+      "code": "562570",
       "name": "信创ETF",
       "sentiment": {
-        "score": 87,
-        "sentiment": "强烈看多",
-        "emoji": "🚀"
+        "score": 67,
+        "sentiment": "看多",
+        "emoji": "📈"
       },
       "signal": {
-        "action": "强烈建议买入",
-        "action_code": "strong_buy",
-        "confidence": 90,
-        "buy_signals": 5,
-        "sell_signals": 0
+        "action": "建议持有",
+        "action_code": "hold",
+        "confidence": 60,
+        "buy_signals": 2,
+        "sell_signals": 2
       },
       "risks": [
         {
-          "level": "medium",
-          "type": "情绪过热",
-          "description": "市场情绪过于乐观，需警惕情绪反转带来的风险"
+          "level": "low",
+          "type": "常规风险",
+          "description": "当前无明显技术风险，但仍需关注市场整体走势和政策变化"
         }
       ],
       "realtime": {
-        "code": "515860",
-        "name": "科技ETF嘉实",
-        "open": 1.689,
-        "pre_close": 1.668,
-        "current": 1.724,
-        "high": 1.725,
-        "low": 1.683,
-        "volume": 2383800,
-        "amount": 4074294.0,
+        "code": "562570",
+        "name": "信创ETF",
+        "open": 1.427,
+        "pre_close": 1.423,
+        "current": 1.453,
+        "high": 1.455,
+        "low": 1.427,
+        "volume": 26834600,
+        "amount": 38760810.0,
         "date": "2025-10-24",
-        "time": "15:00:03",
-        "change": 0.056,
-        "change_percent": 3.36
+        "time": "15:00:01",
+        "change": 0.03,
+        "change_percent": 2.11
       },
       "indicators": {
-        "ma5": 1.685,
-        "ma10": 1.686,
-        "ma20": 1.72,
-        "rsi": 48.87,
+        "ma5": 1.424,
+        "ma10": 1.439,
+        "ma20": 1.472,
+        "rsi": 44.73,
         "macd": {
-          "dif": 0.0015,
-          "dea": 0.0012,
-          "macd": 0.0006
+          "dif": -0.0114,
+          "dea": -0.0091,
+          "macd": -0.0046
         },
         "bollinger": {
-          "upper": 1.806,
-          "middle": 1.72,
-          "lower": 1.634
+          "upper": 1.563,
+          "middle": 1.472,
+          "lower": 1.381
         },
-        "volume_change": 111.18
+        "volume_change": 47.3
       }
     }
   ],
   "ai_analysis": null,
   "summary": {
     "total_etfs": 2,
-    "buy_count": 1,
-    "hold_count": 1,
+    "buy_count": 0,
+    "hold_count": 2,
     "sell_count": 0
   }
 }
