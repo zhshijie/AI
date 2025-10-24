@@ -1,27 +1,27 @@
 {
-  "temperature_score": 58.3,
+  "temperature_score": 68.3,
   "sentiment": "中性",
   "sentiment_emoji": "😐",
   "investment_advice": {
-    "overall_rating": "中性观望",
-    "risk_level": "中高风险",
-    "recommendation": "建议观望",
-    "detailed_analysis": "基于最新30条新闻分析，腾讯当前面临较多不确定性（积极新闻8条，消极新闻3条）。市场情绪偏谨慎，建议保持观望态度，等待更清晰的方向信号。",
+    "overall_rating": "谨慎看好",
+    "risk_level": "中等风险",
+    "recommendation": "建议持有",
+    "detailed_analysis": "基于最新30条新闻分析，腾讯整体表现稳健（积极新闻12条，消极新闻1条）。虽然面临一些挑战，但核心业务基本面良好，具备中长期投资价值。",
     "key_opportunities": [
-      "估值处于相对合理区间",
-      "长期基本面仍然稳固"
+      "核心业务保持稳定增长",
+      "新业务布局逐步显现成效",
+      "技术创新持续推进"
     ],
     "key_risks": [
-      "短期业绩压力较大",
-      "监管政策影响持续",
-      "市场竞争加剧",
-      "宏观经济环境不确定"
+      "行业竞争压力增大",
+      "监管环境存在不确定性",
+      "部分业务增长放缓"
     ],
     "action_items": [
-      "建议暂时观望，不建议新增仓位",
-      "已持有者可考虑减持至5-10%仓位",
-      "设置严格止损，建议在下跌10%时止损",
-      "等待明确的转机信号再考虑入场"
+      "建议维持当前仓位，观察后续发展",
+      "密切关注政策动向和竞争格局变化",
+      "设置止损点，建议在下跌15%时考虑减仓",
+      "等待更明确的投资信号再做调整"
     ]
   },
   "key_factors": [
@@ -38,17 +38,22 @@
     {
       "type": "positive",
       "category": "AI技术",
+      "title": "Alibaba bets on AI chatbots to catch up with ByteDance, Tencent - The American B"
+    },
+    {
+      "type": "positive",
+      "category": "AI技术",
       "title": "Tencent-backed humanoid robot startup Leju raises $210m in pre-IPO round - DealS"
     },
     {
-      "type": "negative",
-      "category": "AI技术",
-      "title": "IBM tops third-quarter estimates and lifts guidance, but stock drops"
+      "type": "positive",
+      "category": "云服务",
+      "title": "Google and Anthropic announce cloud deal worth tens of billions of dollars"
     },
     {
-      "type": "negative",
-      "category": "综合动态",
-      "title": "Sony Blasts Tencent's 'Knock-off Horizon' Lawsuit Response As 'Nonsense,' Insist"
+      "type": "positive",
+      "category": "AI技术",
+      "title": "OpenAI buys AI startup that built interface for Apple computers"
     },
     {
       "type": "positive",
@@ -59,58 +64,43 @@
       "type": "positive",
       "category": "AI技术",
       "title": "CNBC Daily Open: Tesla's increased costs outweighed its revenue growth"
-    },
-    {
-      "type": "positive",
-      "category": "AI技术",
-      "title": "Amazon unveils prototype AI smart glasses for its delivery drivers"
     }
   ],
-  "positive_count": 8,
-  "negative_count": 3,
-  "neutral_count": 19,
+  "positive_count": 12,
+  "negative_count": 1,
+  "neutral_count": 17,
   "analyzed_news_count": 54,
-  "analyzed_at": "2025-10-23T18:05:54.589882",
+  "analyzed_at": "2025-10-24T00:13:02.994075",
   "categories_distribution": {
-    "AI技术": 26,
-    "数字内容": 2,
-    "股市表现": 5,
-    "云服务": 1,
-    "游戏业务": 2,
-    "元宇宙": 12,
+    "AI技术": 25,
+    "数字内容": 1,
+    "股市表现": 6,
+    "云服务": 2,
     "社交平台": 1,
     "投资并购": 1,
+    "游戏业务": 1,
     "综合动态": 3,
+    "元宇宙": 13,
     "政策监管": 1
   },
   "category_sentiment": {
     "AI技术": {
-      "positive": 6,
-      "negative": 2,
+      "positive": 8,
+      "negative": 0,
       "neutral": 10
     },
     "数字内容": {
       "positive": 1,
       "negative": 0,
-      "neutral": 1
+      "neutral": 0
     },
     "股市表现": {
-      "positive": 1,
-      "negative": 0,
-      "neutral": 1
-    },
-    "云服务": {
-      "positive": 0,
-      "negative": 0,
-      "neutral": 1
-    },
-    "游戏业务": {
-      "positive": 0,
+      "positive": 2,
       "negative": 0,
       "neutral": 2
     },
-    "元宇宙": {
-      "positive": 0,
+    "云服务": {
+      "positive": 1,
       "negative": 0,
       "neutral": 1
     },
@@ -124,10 +114,20 @@
       "negative": 0,
       "neutral": 1
     },
+    "游戏业务": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    },
     "综合动态": {
       "positive": 0,
-      "negative": 1,
+      "negative": 0,
       "neutral": 1
+    },
+    "元宇宙": {
+      "positive": 0,
+      "negative": 1,
+      "neutral": 0
     }
   }
 }
