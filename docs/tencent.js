@@ -3,8 +3,7 @@ const API_BASE = 'https://ai-394y.vercel.app/api';
 
 // 智能检测数据源
 const USE_LOCAL_DATA = window.location.hostname === 'localhost' || 
-                       window.location.hostname === '127.0.0.1' ||
-                       window.location.hostname.includes('github.io');
+                       window.location.hostname === '127.0.0.1';
 
 // 全局变量
 let temperatureChart = null;
