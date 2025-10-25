@@ -1,24 +1,27 @@
 {
-  "temperature_score": 78.5,
-  "sentiment": "乐观",
-  "sentiment_emoji": "😊",
-  "analysis_text": "当前市场整体呈现乐观情绪，主要受到通胀数据温和和美联储降息预期的强力支撑。10月24日公布的CPI数据显示通胀低于预期，推动道指首次突破47000点，标普500和纳斯达克指数均创下历史新高。这一数据为美联储降息提供了明确信号，市场预期货币政策将转向宽松，刺激了风险资产的全面上涨。然而，市场仍面临一些结构性风险：医疗成本上升导致Molina Healthcare等个股下跌，消费者支出出现疲软迹象（如Deckers Brands因前景疲软暴跌15%），以及地缘政治紧张局势升级（美国对俄罗斯石油公司和哥伦比亚总统实施制裁）。此外，特朗普政府推动的新关税政策可能对全球贸易造成冲击，而24小时股票交易的推进可能增加市场波动性。从行业角度看，AI和量子计算等科技领域继续展现强劲增长潜力，AMD因与IBM在量子计算领域的合作股价大涨近8%。消费板块呈现分化，居家餐饮经济崛起而传统零售面临压力。总体而言，在宽松货币政策预期和科技创新的双重驱动下，市场短期动能强劲，但投资者需警惕地缘政治风险和个别行业的盈利压力。",
+  "temperature_score": 51.7,
+  "sentiment": "中性",
+  "sentiment_emoji": "😐",
+  "analysis_text": "当前全球经济新闻喜忧参半（积极5条，消极4条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
   "key_factors": [
-    "✓ 通胀数据温和强化美联储降息预期，提振市场信心",
-    "✓ 科技股领涨，AI和量子计算等创新领域表现突出",
-    "✗ 地缘政治风险上升，美国对多国实施制裁影响市场稳定",
-    "✓ 消费板块出现结构性机会，居家经济相关股票受益",
-    "✗ 部分个股因成本压力和盈利预期下调出现大幅下跌"
+    "✓ 国际贸易: Deckers Expects More Cautious Shoppers Due to Tariffs, Highe...",
+    "✗ 综合财经: Post-OPEC Angola: The Quota’s Gone, the Decline Isn’t...",
+    "✗ 股市动态: Tony Blair Institute undertakes restructuring as losses moun...",
+    "✓ 货币政策: Stock market today: Dow, S&P 500, Nasdaq surge to records as...",
+    "✓ 综合财经: What is driving the decision to learn in a manual or automat..."
   ],
-  "positive_count": 16,
-  "negative_count": 9,
-  "neutral_count": 5,
-  "investment_advice": {
-    "short_term": "建议关注对利率敏感的科技股和成长股，利用市场乐观情绪参与反弹行情，但需控制仓位避免追高。可重点关注AI、量子计算等创新领域，以及受益于居家消费趋势的标的。",
-    "medium_term": "配置应偏向优质科技股和防御性消费股，关注美联储政策路径变化。建议逐步建立医疗保健和必需消费品板块的头寸，以对冲潜在的市场波动。",
-    "risk_warning": "主要风险包括：1)地缘政治紧张局势升级可能冲击全球供应链；2)通胀数据若出现反复将改变货币政策预期；3)个别行业盈利压力持续；4)贸易摩擦加剧可能拖累全球经济复苏。建议投资者保持充分流动性，设置严格止损纪律。"
-  },
-  "analyzed_at": "2025-10-25T00:31:30.368084",
+  "positive_count": 5,
+  "negative_count": 4,
+  "neutral_count": 21,
   "analyzed_news_count": 30,
-  "ai_provider": "deepseek"
+  "analyzed_at": "2025-10-25T06:09:58.705807",
+  "categories_distribution": {
+    "综合财经": 12,
+    "国际贸易": 3,
+    "股市动态": 5,
+    "数字货币": 1,
+    "货币政策": 2,
+    "经济数据": 7
+  },
+  "ai_provider": "fallback_rules"
 }
