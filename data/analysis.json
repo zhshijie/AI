@@ -1,27 +1,24 @@
 {
-  "temperature_score": 51.7,
-  "sentiment": "中性",
-  "sentiment_emoji": "😐",
-  "analysis_text": "当前全球经济新闻喜忧参半（积极5条，消极4条），市场情绪相对中性。部分积极因素提振市场信心，但也存在一些不确定性。建议保持均衡配置，关注市场变化，适时调整投资组合。",
+  "temperature_score": 78.5,
+  "sentiment": "乐观",
+  "sentiment_emoji": "😊",
+  "analysis_text": "当前市场呈现明显的乐观情绪，主要受到通胀数据改善和美联储降息预期的双重推动。9月美国通胀率降至3%，为美联储启动降息周期创造了有利条件，这直接刺激了股市创下历史新高，道指突破47000点。同时，中美重启贸易谈判有助于缓解地缘政治紧张局势，为全球贸易环境带来积极信号。在行业层面，人工智能与DeFi的融合创新（如USD.AI将稳定币转化为NVIDIA GPU贷款）以及核能技术公司NuScale的价值重估，显示出科技和新能源领域的投资机会。不过市场仍面临一些风险：伯克希尔哈撒韦大幅跑输标普500显示部分传统价值股表现疲软，美加贸易摩擦升级可能影响北美供应链，而现金ISA限额削减的讨论可能冲击英国房地产市场。总体而言，在流动性预期宽松的背景下，风险资产仍有上行空间，但需警惕地缘政治和货币政策转向风险。",
   "key_factors": [
-    "✓ 国际贸易: Deckers Expects More Cautious Shoppers Due to Tariffs, Highe...",
-    "✗ 综合财经: Post-OPEC Angola: The Quota’s Gone, the Decline Isn’t...",
-    "✗ 股市动态: Tony Blair Institute undertakes restructuring as losses moun...",
-    "✓ 货币政策: Stock market today: Dow, S&P 500, Nasdaq surge to records as...",
-    "✓ 综合财经: What is driving the decision to learn in a manual or automat..."
+    "✓ 通胀降温与美联储降息预期：9月通胀率降至3%强化了降息预期，推动股市创历史新高",
+    "✓ 中美贸易谈判重启：有助于缓解贸易紧张局势，改善全球经济增长前景",
+    "✓ 科技创新驱动：AI与DeFi融合、小型模块化核反应堆等新兴技术带来投资机会",
+    "✗ 地缘政治风险：美俄能源制裁、美加贸易摩擦升级可能引发大宗商品价格波动",
+    "✗ 货币政策不确定性：美联储对2026年市场大幅波动的警告提示长期风险"
   ],
-  "positive_count": 5,
-  "negative_count": 4,
-  "neutral_count": 21,
-  "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-25T06:09:58.705807",
-  "categories_distribution": {
-    "综合财经": 12,
-    "国际贸易": 3,
-    "股市动态": 5,
-    "数字货币": 1,
-    "货币政策": 2,
-    "经济数据": 7
+  "positive_count": 16,
+  "negative_count": 7,
+  "neutral_count": 7,
+  "investment_advice": {
+    "short_term": "重点关注科技股、AI相关资产和受降息预期提振的成长板块，适度配置黄金对冲地缘政治风险",
+    "medium_term": "布局新能源、小型模块化核反应堆等颠覆性技术，增配受益于贸易缓和的新兴市场资产",
+    "risk_warning": "警惕美联储政策转向速度快于预期、地缘政治冲突升级、以及高估值科技股的回调风险"
   },
-  "ai_provider": "fallback_rules"
+  "analyzed_at": "2025-10-25T12:11:43.939176",
+  "analyzed_news_count": 30,
+  "ai_provider": "deepseek"
 }
