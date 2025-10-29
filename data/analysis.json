@@ -1,24 +1,27 @@
 {
-  "temperature_score": 78.5,
+  "temperature_score": 71.7,
   "sentiment": "乐观",
   "sentiment_emoji": "😊",
-  "analysis_text": "当前全球市场呈现明显的乐观情绪，主要受到多重积极因素的共同推动。首先，中美贸易关系出现积极信号，特朗普表示将降低对中国的芬太尼相关关税，这缓解了市场对贸易紧张局势的担忧，推动股市创下历史新高。其次，人工智能热潮持续升温，Nvidia供应商SK海力士2026年产能已售罄，Nvidia股价因5000亿美元订单预期上涨5%，带动纳斯达克和标普500指数创新高。第三，美联储降息预期升温，日本日经指数突破51000点，显示市场对宽松货币政策的乐观预期。第四，银行业绩表现强劲，UBS第三季度利润飙升74%，富国银行连续三个季度实现销售和利润增长。然而，市场也存在一些风险因素，包括制药公司因不当销售行为股价暴跌22%，私人信贷市场可能因放松监管而出现更多风险，以及地缘政治紧张局势持续。总体而言，积极因素明显多于消极因素，市场情绪偏向乐观。",
+  "analysis_text": "当前全球经济新闻整体偏向积极（积极15条，消极2条），市场情绪乐观。多项经济指标表现良好，投资者信心较强。建议适度增加风险资产配置，关注科技、消费等成长性板块。同时注意控制仓位，设置止损点位。",
   "key_factors": [
-    "✓ 中美贸易关系改善：特朗普表示将降低对华关税，缓解贸易紧张局势",
-    "✓ AI热潮持续：Nvidia、SK海力士等AI相关公司业绩强劲，需求旺盛",
-    "✓ 美联储政策预期：市场预期降息，推动全球股市上涨",
-    "✓ 银行业绩强劲：UBS、富国银行等金融机构业绩超预期",
-    "✗ 监管放松风险：私人信贷市场可能因放松监管而滋生风险"
+    "✓ 综合财经: GE HealthCare boosts 2025 profit view after strong US demand...",
+    "✓ 综合财经: Boeing posts Q3 revenue beat, improving cash flow burn rate ...",
+    "✓ 股市动态: Dow Jones Futures: Trump Upbeat On China, Lifts Nvidia; Why ...",
+    "✓ 综合财经: Semtech Corporation (SMTC) Rose as Earnings Beat Expectation...",
+    "✓ 股市动态: Earnings live: Wayfair stock soars following Q3 results, Pay..."
   ],
-  "positive_count": 16,
-  "negative_count": 6,
-  "neutral_count": 8,
-  "investment_advice": {
-    "short_term": "建议关注AI产业链相关股票，特别是Nvidia供应商和内存芯片制造商；同时可适度配置受益于中美贸易关系改善的出口导向型公司",
-    "medium_term": "重点关注科技股和金融股，特别是AI相关企业和业绩改善的银行股；适度增加对新兴市场的配置，受益于美元走弱预期",
-    "risk_warning": "需警惕美联储政策转向风险、地缘政治紧张局势升级、个别公司治理风险（如制药公司不当销售事件）以及私人信贷市场可能出现的违约风险"
-  },
-  "analyzed_at": "2025-10-29T06:12:27.862307",
+  "positive_count": 15,
+  "negative_count": 2,
+  "neutral_count": 13,
   "analyzed_news_count": 30,
-  "ai_provider": "deepseek"
+  "analyzed_at": "2025-10-29T12:13:57.313041",
+  "categories_distribution": {
+    "综合财经": 10,
+    "股市动态": 10,
+    "货币政策": 6,
+    "经济数据": 1,
+    "国际贸易": 2,
+    "外汇市场": 1
+  },
+  "ai_provider": "fallback_rules"
 }
