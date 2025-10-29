@@ -1,153 +1,309 @@
 {
-  "updated_at": "2025-10-29T00:33:51.522468",
+  "updated_at": "2025-10-29T06:12:27.863575",
   "total_count": 55,
   "news": [
     {
-      "id": -1117476024912959499,
-      "title": "Coffee maker Happy attracts Taste Tomorrow Ventures investment",
+      "id": -4582372358439558586,
+      "title": "Sugar Prices Plunge to Lowest Levels in More Than 4 Years",
       "description": "",
-      "url": "https://finance.yahoo.com/news/coffee-maker-happy-attracts-taste-123611820.html",
+      "url": "https://finance.yahoo.com/news/sugar-prices-plunge-lowest-levels-184821219.html",
       "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516364",
-      "category": "综合财经",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516373"
-    },
-    {
-      "id": -3092782508240487159,
-      "title": "Hennessy Embraces the Power Behind the AI Revolution with ONE Nuclear Energy – Exec Edge Research Update",
-      "description": "",
-      "url": "https://finance.yahoo.com/news/hennessy-embraces-power-behind-ai-124442268.html",
-      "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516344",
+      "published_at": "2025-10-29T06:11:57.760619",
       "category": "综合财经",
       "country": "USA",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516357"
+      "fetched_at": "2025-10-29T06:11:57.760627"
     },
     {
-      "id": -4918109496316481714,
-      "title": "Dollar softens amid trade optimism, central bank watch, offshore yuan jumps",
+      "id": -2779777103383733438,
+      "title": "This Small Oil Stock Is Soaring. It Figured Out the Data Center Game.",
       "description": "",
-      "url": "https://finance.yahoo.com/news/dollar-softens-amid-trade-optimism-124116705.html",
+      "url": "https://www.barrons.com/articles/this-small-oil-stock-is-soaring-it-figured-out-the-data-center-game-7c4630a9?siteid=yhoof2&yptr=yahoo",
       "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516335",
-      "category": "货币政策",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:20.516339"
-    },
-    {
-      "id": -9181097265984378225,
-      "title": "Oil slips on scepticism over US-China trade deal impact, Iraq exports rise",
-      "description": "",
-      "url": "https://finance.yahoo.com/news/oil-slips-scepticism-over-us-124008197.html",
-      "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516322",
-      "category": "大宗商品",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516329"
-    },
-    {
-      "id": 5843393246418257513,
-      "title": "My 2 Favorite Warren Buffett Stocks to Buy Right Now",
-      "description": "",
-      "url": "https://finance.yahoo.com/news/2-favorite-warren-buffett-stocks-123200597.html",
-      "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516310",
+      "published_at": "2025-10-29T06:11:57.760607",
       "category": "股市动态",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516315"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:11:57.760613"
     },
     {
-      "id": 6792063421634443637,
-      "title": "Why the Fed May Lower Rates Slower Than Expected Next Year",
+      "id": 5763910257244326065,
+      "title": "Stocks hit record, dollar slips on US-China trade optimism",
       "description": "",
-      "url": "https://www.barrons.com/articles/fed-interest-rates-markets-2026-20217763?siteid=yhoof2&yptr=yahoo",
+      "url": "https://finance.yahoo.com/news/stocks-hit-record-dollar-slips-184232469.html",
       "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516299",
-      "category": "货币政策",
+      "published_at": "2025-10-29T06:11:57.760595",
+      "category": "股市动态",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:11:57.760601"
+    },
+    {
+      "id": 1594657086911083077,
+      "title": "Meta appoints insider Vishal Shah to key AI role",
+      "description": "",
+      "url": "https://finance.yahoo.com/news/meta-appoints-insider-vishal-shah-184207668.html",
+      "source": "Yahoo Finance",
+      "published_at": "2025-10-29T06:11:57.760580",
+      "category": "综合财经",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:57.760589"
+    },
+    {
+      "id": -3794444784523468761,
+      "title": "JPMorgan Chase’s new office for employees goes viral in a bad way",
+      "description": "",
+      "url": "https://finance.yahoo.com/news/jpmorgan-chase-office-employees-goes-184700412.html",
+      "source": "Yahoo Finance",
+      "published_at": "2025-10-29T06:11:57.760564",
+      "category": "综合财经",
       "country": "USA",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516303"
+      "fetched_at": "2025-10-29T06:11:57.760574"
     },
     {
-      "id": -7152886216480857833,
-      "title": "Soybeans Rallying on Positive Trade News",
+      "id": 2416677075566629628,
+      "title": "This Drugmaker Made ‘Improper’ Sales to Meet Guidance. The Stock Plummets 22%.",
       "description": "",
-      "url": "https://finance.yahoo.com/news/soybeans-rallying-positive-trade-news-123658745.html",
+      "url": "https://www.barrons.com/articles/organon-stock-ceo-resign-a30b90c9?siteid=yhoof2&yptr=yahoo",
       "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516283",
-      "category": "国际贸易",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516291"
-    },
-    {
-      "id": 1404888569365947319,
-      "title": "Corn Popping Higher on Monday AM Trade",
-      "description": "",
-      "url": "https://finance.yahoo.com/news/corn-popping-higher-monday-am-123658677.html",
-      "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516269",
-      "category": "经济数据",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:20.516276"
-    },
-    {
-      "id": 3289179397256253604,
-      "title": "Economist fumes at major US bank’s ‘apocalyptic predictions’ about Trump tariffs — here’s why and what it means for you",
-      "description": "",
-      "url": "https://finance.yahoo.com/news/economist-fumes-major-us-bank-123300411.html",
-      "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516246",
-      "category": "国际贸易",
+      "published_at": "2025-10-29T06:11:57.760548",
+      "category": "股市动态",
       "country": "USA",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:20.516261"
+      "fetched_at": "2025-10-29T06:11:57.760557"
     },
     {
-      "id": 1710503358392389258,
-      "title": "MEXC’s New CSO Cecilia Hsueh on Exchange Strategy, RWA Hype, and Why ‘Doing Less’ Works",
+      "id": -3024898911604545671,
+      "title": "Abu Dhabi’s XRG in Talks to Join YPF’s LNG Export Venture",
       "description": "",
-      "url": "https://finance.yahoo.com/news/mexc-cso-cecilia-hsueh-exchange-123215649.html",
+      "url": "https://finance.yahoo.com/news/abu-dhabi-xrg-talks-join-184000505.html",
       "source": "Yahoo Finance",
-      "published_at": "2025-10-29T00:33:20.516202",
+      "published_at": "2025-10-29T06:11:57.760529",
+      "category": "国际贸易",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:57.760541"
+    },
+    {
+      "id": 128148435553265888,
+      "title": "1 Outstanding Growth Stock to Buy and Hold Over the Next Decade",
+      "description": "",
+      "url": "https://finance.yahoo.com/news/1-outstanding-growth-stock-buy-184504651.html",
+      "source": "Yahoo Finance",
+      "published_at": "2025-10-29T06:11:57.760516",
+      "category": "经济数据",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-29T06:11:57.760522"
+    },
+    {
+      "id": -6339888080054904736,
+      "title": "Wells Fargo Stages A Comeback; Rides To Third Straight Quarter Of Sales, Profit Gains",
+      "description": "",
+      "url": "https://www.investors.com/news/wells-fargo-sees-ibd-rs-rating-climb-to-73/?src=A00220&yptr=yahoo",
+      "source": "Yahoo Finance",
+      "published_at": "2025-10-29T06:11:57.760497",
       "category": "综合财经",
       "country": "USA",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:20.516231"
+      "fetched_at": "2025-10-29T06:11:57.760508"
     },
     {
-      "id": 5158005790192099850,
-      "title": "Nvidia-supplier SK Hynix third-quarter profit jumps 62% to a record high on AI-fueled memory demand ",
+      "id": -3667085156506353795,
+      "title": "When the media missed the message: Benioff clarifies meaning on multiple levels",
+      "description": "",
+      "url": "https://finance.yahoo.com/news/media-missed-message-benioff-clarifies-183402360.html",
+      "source": "Yahoo Finance",
+      "published_at": "2025-10-29T06:11:57.760463",
+      "category": "综合财经",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:11:57.760482"
+    },
+    {
+      "id": -1500553914586316482,
+      "title": "UBS posts 74% jump in third-quarter profit, beating expectations",
+      "description": "Swiss banking giant UBS on Wednesday reported stronger-than-expected third-quarter net profit, citing significant momentum in its core businesses.",
+      "url": "https://www.cnbc.com/2025/10/29/ubs-earnings-q3-2025.html",
+      "source": "CNBC",
+      "published_at": "2025-10-29T06:02:11",
+      "category": "综合财经",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147832"
+    },
+    {
+      "id": 800205683268623464,
+      "title": "Trump says he expects to lower fentanyl-related tariffs on Beijing, discuss 'farmers' with China's Xi",
+      "description": "Trump said he expects to lower fentanyl-linked tariffs on China ahead of a much-anticipated meeting with Chinese Xi Jinping in South Korea.",
+      "url": "https://www.cnbc.com/2025/10/29/trump-says-he-expects-to-lower-fentanyl-related-tariffs-on-beijing-discuss-farmers-with-chinaxi.html",
+      "source": "CNBC",
+      "published_at": "2025-10-29T05:36:33",
+      "category": "国际贸易",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147495"
+    },
+    {
+      "id": 2397256240714808505,
+      "title": "Trump says he will cut fentanyl tariffs on China",
+      "description": "US president is in South Korea for talks on trade and security ahead of Xi Jinping summit",
+      "url": "https://www.ft.com/content/3b788e7f-8a90-41fd-9cf5-8dcff8de74d0",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:35:24",
+      "category": "国际贸易",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-29T06:12:02.591150"
+    },
+    {
+      "id": 9031631543151392814,
+      "title": "SK Hynix, a critical Nvidia supplier, is already sold out for 2026 as AI demand booms",
       "description": "SK Hynix posted record quarterly revenue and profit, boosted by a strong demand for its high bandwidth memory used in generative AI chipsets.",
       "url": "https://www.cnbc.com/2025/10/29/sk-hynix-q3-profit-revenue-record-.html",
       "source": "CNBC",
-      "published_at": "2025-10-29T00:23:07",
+      "published_at": "2025-10-29T05:31:34",
       "category": "综合财经",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:23.946186"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147918"
     },
     {
-      "id": 4102937725843797967,
-      "title": "Japan stocks hit record high amid mixed trading in the region as investors look toward Fed rate decision",
+      "id": 2693897063702748429,
+      "title": "Lakshmi Mittal’s energy venture bought Russian oil transported on blacklisted ships",
+      "description": "Indian refinery received at least four crude shipments this year worth almost $280mn on sanctions-listed vessels",
+      "url": "https://www.ft.com/content/52999650-6a10-4666-a5f7-a58c236bff62",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:26",
+      "category": "大宗商品",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:02.590700"
+    },
+    {
+      "id": 1808745797793352591,
+      "title": "Revenge against the banking nerds is near",
+      "description": "With progress in AI, the showhorses may yet eclipse the more technically skilled workhorses",
+      "url": "https://www.ft.com/content/0b7f6551-3662-404a-820e-df0995c16575",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:16",
+      "category": "综合财经",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:02.590962"
+    },
+    {
+      "id": 895282862933999771,
+      "title": "Citi probe did not interview women who complained about executive’s conduct",
+      "description": "Bank stood by Andy Sieg, a potential successor to CEO Jane Fraser, after investigation by law firm Paul Weiss",
+      "url": "https://www.ft.com/content/be4ab80a-40f8-4cb2-81a3-cde101b5fa7a",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:16",
+      "category": "综合财经",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:02.591047"
+    },
+    {
+      "id": -5940472853152666576,
+      "title": "German start-ups set for deal on kamikaze drones with Rheinmetall ",
+      "description": "Contracts worth up to €900mn put Helsing and Stark on track to help buttress Nato’s eastern flank against Russia",
+      "url": "https://www.ft.com/content/6945a079-e97d-4f28-b0b1-918f4fd8ee13",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:16",
+      "category": "综合财经",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-29T06:12:02.591305"
+    },
+    {
+      "id": -6562528627741108364,
+      "title": "Who will be Trump’s next Fed chair — and what will they do? ",
+      "description": "Treasury secretary Scott Bessent has a shortlist of five candidates vying to replace Jay Powell",
+      "url": "https://www.ft.com/content/88c7be12-abc0-4ecf-8f39-9684b1fe95ca",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:07",
+      "category": "货币政策",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:02.590790"
+    },
+    {
+      "id": -6596339560809362914,
+      "title": "Deregulation will pour extra fuel on the private credit bonfire",
+      "description": "The Trump administration’s looser rules could breed more ‘cockroaches’ in the lending market",
+      "url": "https://www.ft.com/content/fddbcf03-f89c-451f-b882-6386d23ba368",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:07",
+      "category": "股市动态",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:02.590876"
+    },
+    {
+      "id": 7199288249281941785,
+      "title": "Freed Palestinian prisoners recount beatings and abuse in Israeli jails",
+      "description": "Testimonies from former detainees spotlight worsening conditions since October 7 2023 attack",
+      "url": "https://www.ft.com/content/d4e7e20f-e975-4b10-8dfc-5c0eb5b3fb11",
+      "source": "Financial Times",
+      "published_at": "2025-10-29T05:00:07",
+      "category": "综合财经",
+      "country": "UK",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:02.591465"
+    },
+    {
+      "id": -1299203025105539820,
+      "title": "Futures: Trump Upbeat On China; Fed, Key Earnings On Tap - Investor's Business Daily",
+      "description": "Futures: Trump Upbeat On China; Fed, Key Earnings On Tap  Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNYzV3MmwtSm9wdldmSzdQMnhRVlNXZHIzbUJzcXMwcmRvY2htNUVIQlc4c0RzSXVYZ3lLalhEMzg5cFVXc2F6Qk14UnpYX3RoUm8wSUZBRmNsSnpibFlEbmU2U2pFNzdLd0RGU0xQQ2lyT2l3Q2JxM3QzY0JUSkt6SzFMQUVocUVQM0JiQzRJSE1wellnNU5xd3Z1OEkzSEFQaUJ6Sy1oR0ZVS0c5cG85Z1c2bXlOMEU5cXcySlRLTDQyUWRua0xNWGlmM18?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-29T04:02:00",
+      "category": "货币政策",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.620694"
+    },
+    {
+      "id": 276083391167431380,
+      "title": "Stock market today: Dow, S&P 500, Nasdaq futures flat with Fed decision, slew of Big Tech earnings on deck - Yahoo Finance",
+      "description": "Stock market today: Dow, S&P 500, Nasdaq futures flat with Fed decision, slew of Big Tech earnings on deck  Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYi1PaGJPN2x3T0JiV192QTFWRU5LOWV6YVZEVENHYmlac3VVMDdla0ZnSkJ3czRaLWhtXzk0TWJDejMxdDhfd2NoTjBmajI3dHhIVVlWLVBFMDBIbFp0TS1mRFM5V0xsdFp0ZE9zTTBxUURuN01yUW1ya1dQaUdpRnpDSmNUZU5QUy1nbVFBT1QwUmtkZldCaUV1R1ZrTUVaOUxkUEkxc2N2UzNwZTl6MnNTeFdwYkdkLUFRSUxmY0VVdE5TRG9SRTgtbzBYcUhKNGdCcVhPbGpCRThVeTlUMlA3dlJ6Rms?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-29T03:26:00",
+      "category": "货币政策",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.619713"
+    },
+    {
+      "id": -8951440218025533343,
+      "title": "Japan's Nikkei crosses 51,000 on Tokyo-Washington trade optimism, Fed rate cut hopes",
       "description": "Asia-Pacific markets traded higher as investors await the Federal Reserve's interest rate decision later in in the day.",
       "url": "https://www.cnbc.com/2025/10/29/asia-pacific-markets-nikkei-225-nifty-50-csi-300.html",
       "source": "CNBC",
-      "published_at": "2025-10-29T00:20:04",
+      "published_at": "2025-10-29T01:58:24",
       "category": "货币政策",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946263"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:01.148068"
     },
     {
-      "id": -3626323024642314918,
+      "id": -3062897085597724893,
+      "title": "US stock market concentration is less extreme than you think - Reuters",
+      "description": "US stock market concentration is less extreme than you think  Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdjRIbTcxb2JmeW1HNzJYUDFCQ2pZMmNKMDNmWTRNcTIzZmdsZTdhN0ExRnJJZy1LdDBsNmZfbGlVMHg2Q21fc0lsQ2hyTVQ2SVVNczZWSGZSb2pUWG1pd3JvVkE1YWFTRnEwM3NSM2JRNVdxVmxwUXB4dloxcTloTlNrY1lVb0FKSzBldHNCZzNoZ1libkRSaG9xcnNaN2V6QTJWNndrNWt5Rmc?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-29T00:30:00",
+      "category": "股市动态",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-29T06:11:55.622235"
+    },
+    {
+      "id": 5141901750684400737,
       "title": "Reeves vows to 'defy' gloomy economic forecasts",
       "description": "The chancellor says investment is the answer to boosting the UK's productivity performance.",
       "url": "https://www.bbc.com/news/articles/cql9ez5grpqo?at_medium=RSS&at_campaign=rss",
@@ -156,10 +312,10 @@
       "category": "综合财经",
       "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:22.862660"
+      "fetched_at": "2025-10-29T06:12:00.082370"
     },
     {
-      "id": -4403968361615786624,
+      "id": 7134852675713294311,
       "title": "The AI job cuts are here - or are they?",
       "description": "Amazon's latest cuts fed into anxiety about AI replacing workers. But some are sceptical that recent layoffs are a telling sign of how AI is affecting employment.",
       "url": "https://www.bbc.com/news/articles/clyk7zg0gzvo?at_medium=RSS&at_campaign=rss",
@@ -167,23 +323,11 @@
       "published_at": "2025-10-29T00:09:22",
       "category": "货币政策",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:22.862754"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:00.082461"
     },
     {
-      "id": -4888964520699489401,
-      "title": "Mild Upside Anticipated For Japan Stock Market - Nasdaq",
-      "description": "Mild Upside Anticipated For Japan Stock Market  Nasdaq",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9SYi1sT2MtbGtyRWh5c2Vwc2VZTXZ1RjBpZDBkTUpsRlA2ZXNxeEVYcndOSTIyLUNXdUUyTFIzT04wczJTMWZtLTJHV3FibmZQYUIxRmJONFZMSnlESXlQZXpFaXEtZzFSS3BXdHoySFowbU5rMHd6QjdiYXR5dkE?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-28T23:14:00",
-      "category": "股市动态",
-      "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:18.470457"
-    },
-    {
-      "id": 8583408507283378533,
+      "id": 8108383056480519165,
       "title": "Stock Market Today: Nvidia Rallies 5% On $500 Billion Booking Projection, Lifting Nasdaq and S&P 500 to Fresh Records - TheStreet",
       "description": "Stock Market Today: Nvidia Rallies 5% On $500 Billion Booking Projection, Lifting Nasdaq and S&P 500 to Fresh Records  TheStreet",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxObjZoMUtqbnY3aXhPd3U0STR1ckdDTFp2NHhKNmduc0NfLTU0WXI2RmFCby1EWmY1akM5ZDA5WDFxNks0UHlvZkNfdl9qbWxtNjRqcDJVUWJKREphaVgzZl9QUXl3SHRMU2VueUdodXdlVEpYaDZiZTQyZFZNNWFiVEZlMW4xMWlqV3VjODBKaTJyZEE?oc=5",
@@ -191,35 +335,23 @@
       "published_at": "2025-10-28T23:03:21",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:18.469901"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.621043"
     },
     {
-      "id": -4872517409468674822,
-      "title": "Stock market today: Dow, S&P 500, Nasdaq futures flat with Fed decision, slew of Big Tech earnings on deck - Yahoo Finance",
-      "description": "Stock market today: Dow, S&P 500, Nasdaq futures flat with Fed decision, slew of Big Tech earnings on deck  Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPYi1PaGJPN2x3T0JiV192QTFWRU5LOWV6YVZEVENHYmlac3VVMDdla0ZnSkJ3czRaLWhtXzk0TWJDejMxdDhfd2NoTjBmajI3dHhIVVlWLVBFMDBIbFp0TS1mRFM5V0xsdFp0ZE9zTTBxUURuN01yUW1ya1dQaUdpRnpDSmNUZU5QUy1nbVFBT1QwUmtkZldCaUV1R1ZrTUVaOUxkUEkxc2N2UzNwZTl6MnNTeFdwYkdkLUFRSUxmY0VVdE5TRG9SRTgtbzBYcUhKNGdCcVhPbGpCRThVeTlUMlA3dlJ6Rms?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-28T22:54:31",
-      "category": "货币政策",
-      "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:18.468513"
-    },
-    {
-      "id": 8210461582196257504,
+      "id": -2069998285220018115,
       "title": "Stock futures were little changed as investors await Fed rate decision: Live updates - CNBC",
       "description": "Stock futures were little changed as investors await Fed rate decision: Live updates  CNBC",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8yYUstbXpjYlc5dUY5d3duQzhHdENxVkRVTlNDaEpBczFmdUVNMi1wcnVCanlaRGdRaUZQblVUN2g4ZzB5bUtaU010UngyU2NfUDdyOGI1c0JRdDg2T2lUdDNUQzNWSHpRYUtBaVhCWXhwU0FhOTJaNdIBfkFVX3lxTFBTV0ZEcUtTekx3ZmdKMHRDN3h6OHA0VWozLTFIUVItMU5Vd2Zza3I0R3JHN3EwZ1pYd0lvZVVDUC1ndnBXaGtHXzA2NnNTdmJoTUtFZG81ejJOLVh0RnplRGxyZlpsSDlsWG90RlhQajNHX3QwNmxaZ2dQNXpBQQ?oc=5",
       "source": "Google News",
-      "published_at": "2025-10-28T22:22:00",
+      "published_at": "2025-10-28T23:03:00",
       "category": "货币政策",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:18.468766"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:11:55.619928"
     },
     {
-      "id": 4691655644137690612,
+      "id": -1800207699177529931,
       "title": "Jensen Huang says Nvidia's AI chips are now being manufactured in Arizona",
       "description": "Previously, Nvidia's fastest GPUs were solely manufactured in Taiwan.",
       "url": "https://www.cnbc.com/2025/10/28/nvidia-jensen-huang-gtc-washington-dc-ai.html",
@@ -227,11 +359,11 @@
       "published_at": "2025-10-28T22:11:09",
       "category": "综合财经",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:23.945901"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147592"
     },
     {
-      "id": -175601340771853861,
+      "id": 8108008575848590265,
       "title": "Stock Market Today: Dow Ends At Record High; Nvidia Surges As Microsoft Hits Rare Milestone (Live Coverage) - Investor's Business Daily",
       "description": "Stock Market Today: Dow Ends At Record High; Nvidia Surges As Microsoft Hits Rare Milestone (Live Coverage)  Investor's Business Daily",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOT3ZHYUNENEN5VjNMQWFkMC02RDQ2RGN6OExMWFVGTjdvdGxlQm16b3liMTIyUmZOQlhQOUQyVFBib3I2bkpPS2ctaENRWUh1SmUwVDJ2WlktWVJnS3NtN3o2dlBsQ1pCVVI4TEMwM0hWSXllTURtNXZfamFSRU9iZUhndXl0aXFPdW04dTZlQlRaYUpuZEhyQ3dXX3BPMkNlSDM2TzNLTXBzM1BiNFJBVWpRcDhzRVk?oc=5",
@@ -239,35 +371,23 @@
       "published_at": "2025-10-28T22:01:00",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:18.469175"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.621841"
     },
     {
-      "id": 6608880125526437721,
+      "id": 7000818001378470274,
       "title": "Stock Market Today: Dow, S&P 500 Records; Nasdaq Rises; Qorvo, Wayfair, Nvidia, Tesla and More Movers - Barron's",
       "description": "Stock Market Today: Dow, S&P 500 Records; Nasdaq Rises; Qorvo, Wayfair, Nvidia, Tesla and More Movers  Barron's",
-      "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxOT2lxSWVTT2l5XzhjS3ZLOXBKelJCQ0VvSFNhWHJTQkFLUm5lWkh4RXJvQW9jWU1DeEwyVGtWR09CejlqMmRTMkpIdHZOY2kzMXJPdE1JX3JJQ0ZHbFU5VzVMWDRhV1l3dGZtVmM3RlJ3YURYVDJNRE5sVjVGR2I5OHVwY3VCcjhqeGFpYkRxR2I5UDZXOS0waFMwd3JUZlREYVU5b0FoNE9EX18xSHpydGJsOGp3ZS1aUWxmWHdwZHdSb2I1RllMZXdIQzB5T2J6aGdCVG55R3RPWFFua0hhSWFjd1JCYjRycE55Z3lYOWFvUWxvbUZ0YkNpTXFBcjhmQTNFcEhHUUpndHZBQUlqdVJNZ3JieHlweGNuVlZuQ0xxTWVVWjZuTWllTUVzU1psR1pEQjRyMzlib1JFRkRVaDhPRHhqUEZYZkdCb1NWUV9ObDd5UnZRMkNWM180dWVHR0U0SGxWbXZtc3JQVlFvN0lIY3dKTUtUQjU4?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxPZ2p3RGRMRjliSjh6SEFvYUdGcS1oRERjSHB0TkM4ekdoWkllcUM2UlVWd3VyVWwzN3J1eVllekhLeHNBYW9ISTVUMEZGMVpDZGFVeGhKVmQ2NC1VeU81SUg4aU0wWTgtWjREYkN6STNiYklrT01sS1FkOWMwNHRmRFpKbzJ4ajhKNzlyNG1YbTNjQXF3Q1dHWGlBbkJ1LUpvNDZDUmFxYU9YclV4M3lWSnBDQk8zTTBTUU1TelBFV1l3RXVDRy1DbW9ObXhPTnN5UEJGVXktS1VfeUl0dHlYdXdOOVRTRTdNcE1YTFBnLTZGTVRpenZDZ21oRGQ3WTAzR3ZwNEU0YkdoYWhGeUtLb0JfZlNyN1NrbWktQk1odzhLTFMyZDEyVmprRE93YjREMmNId29Qd2lUdjNrV09LRjV4b1MwV0JHT0JyNlFvM1FuRUNQSHlnT2NiX3Vla1FINHFSVFBGdnJDSnVKOWRSaTFZaUMxZEZwRnJz?oc=5",
       "source": "Google News",
       "published_at": "2025-10-28T21:34:00",
       "category": "股市动态",
       "country": "Global",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:18.468988"
+      "fetched_at": "2025-10-29T06:11:55.620144"
     },
     {
-      "id": 6100098800787980360,
-      "title": "This San Francisco-based satellite company's stock has doubled in the past three months",
-      "description": "The stock has soared more than 215% this year despite slides earlier this year.",
-      "url": "https://www.cnbc.com/2025/10/28/this-san-francisco-based-satellite-companys-stock-has-doubled-in-the-past-three-months.html",
-      "source": "CNBC",
-      "published_at": "2025-10-28T21:32:25",
-      "category": "股市动态",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946573"
-    },
-    {
-      "id": 6346897024223029058,
+      "id": 5517849469525625707,
       "title": "Israel launches strikes on Gaza after accusing Hamas of ceasefire violations",
       "description": "Palestinian militants deny responsibility for Rafah attack and delays in releasing hostage remains as peace accord frays",
       "url": "https://www.ft.com/content/f2b25bc1-58ac-40cc-96c1-756672fee14e",
@@ -275,11 +395,11 @@
       "published_at": "2025-10-28T21:23:26",
       "category": "综合财经",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397165"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:02.591386"
     },
     {
-      "id": -2703520854687990126,
+      "id": 330147429461341281,
       "title": "'We're trying to shame them': Upstart activist investors target America's underperforming banks",
       "description": "HoldCo has emerged from relative obscurity to launch activist investor campaigns against three regional banks: Comerica, Eastern Bank and First Interstate.",
       "url": "https://www.cnbc.com/2025/10/28/activist-investor-holdco-targets-americas-underperforming-banks.html",
@@ -287,35 +407,35 @@
       "published_at": "2025-10-28T20:48:36",
       "category": "综合财经",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:23.946668"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:01.148251"
     },
     {
-      "id": 525108941131774583,
+      "id": 678782652074625356,
       "title": "The ‘Magnificent Seven’ have never been this important to the stock market — and a big test lies ahead - MarketWatch",
       "description": "The ‘Magnificent Seven’ have never been this important to the stock market — and a big test lies ahead  MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMi3gNBVV95cUxOZUNkQUdTbDhWT3pFM0tmRDN3bFYtMUdFaGg5MDVabTNTc2VZcDB4b0d3dXZrSUhzSmVkV1B4YmdQM21PeklUTHpWalNCT0FNR2kyenU2MXZmczZBQWhYc3ZEa1MtYkVkcEEzeVVRdGx6VE5WbHZndU5OOENtZWp0bkhOQmdKU2RlNDJUYy1MY045QnEzcmdzWUpGTTV2N2JHeTcyTDd3cWdvNmQzVXVSc2h4OXhuZHRVNy10d0RIMmdZbVRhaV9aM1lEV0IyVVVWR0FmVmV4dUd4Z29XVjVDSVhXcGI0blhDMEc5RGlIQ2U0dS1Yay1IR29Rc1ZvYUpha3IwN2lsYm9xTDdCWi1rYVc5ZlJVWmpYWGZmVGU3Wm9yOHpUZUNJdDlIV3I0WGdibnJVT3pldG1zTHVOejFWZXBFSzFpLTZ3WmR5VVJLNmI0a2NvdWVWZFVaSWYyTlJXRDJWUWZrQk4yM0FZaFhOMGFnb0piRk1iUURHYXZqTFdBb0pWZlVXS240OEJZbWpDSkR3RTdhcWhDQmpZV0czQUN4X1hqTklUOWNBemFqbmNHWEpPOC1oNVVUNlljYjFWNWtjVEZDbEdCMUFmXzc4blFrX1EwTEdaOHRwVWZB?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi3gNBVV95cUxQQWM3WEFvTkdYWnFvWGxSNEQ3RGJBZ21INFRCQ1Vvc1JIVFJmcXRuQXVxaUJDN0s3NEpDd2tkUUZPRG9Ldy1tQ2lraGZMXzQtSjVsM3BxeHlPRG1BcXZ5TWt4dEU1bHd6TXJ5c1ktUmFtMENmb0xsMEJlb0UtZ2JZUjdsSk5zZmc4c0NTRHNKY2VIck5uZDF0bGRqZHdSZ2RaMExtbjRPS01wZ0lITDU4cmszaHJ6bXRzbDFFcFBMeHFpVzFWZGh6RGRwV2FTcU9aOU9hak80akxEdlN2S3JVc0xCRjFDTzZocXhpLTZyX3FfR2Y3V0RxYWJ6SmlBbHY1OUxPaGQ5ZHFKWG00TER2aUVxWDc5N1BIVmw0aUhJWG93dy1BcmJjNlY1djV5UXQ0SVQ3dkZMNE91X21VMnh5a3NETDBHaGxFQndYQ2hoZVE2a0tFMktBOW1GUWU2MC1nWWtuTFhZYmgwYkk2OXV1YVlPRWFWXzRld01ZU0o2Xy1fQXA4Mm94bm1hdEVTeTJ2NFE3Z1N3c2ZtTHJfTkp6QVBoOEJER3VMYVd3Qy16RS1xZ01kZmhXNWRIaW9FaWF3VnRTa1U2TTk0RXBaUkp0M0pCTl9fMjAzalRsd3dB?oc=5",
       "source": "Google News",
       "published_at": "2025-10-28T20:46:00",
       "category": "股市动态",
       "country": "Global",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:18.470893"
+      "fetched_at": "2025-10-29T06:11:55.620342"
     },
     {
-      "id": 5084284221674587169,
-      "title": "Judge extends ban on Trump firing federal workers during government shutdown",
-      "description": "A federal judge extended a temporary order blocking the Trump administration's mass-layoff plans during the government shutdown, multiple news outlets reported.",
-      "url": "https://www.cnbc.com/2025/10/28/judge-ban-trump-government-shutdown-layoffs.html",
-      "source": "CNBC",
-      "published_at": "2025-10-28T20:38:49",
+      "id": -8780200898200181031,
+      "title": "Stock market today: Dow, S&P 500, Nasdaq notch fresh records as Nvidia soars ahead of Fed rate decision - Yahoo Finance",
+      "description": "Stock market today: Dow, S&P 500, Nasdaq notch fresh records as Nvidia soars ahead of Fed rate decision  Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSVdwbnlGLWExVFpYSXhIYnNtYWFYNnlXLWcyblJKWmQzNE1BdUpDeEIyWFkyTEJTNGZmVW5zUjZUbC1HVGN6VmctZmVuTXVaMkE5S2RkQUFpemhYTmV1SmdvOHZnckF6RDkwdHRvLVNleXNId0FwM093Ykt3SzM5UVp1NGFHWV9YUnBjWnRCeWNkaUxVbEFRZy1JZ1NCOFNpbV80eE9NaWZlQ1QxTk1fbjM3allPQXJJODNoYktLbFZFTWllZVVmVTFKUXBEQTdUcnRoTDVWaU0yM3gxOVk4QU9DaWg?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-28T20:44:51",
       "category": "货币政策",
-      "country": "USA",
+      "country": "Global",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:23.946416"
+      "fetched_at": "2025-10-29T06:11:55.621416"
     },
     {
-      "id": -6674169307698895210,
+      "id": 4057176030795430769,
       "title": "Nvidia's stock market value nears record $5 trillion - Reuters",
       "description": "Nvidia's stock market value nears record $5 trillion  Reuters",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVHY2TThhWU9ubHZxaDV4NkRzWnRLVENBSTFIMUxfSG5iaEIwVFlkYjN2LXpzNFNBaF83M05UdjVwV3dFNVZ6Vk9xZWhTYXF1bmRtMHR1LTBsWElPZUkzZ3YxRHVSZXpRc3VPZG1xX3ZKWkkzck1PTm5tYjZGRmVNYXB4ZERoQlY1NnBVNUJveGxBcFZJS211MzRwMUptZDVGMldQbXRsRHo?oc=5",
@@ -323,35 +443,11 @@
       "published_at": "2025-10-28T20:38:28",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:18.469350"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.620521"
     },
     {
-      "id": 7341306186375941763,
-      "title": "Apple joins Microsoft and Nvidia in elite $4tn valuation club",
-      "description": "iPhone maker’s share price is up 28% over the past six months",
-      "url": "https://www.ft.com/content/cac347b9-279f-4652-9b42-4f01f3b8f040",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T20:35:59",
-      "category": "综合财经",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397077"
-    },
-    {
-      "id": -2635730320492132783,
-      "title": "Cytokinetics has been on a tear as the biotech pioneers more drugs to fight heart ailments",
-      "description": "Shares of Cytokinetics, which targets medicines for specialty heart diseases, have jumped about 69% over the past three months and are up 31% year to date.",
-      "url": "https://www.cnbc.com/2025/10/28/cytokinetics-has-been-on-a-tear-as-the-biotech-pioneers-more-drugs-to-fight-heart-ailments.html",
-      "source": "CNBC",
-      "published_at": "2025-10-28T20:32:47",
-      "category": "股市动态",
-      "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946495"
-    },
-    {
-      "id": -6652696602533915109,
+      "id": 8275274931180979364,
       "title": "Reeves could face £20bn Budget hole as UK productivity downgraded",
       "description": "The OBR is understood to have downgraded the UK's productivity level in early Budget forecasts",
       "url": "https://www.bbc.com/news/articles/c0rpve82jxvo?at_medium=RSS&at_campaign=rss",
@@ -359,23 +455,35 @@
       "published_at": "2025-10-28T20:23:47",
       "category": "股市动态",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:22.863351"
-    },
-    {
-      "id": 7955560607201485384,
-      "title": "Nvidia Stock Rises Toward $5 Trillion Market Cap Amid Flurry of Deals - The Wall Street Journal",
-      "description": "Nvidia Stock Rises Toward $5 Trillion Market Cap Amid Flurry of Deals  The Wall Street Journal",
-      "url": "https://news.google.com/rss/articles/CBMijARBVV95cUxPWF9kSEhnOHY3TzlhOWtLYzBOQVQ2YnhraEQxbER6a2hBbW5ILTF5RVNqbkRFaW5oRVp0c2J0c2xoMmNqOG5DOUNpaWlHd2wyamVWVHU2dUZjSDcyYUsxVW1ZbktlT0hWNjZTck1QYVNiOGlmaHRoTzVaTElMYlNaSm9PNGQzeklycGdFcTRsbGx5QzYwX3BoVU9URFJiMGJURElCamhNLUFQRjg0WnVvRl8yNXNMRVAySXk1SFlpaXhxU1p1VDVRcEVDM1JhSTFwdTBoU0FkRmFwS2xBNU5NSExlby1wTGZkZGRGR0E4VVdzekFnSS1BeE0ydm9LTnFpSFJYLTV0M1BYcjBzRndoVUtaV1drM3dXcTFGTTEyVXB2NlBoTU5UM2hzTkE1OUV2TV9IT0FkUktWVHpVd3BjTzZTQWtVb21BQ2Jpcm91dGFPTXBkQ2hJeW5LQm4yTmpUSUItN01xaWZPMTV4eC0xamhnbEFDWTBfaUg5X0M3aXJIeXRseHU0TDc0eERhaWVwSkRid1VaVUcxd1VfUURQMktWdFl0c0hTaVBhMnZkR0doOGFhYjJKR042U1Bnc1Jwc0VrQTlyaC1NMzF3Ynh5WTZodTJZQjlkdEsxaEpMSFd2RWN1NFg5UEtmaWhycWc4bVF6azFhTWNKX2tnTkxZVVNLcTVYY0p0cE0yYg?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-28T20:15:00",
-      "category": "股市动态",
-      "country": "Global",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:18.469716"
+      "fetched_at": "2025-10-29T06:12:00.083022"
     },
     {
-      "id": -7580974383901162147,
+      "id": -5368253047197332705,
+      "title": "Stocks close at record highs for second day as AI trade heats up ahead of Fed rate decision - CNBC",
+      "description": "Stocks close at record highs for second day as AI trade heats up ahead of Fed rate decision  CNBC",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE81UjlvYjlFanF0eGQ0N0owY0prQnV6OFM0NmEwQUNYNzZBa29mQUoyN3NkY3pHN1JaQ1JPY2UxaEJTZ2NRcHFFTlkzM1dtU0I5Q0hPOWdnZXVibldxSndWTHdQZnBYTDFsUGhVZnlBejR0bjNjMU000gF8QVVfeXFMT2tJaXkySzU5SnhqNHJKQk04bEh0NkRtMVZocE5lRWRWcHIzc1B6R0tsWGhKUjV3UlNBbVc1eUF2TFFiUklHdXoyWWJUNVk1UVZUYkk4YWhZaklla19GWHE4NEZKMVJ6V1ltODQ5U0pIWE5EMHVOTWoyTlpzSA?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-28T20:23:00",
+      "category": "货币政策",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:11:55.621585"
+    },
+    {
+      "id": 5611666754240325463,
+      "title": "Nvidia takes $1 billion stake in Nokia, sending the 5G equipment maker's shares up 22%",
+      "description": "Nokia is best known for its early cellphones, but in recent years has primarily been a supplier of 5G cellular equipment to telecom providers.",
+      "url": "https://www.cnbc.com/2025/10/28/nvidia-nokia-ai.html",
+      "source": "CNBC",
+      "published_at": "2025-10-28T20:11:17",
+      "category": "股市动态",
+      "country": "USA",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147997"
+    },
+    {
+      "id": 2032589535634800299,
       "title": "States sue Trump administration to keep SNAP benefits during government shutdown",
       "description": "The SNAP program provides food stamps to about 42 million Americans. The program is on the verge of running out of funds because of the government shutdown.",
       "url": "https://www.cnbc.com/2025/10/28/trump-snap-benefits-government-shutdown.html",
@@ -383,11 +491,11 @@
       "published_at": "2025-10-28T19:42:31",
       "category": "股市动态",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946340"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:01.148164"
     },
     {
-      "id": 2264980522426400256,
+      "id": -7042768075976610125,
       "title": "OpenAI completes shift to becoming for-profit",
       "description": "The deal will see long term investor Microsoft retain a 27% stake in the ChatGPT-maker.",
       "url": "https://www.bbc.com/news/articles/cvgv38py7ewo?at_medium=RSS&at_campaign=rss",
@@ -395,11 +503,11 @@
       "published_at": "2025-10-28T19:36:59",
       "category": "综合财经",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:22.862842"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
+      "fetched_at": "2025-10-29T06:12:00.082546"
     },
     {
-      "id": 5614525658075559753,
+      "id": 8035644114634648568,
       "title": "The Fed has a rate cut plus a bunch of other things on its plate this week. Here's what to expect",
       "description": "The easy part for the Federal Reserve this week will be announcing a rate cut when it wraps up its meeting Wednesday.",
       "url": "https://www.cnbc.com/2025/10/28/fed-rate-cut-preview.html",
@@ -407,35 +515,11 @@
       "published_at": "2025-10-28T19:12:06",
       "category": "货币政策",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946012"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:12:01.147744"
     },
     {
-      "id": -423960261704540903,
-      "title": "‘A stomach of steel’: amateur investors ride out dips amid talk of an AI bubble - The Guardian",
-      "description": "‘A stomach of steel’: amateur investors ride out dips amid talk of an AI bubble  The Guardian",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVHRUTzhoXzhfeDF6SGFoTHFYV2xTX1YxQ0pnLUF6d3QzM2VnZEt0cGRCRl8zZWgtcDFaTVpPNTdvRUlsekIxOVBESkNuWVhiYXhDOUFzYVB2Y0VoTlRpYzZHZ2Jwd09BMUlXWWRwUlhSYXJLQ1BNdGZVRzUtYWRZRjkwbWVCUnhaOXlNblk2WTRuU0NERlRCbVpUZW4tVG01RUNNTjk3VjFWQQ?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-28T19:03:00",
-      "category": "综合财经",
-      "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:18.470288"
-    },
-    {
-      "id": -7909814963895402589,
-      "title": "The stock market is breaking records. Time for a gut check - Yahoo Finance",
-      "description": "The stock market is breaking records. Time for a gut check  Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOWWNOTjJmbmJ2UGs3ZHpMWXRvVTJrQnlWX051QURSV0xJZ191VEg0SnctVGZ1QXRNRW9OUWg1Y3dOaGFuaWE5cTE3QlFFaTdwZ05oejlqNmpSNU5ZaExWNDQwSV94RkwxSExHbV9LWjU5cFNyNVdFVUJlUGFoUk43VzVkWFI0dFU?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-28T18:39:43",
-      "category": "股市动态",
-      "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:18.470709"
-    },
-    {
-      "id": 2333172525951889823,
+      "id": -8780357970745588181,
       "title": "Bill Gates softens ‘Climate Disaster’ approach, says strategy needs to shift: Interview",
       "description": "Microsoft co-founder Bill Gates says countries and leaders need to shift their approach to climate change and focus on 'improving lives'",
       "url": "https://www.cnbc.com/2025/10/28/bill-gates-says-countries-need-to-rethink-their-climate-strategy.html",
@@ -443,47 +527,23 @@
       "published_at": "2025-10-28T18:28:31",
       "category": "综合财经",
       "country": "USA",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:23.946756"
-    },
-    {
-      "id": 1092947762038236519,
-      "title": "OpenAI restructuring pushes Microsoft’s valuation above $4tn ",
-      "description": "ChatGPT creator was founded as non-profit but has been racing to unlock new investment",
-      "url": "https://www.ft.com/content/74d537c6-bd80-4797-9897-3d5455dfc414",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T18:12:17",
-      "category": "综合财经",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:25.396973"
-    },
-    {
-      "id": 2714579957487873051,
-      "title": "UK trade deal with Gulf states ‘almost done’ after Reeves visit",
-      "description": "Chancellor hopes to get the agreement over the line before her Budget",
-      "url": "https://www.ft.com/content/f6189ec0-27d8-4d4e-aeb7-0d44b3c14e5b",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T17:33:30",
-      "category": "国际贸易",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397626"
-    },
-    {
-      "id": 4847839278482047325,
-      "title": "Reeves must get whatever growth she can",
-      "description": "Improved standards of living are the foundation of modern democracy",
-      "url": "https://www.ft.com/content/20d6d434-0ae7-4305-b1c9-db1e26182931",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T16:46:42",
-      "category": "经济数据",
-      "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397239"
+      "fetched_at": "2025-10-29T06:12:01.148341"
     },
     {
-      "id": -9025443750748219713,
+      "id": -4589185009514352330,
+      "title": "The stock market is breaking records. Time for a gut check - AP News",
+      "description": "The stock market is breaking records. Time for a gut check  AP News",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRXFZRTFtdl9lSUVMd0FQR2hXaUF2VXVudE9OVldnUTdLOXQ3RklyZWV4YkxYazdMRUNrNlpKRDgxc1owZUU3OFhRck9zQVNaNjEzU3JKUlkwRFV2dFcwM1FFcHVXd1BidWJsQ1NLc2VGUlJkdTJOTnd1Vk5aSkRsaGpBT2J1dmpzZTBzVXZR?oc=5",
+      "source": "Google News",
+      "published_at": "2025-10-28T17:25:00",
+      "category": "股市动态",
+      "country": "Global",
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.620864"
+    },
+    {
+      "id": -2864619363550091566,
       "title": "Trump floats Treasury secretary Scott Bessent as new Fed chair",
       "description": "US president expected to name successor to Jay Powell by Christmas",
       "url": "https://www.ft.com/content/5344084e-3254-4c8c-9ca5-c30447a30d61",
@@ -492,10 +552,10 @@
       "category": "货币政策",
       "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397477"
+      "fetched_at": "2025-10-29T06:12:02.591223"
     },
     {
-      "id": 4441865908736730730,
+      "id": -5783876249656817219,
       "title": "Headlights to be reviewed after drivers complain of being 'blinded' at night",
       "description": "Concern over the glare from brighter headlamps is prompting the government to review vehicle design.",
       "url": "https://www.bbc.com/news/articles/cn971jlpvvro?at_medium=RSS&at_campaign=rss",
@@ -504,22 +564,10 @@
       "category": "综合财经",
       "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:22.862925"
+      "fetched_at": "2025-10-29T06:12:00.082627"
     },
     {
-      "id": -5188710475419321039,
-      "title": "Trade’s contribution to UK GDP ‘stagnated’ since Brexit, warns WTO",
-      "description": "Export of goods are languishing at 17% below pre-Covid levels",
-      "url": "https://www.ft.com/content/8f4d0f1a-599c-4617-a4d6-21ac8736109c",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T13:00:35",
-      "category": "经济数据",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397699"
-    },
-    {
-      "id": 649453927275560425,
+      "id": -1360286160722837304,
       "title": "Amazon confirms 14,000 job losses in corporate division",
       "description": "The company says the opportunities provided by AI means it  needs to be \"organised more leanly.\"",
       "url": "https://www.bbc.com/news/articles/c1m3zm9jnl1o?at_medium=RSS&at_campaign=rss",
@@ -528,70 +576,34 @@
       "category": "综合财经",
       "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:22.863195"
+      "fetched_at": "2025-10-29T06:12:00.082870"
     },
     {
-      "id": -8453228779384898417,
-      "title": "The political economy of Trump’s luck",
-      "description": "Those who are bearish on US democracy should not extend their pessimism to the economy",
-      "url": "https://www.ft.com/content/dcea6bc1-ee1d-46cd-b23c-043e1dcfa964",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T11:45:54",
-      "category": "综合财经",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397328"
-    },
-    {
-      "id": 6736601353570405102,
+      "id": -4662838015443178675,
       "title": "All four U.S. stock market indexes just closed at record highs. Here’s what history says happens next. - MarketWatch",
       "description": "All four U.S. stock market indexes just closed at record highs. Here’s what history says happens next.  MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMi3gNBVV95cUxOaGx5eGhUNHI4NHNXTy1oYXNGOW52dGdkLWpDNWlEZExXWXhWWUdVbElVRUk3cUVnN01TVWZjTHFRSGpwY0xRaFpGT1A3RkRvODlXQ3VyenphZ0tTQVphWldiYzRGWjduNm5JR3REMkx4R1pSZW5sOWtZSGJkR2NIWGI4d2UtSUhHX1RoYlQ4UWs2UEd2VW81ZFhWcjRwUUhoN3IwUVM0VVNnQktIWWNQanVaNFZOQk1LYmhNM2YyNFViNEplZWJKWjJ4YXAxQUxGUGlzZWlmWEdWZGZfUDJ3TDZkUG9uXzczdnZ0cXVkZkUtYTBNYXV4akF2ZmlESk1fMEFQNG5TR3pWeUV2bW0yN01sbHhveG1fVkRxVXA3VGM3X3Faa2RhUWZCVmNoQ1I0aVNVazI4OWkwQmlfY29aejRQRGxFdkJHMlpXXzBHLXJEaFpuZzVFbm4tV1Z0MURlQTM3SzZGQ3F0RlRQN2FlZ0lGRW44UzMySmxqSC1NajlNMDFmZHVQQ2Fwb25oQjFselgwMnZjeFg4c2pMRkZ0bEx6akl0bkk1ZWNGWUR2NjJ6T0ZBS0VYRzZWMUdfQWhGdUdMZVRHMWNkS1pqbU1sSEwybFN2WGUzdnF2eDl3?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi3gNBVV95cUxNVGpXbkhQQkJVQl9oYk9wMG1wUkRoODJ6bmtnUklsaGRyUS1xUkcwTERFMGhpZzgxdjBwQW9JRkRKSElMY2U5UWRWZWpYWUdCbmNpbXd4OEx4RUlzOWxkcFNOSkNuVElJSnpiQXlrdEZNS01YbW5lSXZxRmkzczh6TDNOS1FBczh3NEV6ZnR5RTAyd1gyR2M2ZVd6YU03SXo4SEl6MFNRdUY2bEVyR3VCaWU3VkV1NFBwdE5Ta1VOX1kzdmxvZFo4eFl6VjEtcU1xSFFiNkdaaDVvMFl1ZEJXWFF0eUxFYmdzUnRkYmJNWkctc2JlNjA5ZEwwQXc5QmhySWtYcWtXRW1sVTc3TkZoSmtRczhvcUtQV2wxNm1ibUI4RGpsVkxZLUpGMDVXdDVhems0SktQOWR4YjRQbWtmMF90Ti1YV0pWamRYUHpKek92eXl4c19GdW84MWNvSk1lei1SeEtmczV2YXJzU1NPUXA2VmJwMFFFMU5Vc2M5V09PMURUZ3owSkQyaUtWQi1JSDdZalc0dDZwOVFfV0pkWFEzTEpUQnc5Z2NZT3U0Zy10dG9zaGNBRlpnMEZJZXFtdTRVc3VFN1hVYjNBNnVyUXhOSjluTTQ5SC1GZ1h3?oc=5",
       "source": "Google News",
       "published_at": "2025-10-28T11:27:00",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:18.469538"
-    },
-    {
-      "id": 836137562813741299,
-      "title": "Amazon to cut 14,000 corporate jobs",
-      "description": "Job losses come as chief oversees a cost-cutting drive amid increased AI spending",
-      "url": "https://www.ft.com/content/106a0ea2-5f76-47c3-b1d6-c6b425b556fc",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T10:02:16",
-      "category": "综合财经",
-      "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397407"
-    },
-    {
-      "id": -6870816164776530501,
-      "title": "Fed nears end of QT amid signs of stress in money markets",
-      "description": "US central bank to begin debate on halting three-year phase of shrinking its balance sheet",
-      "url": "https://www.ft.com/content/3c8e1d44-6156-4cbe-86fb-b45c66881cea",
-      "source": "Financial Times",
-      "published_at": "2025-10-28T05:00:23",
-      "category": "货币政策",
-      "country": "UK",
       "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:25.397546"
+      "fetched_at": "2025-10-29T06:11:55.622025"
     },
     {
-      "id": 6775418518237546576,
+      "id": 7381466441851159594,
       "title": "Stock Market News, Oct. 27, 2025: Dow Hits New Record on U.S.-China Trade Deal Hopes - The Wall Street Journal",
       "description": "Stock Market News, Oct. 27, 2025: Dow Hits New Record on U.S.-China Trade Deal Hopes  The Wall Street Journal",
-      "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxOanY2bjJnUnpxQlM4OHZ6TEdKeXpnODNxbG1HcnNPNWVWWnoyS1BTYWQxcUw4b1FUNkl5Wnp6RU9zQkZybEVCNEJPUEF6RDVpbGJUdkQyc0FLY0IxeV9uaDJuTjZCeHVkMktBbmJBai0tQWZCYldteTN2MUd5dmJQa2MtY3NVSUhTQy1PV0ZyX3hhZE9HWWJLM2hNdW14ZFRtdkRIamVUVjB5Y3g4cWpvLWx2QU9oODNYZFdjRC16QnRwVUdQenpKc0VZR09RaVNTdGVpczlsajBLVk9BSXJLa1lYallnbVllZ2RGR1ZBVDhoTWhXeVZqQ21VYjVYNWkxX1ljZ3dxVzA0MFBVOU9GRFYwWnN5VmJTRkloWmJacUcwSjVNejlyTkhtMHBmWlRUZDdhVjFYc3lYb3ZkemVjTTNyUlFfWk9iYmd5cnFfb3hfNkJYcWh3OGhBRjAxeFlBV1VaSnRDMzNIMHliRElaWF9na0NxSHk3X0g4NEVONWt6Z0dPdnNPQTNYMVk?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxQR3BlQVE3anBiNWtXQUhPVFlYU01kdnhGUm1qUEc1XzlkLTZqcURPcGVNcldhNWFfeFh0bWcxYmp5ODQ5WFhLMTBBdXlmWDBfV3dQMGxITkkwY05EaTdldkFTM1JPSGFDeklnUkhmRHZlOUNCLTBrejMtUzE4UGVnTEN4alZjUXBpU0dncDJlRVMxbnZRZnVuUFFDNTFxaXN2cWo4djMzb0xYcDhDUGhKR2hkbWx1U2QxcW9QaVpQdXVuSDI4bG1lMUx1cThHQVNiOGRZT3FlcUhuUS1nbnRuZHdVeERZeTdTdjVaaUs1MU9DNzBudEZidW0wNnJINkJvNVRMZm5CTzI5QktlNEJSZ3dYOVc3NFBKQ3FYREdubUlaZTd4NmFzMUlLanFac3hlVWgwVDg4OWRkUElyd21Db3JieG1zZ1V0alBLWHdfNXNRNUk4Skt0ZGdHZjVkM09jLWEwbmRCMGpjY1p0V29TOE9BQ3I3TTREdUNKTzBYdG5rRWV5MHhaMThZbDM?oc=5",
       "source": "Google News",
       "published_at": "2025-10-28T01:54:00",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:18.471276"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.621238"
     },
     {
-      "id": 2390257785356618244,
+      "id": -7826919554256656570,
       "title": "The South African start-up bringing tech to townships",
       "description": "Entrepreneur Talifhani Banks has bought a modern delivery system to smaller firms in South Africa.",
       "url": "https://www.bbc.com/news/videos/c2310jkr9y9o?at_medium=RSS&at_campaign=rss",
@@ -599,11 +611,11 @@
       "published_at": "2025-10-28T00:07:11",
       "category": "综合财经",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:22.863116"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
+      "fetched_at": "2025-10-29T06:12:00.082791"
     },
     {
-      "id": -259492276305864231,
+      "id": 6909278551002484084,
       "title": "Turing AI Institute boss denies accusations of 'toxic internal culture'",
       "description": "Whistleblowers also accused the charity's leadership of misusing public funds and failing to deliver on its mission.",
       "url": "https://www.bbc.com/news/articles/c9q1xdnydwjo?at_medium=RSS&at_campaign=rss",
@@ -611,23 +623,23 @@
       "published_at": "2025-10-28T00:04:41",
       "category": "综合财经",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
-      "fetched_at": "2025-10-29T00:33:22.863031"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:00.082710"
     },
     {
-      "id": -7213549918097670715,
+      "id": 7226467377255490933,
       "title": "Why the Stock Market Keeps Gaining. No, It’s Not Just AI. - Barron's",
       "description": "Why the Stock Market Keeps Gaining. No, It’s Not Just AI.  Barron's",
-      "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxOV0JZRHhiWnRfT2JnYlZ6THllVWNPeW9rQVVoYUI5RjlGRHZaNVhybHZsOXkzbnV5alpkdlIyUDFvTnBfWlotVkhrczdia3JXdGhxcHhyU2l1d0xFSXpFRm9KM0FlWHVnOS1Vak1OSmoxb3QtMk5XdERBYW5meXJVcG5UUHJtUHIyU3dyQjh2REtNalZ5S2dMS1dwLXBCS0s2OXAyUW9iRXBRd1V2a1RVUXZ2VWhCaEJPMFdJR0J6Z2dWMnFGNEtpMmhMbGJzUVNFNGd3T01kVERrY1dQYjVFUUNBU215cmllTGVaU3B3Z0FjSGw5dHhocXlfYXdibHJEY3lGS2ltMHdSaXdqQVFQall1RkZOSGF0enJTdXQ2LTZHYUo5NFFLNVlES3h6ak1LQ3d0QkVyZnpFdkNjcEdVdXRHUTNzcGgyaEgtNmpxU0lsdFZuSnhLNmwtd2g2dnJlamVkZXEyNENaamthZVlQZzA0YWl1LTJ6dFN5ZkliUlVDU19tQWc?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxQMGFiWnpwckQtLUwwQ1hPLTJTNl9xQTRJdUYxM05SbXdKSExvQ1JhUEwwT2ZKcWhDQlFZNW1vQ2xxcGhLN25ac0E1MTVlR3Q1R3pqNGJXTGYwZVI0MkxPeWZMWWRnd3Zibm1IbGw3SjVVbnI5Vno5MmZoSjY0dngxTmx5X2U4TExwX3o2V2ZqX3c5V3Y4bVVVcFdKOVo0R3ljRm1CZkszN3pVNldTUzgtUFl1eFFMcGFWRlJ0My02YW1oTWFrekdPR3U0VDNvWXpLelU1ZF9Hd1BtSXBCVkF4eVUxdDBZT2FZZ05naVhDU2wzQXhOc1BHaktRU1N4YlVxamdQbHVBVmVyX2gzTzlMM0gtRXdXeEk3TGJ4WWVKUmtlTG80MEtTOUo1Rzhud1pMT213NzdaeC1iT0RoWmNqOFlIeG5DUnZjeXN0Sm5qOUlMSVMxNnE3dnI3TENJZ21ZS2F5WUZtcndGbHZyNERsVUFXdXV4REwtVW9EbW9oT0RYUGJidnc?oc=5",
       "source": "Google News",
       "published_at": "2025-10-27T21:50:00",
       "category": "股市动态",
       "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:18.471104"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/d73313bb-1da1-4247-8ca6-de693c674018/image_1761210124_5_1.png",
+      "fetched_at": "2025-10-29T06:11:55.622414"
     },
     {
-      "id": 7791085583245410896,
+      "id": -1606256226454540870,
       "title": "City trader sues UBS for $400m after rate-rigging conviction quashed",
       "description": "Tom Hayes launches a legal claim against UBS, claiming he was the bank's \"hand-picked scapegoat\".",
       "url": "https://www.bbc.com/news/articles/cz6ngvenxj6o?at_medium=RSS&at_campaign=rss",
@@ -635,11 +647,11 @@
       "published_at": "2025-10-27T20:52:24",
       "category": "国际贸易",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5f2cdbe0-ff90-4dd6-847d-f845db12d841/image_1761210122_6_1.jpg",
-      "fetched_at": "2025-10-29T00:33:22.863428"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:00.083129"
     },
     {
-      "id": -2200915865514604088,
+      "id": 5310915664171374857,
       "title": "Eastern Airways on brink of collapse with jobs at risk",
       "description": "Hundreds of jobs are at risk after the airline filed a notice of intention to appoint an administrator.",
       "url": "https://www.bbc.com/news/articles/cd04vyg4x19o?at_medium=RSS&at_campaign=rss",
@@ -647,20 +659,8 @@
       "published_at": "2025-10-27T17:58:14",
       "category": "综合财经",
       "country": "UK",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:22.863275"
-    },
-    {
-      "id": 7741041842170995322,
-      "title": "Think the stock rally is over? It may just be beginning - CNN",
-      "description": "Think the stock rally is over? It may just be beginning  CNN",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1fbXFLR1dib21BU09UbnNfeHNtaFo2ZjRpbmtIRC1LN3dUWHdpeFJlMXluNkhLOVZxYzh6d2p2aEp2V1hjSFd0Ym80LXYxZ0FqWWRTS09zLUFYczdqQloxeGNDUzBNZWduTHlFel9Odw?oc=5",
-      "source": "Google News",
-      "published_at": "2025-10-27T10:30:01",
-      "category": "股市动态",
-      "country": "Global",
-      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/c114dc3c-72a6-44d4-93a8-b97d0608ad58/image_1761210122_4_1.png",
-      "fetched_at": "2025-10-29T00:33:18.470099"
+      "image_url": "https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/e21eb98a-5751-440c-8dc6-b04471809fc8/image_1761210124_7_1.png",
+      "fetched_at": "2025-10-29T06:12:00.082948"
     }
   ]
 }
