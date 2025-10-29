@@ -1,27 +1,24 @@
 {
-  "temperature_score": 71.7,
+  "temperature_score": 78.5,
   "sentiment": "乐观",
   "sentiment_emoji": "😊",
-  "analysis_text": "当前全球经济新闻整体偏向积极（积极15条，消极2条），市场情绪乐观。多项经济指标表现良好，投资者信心较强。建议适度增加风险资产配置，关注科技、消费等成长性板块。同时注意控制仓位，设置止损点位。",
+  "analysis_text": "当前市场整体呈现谨慎乐观态势，主要受到美联储货币政策转向和企业盈利预期的双重支撑。美联储连续第二次降息并计划在12月结束量化紧缩，为市场提供了充足的流动性支持，这反映在美股主要指数维持在历史高位附近。与此同时，人工智能热潮持续推动科技股表现，英伟达成为首家市值突破5万亿美元的公司，显示出市场对AI产业链的强烈信心。阿根廷市场在米莱当选后出现显著反弹，多只股票涨幅超过30%，表明新兴市场存在结构性机会。然而，风险因素同样不容忽视：美国政府停摆可能造成140亿美元经济损失，微软Azure和365服务出现全球性中断，以及俄罗斯石油公司因制裁而出售国际资产等地缘政治风险。从板块轮动角度看，科技、金融和能源板块存在差异化机会，但需警惕市场波动率上升带来的短期调整风险。",
   "key_factors": [
-    "✓ 综合财经: GE HealthCare boosts 2025 profit view after strong US demand...",
-    "✓ 综合财经: Boeing posts Q3 revenue beat, improving cash flow burn rate ...",
-    "✓ 股市动态: Dow Jones Futures: Trump Upbeat On China, Lifts Nvidia; Why ...",
-    "✓ 综合财经: Semtech Corporation (SMTC) Rose as Earnings Beat Expectation...",
-    "✓ 股市动态: Earnings live: Wayfair stock soars following Q3 results, Pay..."
+    "✓ 货币政策宽松：美联储连续降息并结束QT，为市场提供流动性支持",
+    "✓ 科技龙头强势：英伟达市值突破5万亿，AI产业链持续受益",
+    "✓ 并购活动活跃：多项大型并购交易显示企业扩张信心",
+    "✗ 地缘政治风险：美国政府停摆、俄罗斯资产出售等不确定性",
+    "✗ 技术故障风险：微软全球服务中断暴露科技基础设施脆弱性"
   ],
-  "positive_count": 15,
-  "negative_count": 2,
-  "neutral_count": 13,
-  "analyzed_news_count": 30,
-  "analyzed_at": "2025-10-29T12:13:57.313041",
-  "categories_distribution": {
-    "综合财经": 10,
-    "股市动态": 10,
-    "货币政策": 6,
-    "经济数据": 1,
-    "国际贸易": 2,
-    "外汇市场": 1
+  "positive_count": 16,
+  "negative_count": 9,
+  "neutral_count": 5,
+  "investment_advice": {
+    "short_term": "重点关注科技板块特别是AI相关个股，适度配置金融股受益于降息周期，回避受地缘政治影响较大的能源和原材料板块",
+    "medium_term": "布局受益于宽松货币政策的价值股和成长股，关注并购整合机会，增配防御性板块以平衡组合风险",
+    "risk_warning": "需警惕市场波动率上升风险，关注美联储政策转向速度、地缘政治冲突升级以及企业盈利不及预期等潜在风险因素"
   },
-  "ai_provider": "fallback_rules"
+  "analyzed_at": "2025-10-29T18:11:36.543550",
+  "analyzed_news_count": 30,
+  "ai_provider": "deepseek"
 }
