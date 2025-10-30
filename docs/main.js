@@ -1,12 +1,6 @@
 // API基础URL - 替换为你的Vercel部署URL（如果不使用Vercel，保持默认即可）
 const API_BASE = 'https://your-vercel-app.vercel.app/api';
 
-// 智能检测数据源
-const USE_LOCAL_DATA = window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1' ||
-    window.location.hostname.includes('github.io') ||
-    window.location.protocol === 'file:';
-
 // 全局状态
 let currentCategory = '';
 let temperatureChart = null;
@@ -15,7 +9,6 @@ let temperatureChart = null;
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 全球经济新闻分析系统初始化...');
     console.log('📍 当前环境:', window.location.hostname);
-    console.log('📂 使用本地数据:', USE_LOCAL_DATA);
     initApp();
     setupEventListeners();
 });
@@ -108,31 +101,15 @@ async function loadCategories() {
         let categories;
 
         try {
-            if (USE_LOCAL_DATA) {
-                const response = await fetch('../data/news.json');
-                if (!response.ok) throw new Error('数据文件不存在');
-                const newsData = await response.json();
+            const response = await fetch(`${API_BASE}/news/categories`);
+            if (!response.ok) throw new Error('API请求失败');
+            const result = await response.json();
 
-                const categoryCount = {};
-                (newsData.news || []).forEach(news => {
-                    const cat = news.category || '其他';
-                    categoryCount[cat] = (categoryCount[cat] || 0) + 1;
-                });
-
-                categories = Object.entries(categoryCount)
-                    .map(([category, count]) => ({ category, count }))
-                    .sort((a, b) => b.count - a.count);
-            } else {
-                const response = await fetch(`${API_BASE}/news/categories`);
-                if (!response.ok) throw new Error('API请求失败');
-                const result = await response.json();
-
-                if (!result.success) {
-                    throw new Error(result.error);
-                }
-
-                categories = result.data;
+            if (!result.success) {
+                throw new Error(result.error);
             }
+
+            categories = result.data;
         } catch (fetchError) {
             console.warn('分类数据加载失败，使用默认分类:', fetchError);
             categories = [
@@ -189,33 +166,20 @@ async function loadNews() {
         let newsList;
 
         try {
-            if (USE_LOCAL_DATA) {
-                const response = await fetch('../data/news.json');
-                if (!response.ok) throw new Error('数据文件不存在');
-                const newsData = await response.json();
-                newsList = newsData.news || [];
-
-                if (currentCategory) {
-                    newsList = newsList.filter(n => n.category === currentCategory);
-                }
-
-                newsList = newsList.slice(0, 20);
-            } else {
-                let url = `${API_BASE}/news/latest?limit=20`;
-                if (currentCategory) {
-                    url += `&category=${encodeURIComponent(currentCategory)}`;
-                }
-
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('API请求失败');
-                const result = await response.json();
-
-                if (!result.success) {
-                    throw new Error(result.error);
-                }
-
-                newsList = result.data;
+            let url = `${API_BASE}/news/latest?limit=20`;
+            if (currentCategory) {
+                url += `&category=${encodeURIComponent(currentCategory)}`;
             }
+
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('API请求失败');
+            const result = await response.json();
+
+            if (!result.success) {
+                throw new Error(result.error);
+            }
+
+            newsList = result.data;
         } catch (fetchError) {
             console.warn('新闻数据加载失败，使用演示数据:', fetchError);
             // 使用演示数据
@@ -312,21 +276,15 @@ async function loadAnalysis() {
         let analysisData;
 
         try {
-            if (USE_LOCAL_DATA) {
-                const response = await fetch('../data/analysis.json');
-                if (!response.ok) throw new Error('分析数据文件不存在');
-                analysisData = await response.json();
-            } else {
-                const response = await fetch(`${API_BASE}/temperature/latest`);
-                if (!response.ok) throw new Error('API请求失败');
-                const result = await response.json();
+            const response = await fetch(`${API_BASE}/temperature/latest`);
+            if (!response.ok) throw new Error('API请求失败');
+            const result = await response.json();
 
-                if (!result.success) {
-                    throw new Error(result.error);
-                }
-
-                analysisData = result.data;
+            if (!result.success) {
+                throw new Error(result.error);
             }
+
+            analysisData = result.data;
         } catch (fetchError) {
             console.warn('分析数据加载失败，使用演示数据:', fetchError);
             // 使用演示数据
