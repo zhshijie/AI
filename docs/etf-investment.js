@@ -20,7 +20,7 @@ async function loadData() {
                 // 优先尝试从 Vercel API 获取
          try {
                 console.log('  尝试从 Vercel API 获取数据...');
-                const apiBase = 'https://ai-394y.vercel.app/api';
+                const apiBase = 'https://ai-394y.vercel.app';
                 
                 const [strategyResponse, dataResponse] = await Promise.all([
                     fetch(`${apiBase}/api/etf/strategy`),
