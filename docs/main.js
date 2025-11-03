@@ -1,5 +1,5 @@
 // API基础URL - 替换为你的Vercel部署URL（如果不使用Vercel，保持默认即可）
-const API_BASE = 'https://your-vercel-app.vercel.app/api';
+const API_BASE = 'https://ai-394y.vercel.app/api';
 
 // 全局状态
 let currentCategory = '';
